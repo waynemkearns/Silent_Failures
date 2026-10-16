@@ -2,7 +2,7 @@
 
 Each example below was run. `patterns.py` runs all nine on small made-up tables and prints the outputs as JSON. It was run on Pandas 1.5.3, 2.0.3, 2.3.3 and 3.0.6 (Python 3.11; numpy 1.26.4 for the first two, 2.4.6 for the last two), with all warnings switched on. **All nine outputs are identical on all four versions, and no warning was raised.** The failures are not version quirks. They come from what the calls do by design.
 
-What this shows and does not show. These are mechanism demonstrations on toy tables. They are not evidence of how often a pattern occurs, and the numbers are not the paper's case-study numbers. The right-hand column is the conclusion the pattern puts at risk, in plain words; it was checked against Section 3.1 (the pattern catalogue) of `main_r10_CLEAN.tex` on 15 Oct 2026; each row agrees with the catalogue text.
+What this shows and does not show. These are mechanism demonstrations on toy tables. They are not evidence of how often a pattern occurs, and the numbers are not the paper's case-study numbers. The right-hand column is the conclusion the pattern puts at risk, in plain words; it was checked against Section 3.1 (the pattern catalogue) of `main_r10_CLEAN.tex`; each row agrees with the catalogue text.
 
 | Pattern | Plain definition | Three-line example | Output (identical on all four versions) | Conclusion at risk |
 |---|---|---|---|---|
