@@ -1,6 +1,6 @@
 # Pilot scan protocol (frozen before the first search)
 
-Written 12 Oct 2026. Purpose: give reviewers B, D and E evidence from code we did not write, so the paper's pattern claims do not rest only on our own pipelines.
+Written before the search. Purpose: give independent evidence from code we did not write, so the paper's pattern claims do not rest only on our own pipelines.
 
 ## What this is and is not
 

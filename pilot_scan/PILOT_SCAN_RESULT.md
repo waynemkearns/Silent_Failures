@@ -1,4 +1,4 @@
-# Pilot scan result (run 12 Oct 2026, 16:28 UTC)
+# Pilot scan result 
 
 Protocol: `PILOT_SCAN_PROTOCOL_FROZEN.md`. Scanner v2 hash matched. Selection rule and queries unchanged.
 The per-flag list names third-party repositories and is not included here. The list, commits and verdicts can be given to the programme chairs on request.
