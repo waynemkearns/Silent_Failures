@@ -1,0 +1,355 @@
+worlds finished: {'adult_c': 30, 'mimic_c': 30}
+
+========================================================================
+CELL adult_c (PrivBayes-style release at epsilon 10 with a planted leak; Laplace near-copy positive control on the clean arm)
+worlds completed: 30 (minimum 30)
+clean arm records-only mean 0.500 PASS
+DCR       positive control (Laplace divisor 100) 1.000 PASS | placebo mean at f=0 0.495 PASS
+DCRDiff   positive control (Laplace divisor 100) 0.955 PASS | placebo mean at f=0 0.499 PASS
+KDEratio  positive control (Laplace divisor 100) 0.804 PASS | placebo mean at f=0 0.498 PASS
+informative attacks: ['DCR', 'DCRDiff', 'KDEratio']
+
+VERDICT GRID (mean AUC over 30 worlds; verdict from Holm-corrected tests against the 0.03 margin around 0.5; 132 tests per family)
+
+  attack DCR
+  arm       0                       0.1                     0.25                    nc_d4_f0.25             
+  clean     0.513 clear             0.556 FLAGGED           0.633 FLAGGED           0.606 FLAGGED           
+  P2_asym   0.512 clear             0.559 FLAGGED           0.631 FLAGGED           0.603 FLAGGED           
+  P2_sym    0.513 clear             0.561 FLAGGED           0.633 FLAGGED           0.607 FLAGGED           
+  P4a_asym  0.522 inconclusive      0.569 FLAGGED           0.642 FLAGGED           0.612 FLAGGED           
+  P4a_sym   0.513 clear             0.558 FLAGGED           0.633 FLAGGED           0.606 FLAGGED           
+  P4b_asym  0.473 inconclusive      0.534 inconclusive      0.613 FLAGGED           0.473 inconclusive      
+  P4b_sym   0.509 clear             0.558 FLAGGED           0.629 FLAGGED           0.594 FLAGGED           
+  P5_asym   0.532 inconclusive      0.574 FLAGGED           0.644 FLAGGED           0.623 FLAGGED           
+  P5_sym    0.509 clear             0.556 FLAGGED           0.629 FLAGGED           0.605 FLAGGED           
+  P6_asym   0.534 inconclusive      0.577 FLAGGED           0.649 FLAGGED           0.622 FLAGGED           
+  P6_sym    0.511 clear             0.557 FLAGGED           0.630 FLAGGED           0.602 FLAGGED           
+
+  attack DCRDiff
+  arm       0                       0.1                     0.25                    nc_d4_f0.25             
+  clean     0.511 clear             0.556 FLAGGED           0.627 FLAGGED           0.585 FLAGGED           
+  P2_asym   0.503 clear             0.550 FLAGGED           0.620 FLAGGED           0.575 FLAGGED           
+  P2_sym    0.503 clear             0.552 FLAGGED           0.619 FLAGGED           0.576 FLAGGED           
+  P4a_asym  0.540 inconclusive      0.589 FLAGGED           0.656 FLAGGED           0.612 FLAGGED           
+  P4a_sym   0.511 clear             0.557 FLAGGED           0.628 FLAGGED           0.584 FLAGGED           
+  P4b_asym  0.472 inconclusive      0.594 FLAGGED           0.660 FLAGGED           0.550 FLAGGED           
+  P4b_sym   0.508 clear             0.556 FLAGGED           0.619 FLAGGED           0.571 FLAGGED           
+  P5_asym   0.510 clear             0.554 FLAGGED           0.624 FLAGGED           0.582 FLAGGED           
+  P5_sym    0.504 clear             0.549 FLAGGED           0.620 FLAGGED           0.577 FLAGGED           
+  P6_asym   0.506 clear             0.555 FLAGGED           0.625 FLAGGED           0.579 FLAGGED           
+  P6_sym    0.506 clear             0.552 FLAGGED           0.622 FLAGGED           0.576 FLAGGED           
+
+  attack KDEratio
+  arm       0                       0.1                     0.25                    nc_d4_f0.25             
+  clean     0.512 clear             0.546 FLAGGED           0.599 FLAGGED           0.581 FLAGGED           
+  P2_asym   0.506 clear             0.543 FLAGGED           0.592 FLAGGED           0.572 FLAGGED           
+  P2_sym    0.504 clear             0.543 FLAGGED           0.590 FLAGGED           0.573 FLAGGED           
+  P4a_asym  0.543 inconclusive      0.584 FLAGGED           0.634 FLAGGED           0.613 FLAGGED           
+  P4a_sym   0.512 clear             0.547 FLAGGED           0.599 FLAGGED           0.580 FLAGGED           
+  P4b_asym  0.471 inconclusive      0.586 FLAGGED           0.634 FLAGGED           0.548 FLAGGED           
+  P4b_sym   0.508 clear             0.545 FLAGGED           0.589 FLAGGED           0.570 FLAGGED           
+  P5_asym   0.513 clear             0.547 FLAGGED           0.594 FLAGGED           0.577 FLAGGED           
+  P5_sym    0.507 clear             0.543 FLAGGED           0.593 FLAGGED           0.575 FLAGGED           
+  P6_asym   0.512 clear             0.548 FLAGGED           0.596 FLAGGED           0.580 FLAGGED           
+  P6_sym    0.508 clear             0.543 FLAGGED           0.592 FLAGGED           0.575 FLAGGED           
+
+OUTCOMES for pattern arms (clean verdict is the reference)
+
+  attack DCR: clean arm flags the leak at 0.1=yes 0.25=yes nc_d4_f0.25=yes
+    P2_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_asym  f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_asym  f0: no false alarm | 0.1: LEAK MISSED (inconclusive) | 0.25: leak kept | nc_d4_f0.25: LEAK MISSED (inconclusive)
+    P4b_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+
+  attack DCRDiff: clean arm flags the leak at 0.1=yes 0.25=yes nc_d4_f0.25=yes
+    P2_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_asym  f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_asym  f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+
+  attack KDEratio: clean arm flags the leak at 0.1=yes 0.25=yes nc_d4_f0.25=yes
+    P2_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_asym  f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_asym  f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+
+PAIRED SHIFT (descriptive): arm minus clean AUC at the same variant, 90% CI
+  DCR       P2_asym   0 -0.001 [-0.006,+0.004]; 0.1 +0.004 [-0.001,+0.008]; 0.25 -0.002 [-0.007,+0.003]; nc_d4_f0.25 -0.003 [-0.009,+0.004]
+  DCR       P2_sym    0 -0.001 [-0.005,+0.004]; 0.1 +0.006 [+0.000,+0.011]; 0.25 +0.000 [-0.005,+0.005]; nc_d4_f0.25 +0.000 [-0.005,+0.006]
+  DCR       P4a_asym  0 +0.008 [+0.003,+0.013]; 0.1 +0.014 [+0.009,+0.018]; 0.25 +0.009 [+0.005,+0.012]; nc_d4_f0.25 +0.006 [+0.001,+0.011]
+  DCR       P4a_sym   0 +0.000 [-0.000,+0.000]; 0.1 +0.003 [-0.001,+0.006]; 0.25 +0.000 [-0.003,+0.003]; nc_d4_f0.25 -0.001 [-0.003,+0.002]
+  DCR       P4b_asym  0 -0.041 [-0.046,-0.036]; 0.1 -0.022 [-0.027,-0.018]; 0.25 -0.020 [-0.024,-0.016]; nc_d4_f0.25 -0.133 [-0.139,-0.128]
+  DCR       P4b_sym   0 -0.005 [-0.011,+0.001]; 0.1 +0.002 [-0.002,+0.006]; 0.25 -0.004 [-0.008,-0.000]; nc_d4_f0.25 -0.012 [-0.016,-0.009]
+  DCR       P5_asym   0 +0.019 [+0.012,+0.025]; 0.1 +0.018 [+0.012,+0.024]; 0.25 +0.011 [+0.006,+0.016]; nc_d4_f0.25 +0.017 [+0.012,+0.021]
+  DCR       P5_sym    0 -0.004 [-0.009,+0.001]; 0.1 +0.000 [-0.005,+0.006]; 0.25 -0.004 [-0.008,+0.000]; nc_d4_f0.25 -0.001 [-0.006,+0.004]
+  DCR       P6_asym   0 +0.020 [+0.015,+0.026]; 0.1 +0.022 [+0.016,+0.027]; 0.25 +0.016 [+0.011,+0.021]; nc_d4_f0.25 +0.016 [+0.010,+0.021]
+  DCR       P6_sym    0 -0.002 [-0.008,+0.003]; 0.1 +0.001 [-0.004,+0.006]; 0.25 -0.003 [-0.008,+0.002]; nc_d4_f0.25 -0.004 [-0.010,+0.002]
+  DCRDiff   P2_asym   0 -0.008 [-0.015,-0.001]; 0.1 -0.006 [-0.012,+0.001]; 0.25 -0.007 [-0.013,-0.001]; nc_d4_f0.25 -0.010 [-0.017,-0.002]
+  DCRDiff   P2_sym    0 -0.009 [-0.015,-0.002]; 0.1 -0.003 [-0.008,+0.002]; 0.25 -0.009 [-0.014,-0.004]; nc_d4_f0.25 -0.009 [-0.016,-0.003]
+  DCRDiff   P4a_asym  0 +0.029 [+0.022,+0.035]; 0.1 +0.033 [+0.027,+0.039]; 0.25 +0.029 [+0.024,+0.034]; nc_d4_f0.25 +0.028 [+0.023,+0.032]
+  DCRDiff   P4a_sym   0 +0.000 [-0.000,+0.000]; 0.1 +0.001 [-0.003,+0.005]; 0.25 +0.000 [-0.003,+0.004]; nc_d4_f0.25 -0.001 [-0.004,+0.002]
+  DCRDiff   P4b_asym  0 -0.039 [-0.044,-0.034]; 0.1 +0.038 [+0.033,+0.044]; 0.25 +0.032 [+0.029,+0.036]; nc_d4_f0.25 -0.034 [-0.041,-0.028]
+  DCRDiff   P4b_sym   0 -0.004 [-0.010,+0.003]; 0.1 -0.000 [-0.006,+0.006]; 0.25 -0.008 [-0.013,-0.003]; nc_d4_f0.25 -0.013 [-0.018,-0.009]
+  DCRDiff   P5_asym   0 -0.001 [-0.007,+0.005]; 0.1 -0.001 [-0.007,+0.004]; 0.25 -0.003 [-0.009,+0.002]; nc_d4_f0.25 -0.003 [-0.008,+0.002]
+  DCRDiff   P5_sym    0 -0.008 [-0.016,+0.000]; 0.1 -0.007 [-0.013,+0.000]; 0.25 -0.007 [-0.013,-0.001]; nc_d4_f0.25 -0.008 [-0.015,-0.000]
+  DCRDiff   P6_asym   0 -0.005 [-0.015,+0.004]; 0.1 -0.001 [-0.009,+0.007]; 0.25 -0.002 [-0.009,+0.004]; nc_d4_f0.25 -0.005 [-0.013,+0.002]
+  DCRDiff   P6_sym    0 -0.005 [-0.012,+0.001]; 0.1 -0.004 [-0.008,+0.000]; 0.25 -0.005 [-0.011,+0.000]; nc_d4_f0.25 -0.008 [-0.015,-0.002]
+  KDEratio  P2_asym   0 -0.006 [-0.012,+0.001]; 0.1 -0.003 [-0.009,+0.003]; 0.25 -0.007 [-0.013,-0.001]; nc_d4_f0.25 -0.008 [-0.015,-0.001]
+  KDEratio  P2_sym    0 -0.008 [-0.014,-0.001]; 0.1 -0.003 [-0.008,+0.002]; 0.25 -0.009 [-0.015,-0.004]; nc_d4_f0.25 -0.008 [-0.014,-0.002]
+  KDEratio  P4a_asym  0 +0.031 [+0.023,+0.038]; 0.1 +0.038 [+0.032,+0.044]; 0.25 +0.035 [+0.029,+0.040]; nc_d4_f0.25 +0.032 [+0.027,+0.037]
+  KDEratio  P4a_sym   0 +0.000 [-0.000,+0.000]; 0.1 +0.001 [-0.003,+0.005]; 0.25 +0.000 [-0.003,+0.004]; nc_d4_f0.25 -0.000 [-0.004,+0.003]
+  KDEratio  P4b_asym  0 -0.041 [-0.046,-0.036]; 0.1 +0.040 [+0.035,+0.045]; 0.25 +0.035 [+0.030,+0.039]; nc_d4_f0.25 -0.033 [-0.039,-0.027]
+  KDEratio  P4b_sym   0 -0.004 [-0.011,+0.003]; 0.1 -0.000 [-0.006,+0.005]; 0.25 -0.010 [-0.015,-0.005]; nc_d4_f0.25 -0.011 [-0.016,-0.006]
+  KDEratio  P5_asym   0 +0.001 [-0.005,+0.007]; 0.1 +0.001 [-0.004,+0.005]; 0.25 -0.005 [-0.010,+0.001]; nc_d4_f0.25 -0.004 [-0.009,+0.001]
+  KDEratio  P5_sym    0 -0.005 [-0.012,+0.003]; 0.1 -0.003 [-0.009,+0.003]; 0.25 -0.006 [-0.013,+0.000]; nc_d4_f0.25 -0.006 [-0.013,+0.001]
+  KDEratio  P6_asym   0 -0.000 [-0.009,+0.009]; 0.1 +0.002 [-0.006,+0.011]; 0.25 -0.003 [-0.011,+0.004]; nc_d4_f0.25 -0.001 [-0.009,+0.007]
+  KDEratio  P6_sym    0 -0.004 [-0.010,+0.002]; 0.1 -0.003 [-0.008,+0.002]; 0.25 -0.007 [-0.013,-0.000]; nc_d4_f0.25 -0.005 [-0.012,+0.002]
+
+PER-WORLD FLAG RATE (descriptive): share of worlds with AUC above 0.53
+  DCR       clean     0:0.20 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P2_asym   0:0.10 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P2_sym    0:0.27 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P4a_asym  0:0.33 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P4a_sym   0:0.20 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P4b_asym  0:0.00 0.1:0.67 0.25:1.00 nc_d4_f0.25:0.00
+  DCR       P4b_sym   0:0.10 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P5_asym   0:0.53 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P5_sym    0:0.07 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P6_asym   0:0.57 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P6_sym    0:0.17 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   clean     0:0.13 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P2_asym   0:0.03 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P2_sym    0:0.00 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P4a_asym  0:0.67 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P4a_sym   0:0.13 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P4b_asym  0:0.00 0.1:1.00 0.25:1.00 nc_d4_f0.25:0.77
+  DCRDiff   P4b_sym   0:0.13 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P5_asym   0:0.13 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P5_sym    0:0.07 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P6_asym   0:0.07 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P6_sym    0:0.10 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  clean     0:0.23 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P2_asym   0:0.03 0.1:0.80 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P2_sym    0:0.00 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P4a_asym  0:0.73 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P4a_sym   0:0.23 0.1:0.80 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P4b_asym  0:0.00 0.1:1.00 0.25:1.00 nc_d4_f0.25:0.83
+  KDEratio  P4b_sym   0:0.10 0.1:0.83 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P5_asym   0:0.13 0.1:0.83 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P5_sym    0:0.10 0.1:0.80 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P6_asym   0:0.13 0.1:0.83 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P6_sym    0:0.10 0.1:0.77 0.25:1.00 nc_d4_f0.25:1.00
+
+RECORDS-ONLY BASELINE by arm (mean over worlds; above 0.55 is a separate alarm that the audit reports on its own)
+  clean:0.500 P2_asym:0.501 P2_sym:0.496 P4a_asym:0.904 P4a_sym:0.500 P4b_asym:0.540 P4b_sym:0.503 P5_asym:0.515 P5_sym:0.493 P6_asym:0.527 P6_sym:0.497
+PLACEBO mean at f=0 by arm and attack (flag if outside 0.47 to 0.53):
+  DCR      clean:0.495 P2_asym:0.497 P2_sym:0.501 P4a_asym:0.492 P4a_sym:0.495 P4b_asym:0.493 P4b_sym:0.494 P5_asym:0.497 P5_sym:0.512 P6_asym:0.501 P6_sym:0.495
+  DCRDiff  clean:0.499 P2_asym:0.506 P2_sym:0.505 P4a_asym:0.494 P4a_sym:0.499 P4b_asym:0.496 P4b_sym:0.493 P5_asym:0.494 P5_sym:0.499 P6_asym:0.505 P6_sym:0.502
+  KDEratio clean:0.498 P2_asym:0.505 P2_sym:0.504 P4a_asym:0.493 P4a_sym:0.498 P4b_asym:0.495 P4b_sym:0.495 P5_asym:0.495 P5_sym:0.497 P6_asym:0.504 P6_sym:0.501
+
+========================================================================
+CELL mimic_c (PrivBayes-style release at epsilon 10 with a planted leak; Laplace near-copy positive control on the clean arm)
+worlds completed: 30 (minimum 30)
+clean arm records-only mean 0.500 PASS
+DCR       positive control (Laplace divisor 100) 1.000 PASS | placebo mean at f=0 0.505 PASS
+DCRDiff   positive control (Laplace divisor 100) 0.991 PASS | placebo mean at f=0 0.504 PASS
+KDEratio  positive control (Laplace divisor 100) 0.911 PASS | placebo mean at f=0 0.505 PASS
+informative attacks: ['DCR', 'DCRDiff', 'KDEratio']
+
+VERDICT GRID (mean AUC over 30 worlds; verdict from Holm-corrected tests against the 0.03 margin around 0.5; 156 tests per family)
+
+  attack DCR
+  arm       0                       0.1                     0.25                    nc_d4_f0.25             
+  clean     0.508 clear             0.556 FLAGGED           0.627 FLAGGED           0.612 FLAGGED           
+  P1_asym   0.509 clear             0.559 FLAGGED           0.629 FLAGGED           0.614 FLAGGED           
+  P1_sym    0.513 inconclusive      0.558 FLAGGED           0.629 FLAGGED           0.617 FLAGGED           
+  P2_asym   0.510 clear             0.554 FLAGGED           0.629 FLAGGED           0.616 FLAGGED           
+  P2_sym    0.503 clear             0.553 FLAGGED           0.625 FLAGGED           0.610 FLAGGED           
+  P4a_asym  0.517 inconclusive      0.565 FLAGGED           0.638 FLAGGED           0.617 FLAGGED           
+  P4a_sym   0.508 clear             0.558 FLAGGED           0.627 FLAGGED           0.609 FLAGGED           
+  P4b_asym  0.467 inconclusive      0.525 inconclusive      0.607 FLAGGED           0.468 inconclusive      
+  P4b_sym   0.513 clear             0.562 FLAGGED           0.630 FLAGGED           0.615 FLAGGED           
+  P5_asym   0.545 FLAGGED           0.589 FLAGGED           0.654 FLAGGED           0.646 FLAGGED           
+  P5_sym    0.508 clear             0.556 FLAGGED           0.630 FLAGGED           0.621 FLAGGED           
+  P6_asym   0.499 clear             0.549 FLAGGED           0.623 FLAGGED           0.603 FLAGGED           
+  P6_sym    0.514 clear             0.558 FLAGGED           0.628 FLAGGED           0.615 FLAGGED           
+
+  attack DCRDiff
+  arm       0                       0.1                     0.25                    nc_d4_f0.25             
+  clean     0.512 clear             0.557 FLAGGED           0.627 FLAGGED           0.602 FLAGGED           
+  P1_asym   0.512 inconclusive      0.562 FLAGGED           0.630 FLAGGED           0.607 FLAGGED           
+  P1_sym    0.510 clear             0.558 FLAGGED           0.628 FLAGGED           0.597 FLAGGED           
+  P2_asym   0.516 inconclusive      0.563 FLAGGED           0.636 FLAGGED           0.608 FLAGGED           
+  P2_sym    0.506 clear             0.556 FLAGGED           0.627 FLAGGED           0.597 FLAGGED           
+  P4a_asym  0.555 FLAGGED           0.601 FLAGGED           0.669 FLAGGED           0.637 FLAGGED           
+  P4a_sym   0.512 clear             0.561 FLAGGED           0.629 FLAGGED           0.599 FLAGGED           
+  P4b_asym  0.473 inconclusive      0.568 FLAGGED           0.657 FLAGGED           0.550 FLAGGED           
+  P4b_sym   0.511 clear             0.559 FLAGGED           0.627 FLAGGED           0.599 FLAGGED           
+  P5_asym   0.520 inconclusive      0.565 FLAGGED           0.633 FLAGGED           0.611 FLAGGED           
+  P5_sym    0.510 inconclusive      0.560 FLAGGED           0.631 FLAGGED           0.611 FLAGGED           
+  P6_asym   0.521 inconclusive      0.569 FLAGGED           0.641 FLAGGED           0.611 FLAGGED           
+  P6_sym    0.512 inconclusive      0.554 FLAGGED           0.626 FLAGGED           0.602 FLAGGED           
+
+  attack KDEratio
+  arm       0                       0.1                     0.25                    nc_d4_f0.25             
+  clean     0.515 inconclusive      0.555 FLAGGED           0.617 FLAGGED           0.598 FLAGGED           
+  P1_asym   0.514 inconclusive      0.558 FLAGGED           0.620 FLAGGED           0.601 FLAGGED           
+  P1_sym    0.511 inconclusive      0.553 FLAGGED           0.615 FLAGGED           0.592 FLAGGED           
+  P2_asym   0.518 inconclusive      0.560 FLAGGED           0.626 FLAGGED           0.606 FLAGGED           
+  P2_sym    0.510 clear             0.554 FLAGGED           0.616 FLAGGED           0.594 FLAGGED           
+  P4a_asym  0.560 FLAGGED           0.602 FLAGGED           0.665 FLAGGED           0.637 FLAGGED           
+  P4a_sym   0.515 inconclusive      0.558 FLAGGED           0.617 FLAGGED           0.597 FLAGGED           
+  P4b_asym  0.475 inconclusive      0.560 FLAGGED           0.642 FLAGGED           0.555 FLAGGED           
+  P4b_sym   0.515 clear             0.557 FLAGGED           0.615 FLAGGED           0.596 FLAGGED           
+  P5_asym   0.525 inconclusive      0.564 FLAGGED           0.623 FLAGGED           0.606 FLAGGED           
+  P5_sym    0.511 clear             0.557 FLAGGED           0.622 FLAGGED           0.605 FLAGGED           
+  P6_asym   0.524 inconclusive      0.569 FLAGGED           0.630 FLAGGED           0.608 FLAGGED           
+  P6_sym    0.515 inconclusive      0.554 FLAGGED           0.616 FLAGGED           0.597 FLAGGED           
+
+OUTCOMES for pattern arms (clean verdict is the reference)
+
+  attack DCR: clean arm flags the leak at 0.1=yes 0.25=yes nc_d4_f0.25=yes
+    P1_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P1_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_asym  f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_asym  f0: no false alarm | 0.1: LEAK MISSED (inconclusive) | 0.25: leak kept | nc_d4_f0.25: LEAK MISSED (inconclusive)
+    P4b_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_asym   f0: FALSE ALARM | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+
+  attack DCRDiff: clean arm flags the leak at 0.1=yes 0.25=yes nc_d4_f0.25=yes
+    P1_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P1_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_asym  f0: FALSE ALARM | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_asym  f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+
+  attack KDEratio: clean arm flags the leak at 0.1=yes 0.25=yes nc_d4_f0.25=yes
+    P1_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P1_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P2_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_asym  f0: FALSE ALARM | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4a_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_asym  f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P4b_sym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P5_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_asym   f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+    P6_sym    f0: no false alarm | 0.1: leak kept | 0.25: leak kept | nc_d4_f0.25: leak kept
+
+PAIRED SHIFT (descriptive): arm minus clean AUC at the same variant, 90% CI
+  DCR       P1_asym   0 +0.001 [-0.005,+0.007]; 0.1 +0.003 [-0.002,+0.008]; 0.25 +0.002 [-0.006,+0.010]; nc_d4_f0.25 +0.002 [-0.005,+0.009]
+  DCR       P1_sym    0 +0.005 [-0.004,+0.013]; 0.1 +0.002 [-0.005,+0.010]; 0.25 +0.002 [-0.007,+0.011]; nc_d4_f0.25 +0.005 [-0.002,+0.012]
+  DCR       P2_asym   0 +0.002 [-0.006,+0.010]; 0.1 -0.002 [-0.009,+0.006]; 0.25 +0.002 [-0.007,+0.011]; nc_d4_f0.25 +0.004 [-0.007,+0.014]
+  DCR       P2_sym    0 -0.004 [-0.013,+0.004]; 0.1 -0.003 [-0.011,+0.005]; 0.25 -0.002 [-0.009,+0.004]; nc_d4_f0.25 -0.002 [-0.010,+0.006]
+  DCR       P4a_asym  0 +0.009 [+0.002,+0.016]; 0.1 +0.010 [+0.003,+0.017]; 0.25 +0.011 [+0.004,+0.017]; nc_d4_f0.25 +0.006 [-0.001,+0.013]
+  DCR       P4a_sym   0 +0.000 [-0.000,+0.000]; 0.1 +0.002 [-0.003,+0.007]; 0.25 -0.000 [-0.005,+0.004]; nc_d4_f0.25 -0.002 [-0.007,+0.002]
+  DCR       P4b_asym  0 -0.041 [-0.046,-0.036]; 0.1 -0.030 [-0.036,-0.024]; 0.25 -0.020 [-0.025,-0.016]; nc_d4_f0.25 -0.144 [-0.151,-0.138]
+  DCR       P4b_sym   0 +0.006 [+0.001,+0.010]; 0.1 +0.006 [-0.000,+0.012]; 0.25 +0.002 [-0.004,+0.009]; nc_d4_f0.25 +0.003 [-0.002,+0.009]
+  DCR       P5_asym   0 +0.037 [+0.029,+0.045]; 0.1 +0.034 [+0.027,+0.041]; 0.25 +0.027 [+0.020,+0.034]; nc_d4_f0.25 +0.034 [+0.026,+0.042]
+  DCR       P5_sym    0 +0.000 [-0.008,+0.009]; 0.1 +0.001 [-0.006,+0.008]; 0.25 +0.003 [-0.005,+0.011]; nc_d4_f0.25 +0.009 [-0.000,+0.018]
+  DCR       P6_asym   0 -0.009 [-0.019,+0.001]; 0.1 -0.007 [-0.015,+0.002]; 0.25 -0.004 [-0.013,+0.005]; nc_d4_f0.25 -0.009 [-0.016,-0.001]
+  DCR       P6_sym    0 +0.006 [-0.002,+0.014]; 0.1 +0.003 [-0.004,+0.010]; 0.25 +0.001 [-0.008,+0.010]; nc_d4_f0.25 +0.003 [-0.004,+0.010]
+  DCRDiff   P1_asym   0 +0.001 [-0.008,+0.009]; 0.1 +0.005 [-0.004,+0.014]; 0.25 +0.003 [-0.006,+0.012]; nc_d4_f0.25 +0.005 [-0.004,+0.014]
+  DCRDiff   P1_sym    0 -0.001 [-0.013,+0.010]; 0.1 +0.001 [-0.008,+0.009]; 0.25 +0.000 [-0.009,+0.010]; nc_d4_f0.25 -0.004 [-0.015,+0.006]
+  DCRDiff   P2_asym   0 +0.004 [-0.005,+0.013]; 0.1 +0.005 [-0.004,+0.015]; 0.25 +0.009 [+0.000,+0.018]; nc_d4_f0.25 +0.007 [-0.002,+0.015]
+  DCRDiff   P2_sym    0 -0.006 [-0.017,+0.005]; 0.1 -0.002 [-0.010,+0.007]; 0.25 -0.000 [-0.010,+0.009]; nc_d4_f0.25 -0.005 [-0.014,+0.004]
+  DCRDiff   P4a_asym  0 +0.043 [+0.034,+0.053]; 0.1 +0.044 [+0.035,+0.053]; 0.25 +0.042 [+0.032,+0.052]; nc_d4_f0.25 +0.035 [+0.027,+0.043]
+  DCRDiff   P4a_sym   0 +0.000 [-0.000,+0.000]; 0.1 +0.004 [-0.001,+0.009]; 0.25 +0.001 [-0.004,+0.007]; nc_d4_f0.25 -0.002 [-0.008,+0.003]
+  DCRDiff   P4b_asym  0 -0.039 [-0.045,-0.033]; 0.1 +0.011 [-0.001,+0.022]; 0.25 +0.029 [+0.022,+0.037]; nc_d4_f0.25 -0.052 [-0.061,-0.044]
+  DCRDiff   P4b_sym   0 -0.001 [-0.008,+0.006]; 0.1 +0.002 [-0.006,+0.010]; 0.25 -0.001 [-0.008,+0.007]; nc_d4_f0.25 -0.003 [-0.009,+0.003]
+  DCRDiff   P5_asym   0 +0.008 [-0.003,+0.019]; 0.1 +0.008 [-0.002,+0.018]; 0.25 +0.006 [-0.004,+0.015]; nc_d4_f0.25 +0.010 [-0.002,+0.021]
+  DCRDiff   P5_sym    0 -0.001 [-0.012,+0.009]; 0.1 +0.003 [-0.006,+0.011]; 0.25 +0.004 [-0.005,+0.013]; nc_d4_f0.25 +0.009 [-0.001,+0.019]
+  DCRDiff   P6_asym   0 +0.010 [-0.002,+0.021]; 0.1 +0.012 [+0.002,+0.022]; 0.25 +0.014 [+0.004,+0.025]; nc_d4_f0.25 +0.009 [-0.003,+0.020]
+  DCRDiff   P6_sym    0 +0.000 [-0.012,+0.012]; 0.1 -0.003 [-0.014,+0.008]; 0.25 -0.001 [-0.013,+0.010]; nc_d4_f0.25 -0.000 [-0.011,+0.011]
+  KDEratio  P1_asym   0 -0.002 [-0.010,+0.007]; 0.1 +0.003 [-0.006,+0.012]; 0.25 +0.002 [-0.008,+0.012]; nc_d4_f0.25 +0.003 [-0.006,+0.011]
+  KDEratio  P1_sym    0 -0.004 [-0.015,+0.007]; 0.1 -0.002 [-0.011,+0.007]; 0.25 -0.002 [-0.013,+0.009]; nc_d4_f0.25 -0.007 [-0.016,+0.003]
+  KDEratio  P2_asym   0 +0.003 [-0.007,+0.012]; 0.1 +0.005 [-0.004,+0.015]; 0.25 +0.009 [-0.002,+0.019]; nc_d4_f0.25 +0.007 [-0.002,+0.016]
+  KDEratio  P2_sym    0 -0.005 [-0.016,+0.005]; 0.1 -0.001 [-0.009,+0.007]; 0.25 -0.001 [-0.012,+0.010]; nc_d4_f0.25 -0.004 [-0.014,+0.005]
+  KDEratio  P4a_asym  0 +0.045 [+0.035,+0.055]; 0.1 +0.047 [+0.037,+0.056]; 0.25 +0.048 [+0.036,+0.059]; nc_d4_f0.25 +0.038 [+0.030,+0.047]
+  KDEratio  P4a_sym   0 +0.000 [-0.000,+0.000]; 0.1 +0.004 [-0.002,+0.010]; 0.25 -0.001 [-0.008,+0.006]; nc_d4_f0.25 -0.002 [-0.008,+0.005]
+  KDEratio  P4b_asym  0 -0.040 [-0.046,-0.034]; 0.1 +0.005 [-0.006,+0.016]; 0.25 +0.024 [+0.015,+0.034]; nc_d4_f0.25 -0.043 [-0.052,-0.035]
+  KDEratio  P4b_sym   0 -0.000 [-0.007,+0.007]; 0.1 +0.002 [-0.006,+0.011]; 0.25 -0.002 [-0.010,+0.006]; nc_d4_f0.25 -0.002 [-0.009,+0.004]
+  KDEratio  P5_asym   0 +0.010 [-0.001,+0.020]; 0.1 +0.009 [-0.001,+0.020]; 0.25 +0.005 [-0.005,+0.015]; nc_d4_f0.25 +0.008 [-0.003,+0.019]
+  KDEratio  P5_sym    0 -0.004 [-0.014,+0.006]; 0.1 +0.002 [-0.007,+0.011]; 0.25 +0.005 [-0.005,+0.015]; nc_d4_f0.25 +0.007 [-0.002,+0.017]
+  KDEratio  P6_asym   0 +0.009 [-0.002,+0.021]; 0.1 +0.014 [+0.004,+0.024]; 0.25 +0.013 [-0.000,+0.025]; nc_d4_f0.25 +0.010 [-0.002,+0.021]
+  KDEratio  P6_sym    0 -0.000 [-0.012,+0.011]; 0.1 -0.001 [-0.012,+0.011]; 0.25 -0.001 [-0.013,+0.011]; nc_d4_f0.25 -0.001 [-0.012,+0.011]
+
+PER-WORLD FLAG RATE (descriptive): share of worlds with AUC above 0.53
+  DCR       clean     0:0.17 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P1_asym   0:0.23 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P1_sym    0:0.30 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P2_asym   0:0.20 0.1:0.83 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P2_sym    0:0.13 0.1:0.80 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P4a_asym  0:0.27 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P4a_sym   0:0.17 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P4b_asym  0:0.00 0.1:0.37 0.25:1.00 nc_d4_f0.25:0.03
+  DCR       P4b_sym   0:0.23 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P5_asym   0:0.80 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P5_sym    0:0.20 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P6_asym   0:0.13 0.1:0.83 0.25:1.00 nc_d4_f0.25:1.00
+  DCR       P6_sym    0:0.30 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   clean     0:0.27 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P1_asym   0:0.30 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P1_sym    0:0.27 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P2_asym   0:0.20 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P2_sym    0:0.20 0.1:0.80 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P4a_asym  0:0.70 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P4a_sym   0:0.27 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P4b_asym  0:0.00 0.1:0.87 0.25:1.00 nc_d4_f0.25:0.73
+  DCRDiff   P4b_sym   0:0.27 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P5_asym   0:0.37 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P5_sym    0:0.20 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P6_asym   0:0.33 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  DCRDiff   P6_sym    0:0.27 0.1:0.77 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  clean     0:0.30 0.1:0.83 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P1_asym   0:0.30 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P1_sym    0:0.20 0.1:0.83 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P2_asym   0:0.23 0.1:0.87 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P2_sym    0:0.20 0.1:0.73 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P4a_asym  0:0.80 0.1:1.00 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P4a_sym   0:0.30 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P4b_asym  0:0.00 0.1:0.73 0.25:1.00 nc_d4_f0.25:0.87
+  KDEratio  P4b_sym   0:0.27 0.1:0.93 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P5_asym   0:0.37 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P5_sym    0:0.17 0.1:0.90 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P6_asym   0:0.40 0.1:0.97 0.25:1.00 nc_d4_f0.25:1.00
+  KDEratio  P6_sym    0:0.33 0.1:0.77 0.25:1.00 nc_d4_f0.25:1.00
+
+RECORDS-ONLY BASELINE by arm (mean over worlds; above 0.55 is a separate alarm that the audit reports on its own)
+  clean:0.500 P1_asym:0.496 P1_sym:0.492 P2_asym:0.495 P2_sym:0.502 P4a_asym:0.841 P4a_sym:0.500 P4b_asym:0.536 P4b_sym:0.497 P5_asym:0.513 P5_sym:0.504 P6_asym:0.707 P6_sym:0.496
+PLACEBO mean at f=0 by arm and attack (flag if outside 0.47 to 0.53):
+  DCR      clean:0.505 P1_asym:0.505 P1_sym:0.493 P2_asym:0.502 P2_sym:0.500 P4a_asym:0.503 P4a_sym:0.505 P4b_asym:0.498 P4b_sym:0.496 P5_asym:0.503 P5_sym:0.491 P6_asym:0.507 P6_sym:0.498
+  DCRDiff  clean:0.504 P1_asym:0.495 P1_sym:0.507 P2_asym:0.504 P2_sym:0.504 P4a_asym:0.507 P4a_sym:0.504 P4b_asym:0.500 P4b_sym:0.496 P5_asym:0.502 P5_sym:0.495 P6_asym:0.507 P6_sym:0.509
+  KDEratio clean:0.505 P1_asym:0.494 P1_sym:0.505 P2_asym:0.507 P2_sym:0.506 P4a_asym:0.507 P4a_sym:0.505 P4b_asym:0.502 P4b_sym:0.494 P5_asym:0.499 P5_sym:0.498 P6_asym:0.511 P6_sym:0.510

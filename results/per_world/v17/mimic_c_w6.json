@@ -1,0 +1,544 @@
+{
+ "meta": {
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb",
+  "method": "pb",
+  "eps": 10.0,
+  "fgrid": [
+   0.0,
+   0.1,
+   0.25
+  ],
+  "seconds": 94
+ },
+ "results": [
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "clean",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 729,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.485664,
+   "pb": {
+    "0": {
+     "DCR": 0.5111519999999999,
+     "DCRDiff": 0.51448,
+     "KDEratio": 0.516512
+    },
+    "0.1": {
+     "DCR": 0.550048,
+     "DCRDiff": 0.548448,
+     "KDEratio": 0.539488
+    },
+    "0.25": {
+     "DCR": 0.642384,
+     "DCRDiff": 0.6277280000000001,
+     "KDEratio": 0.6140160000000001
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.62128,
+     "DCRDiff": 0.611808,
+     "KDEratio": 0.615552
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.524864,
+     "DCRDiff": 0.469824,
+     "KDEratio": 0.47616
+    }
+   },
+   "lap100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9914560000000001,
+    "KDEratio": 0.90224
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P1_sym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 723,
+   "n_nm_avail": 721,
+   "n_ref_avail": 734,
+   "records_only_oof": 0.5333199999999999,
+   "pb": {
+    "0": {
+     "DCR": 0.537504,
+     "DCRDiff": 0.5113759999999999,
+     "KDEratio": 0.5194559999999999
+    },
+    "0.1": {
+     "DCR": 0.573472,
+     "DCRDiff": 0.539728,
+     "KDEratio": 0.544256
+    },
+    "0.25": {
+     "DCR": 0.634288,
+     "DCRDiff": 0.60144,
+     "KDEratio": 0.599008
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.608576,
+     "DCRDiff": 0.5644640000000001,
+     "KDEratio": 0.566064
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.5146240000000001,
+     "DCRDiff": 0.5312,
+     "KDEratio": 0.546688
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P1_asym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 723,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.5267519999999999,
+   "pb": {
+    "0": {
+     "DCR": 0.525232,
+     "DCRDiff": 0.49008,
+     "KDEratio": 0.48456000000000005
+    },
+    "0.1": {
+     "DCR": 0.592608,
+     "DCRDiff": 0.559808,
+     "KDEratio": 0.54984
+    },
+    "0.25": {
+     "DCR": 0.6493120000000001,
+     "DCRDiff": 0.627744,
+     "KDEratio": 0.608064
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.63944,
+     "DCRDiff": 0.599056,
+     "KDEratio": 0.575536
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.499456,
+     "DCRDiff": 0.424192,
+     "KDEratio": 0.431616
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P2_sym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 436,
+   "n_nm_avail": 432,
+   "n_ref_avail": 438,
+   "records_only_oof": 0.538808,
+   "pb": {
+    "0": {
+     "DCR": 0.463216,
+     "DCRDiff": 0.50312,
+     "KDEratio": 0.513424
+    },
+    "0.1": {
+     "DCR": 0.525184,
+     "DCRDiff": 0.560624,
+     "KDEratio": 0.559504
+    },
+    "0.25": {
+     "DCR": 0.625936,
+     "DCRDiff": 0.63936,
+     "KDEratio": 0.625888
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.607424,
+     "DCRDiff": 0.6233279999999999,
+     "KDEratio": 0.614128
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.48,
+     "DCRDiff": 0.552192,
+     "KDEratio": 0.543488
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P2_asym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 436,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.523096,
+   "pb": {
+    "0": {
+     "DCR": 0.45342400000000005,
+     "DCRDiff": 0.49544,
+     "KDEratio": 0.493248
+    },
+    "0.1": {
+     "DCR": 0.48944000000000004,
+     "DCRDiff": 0.514464,
+     "KDEratio": 0.506064
+    },
+    "0.25": {
+     "DCR": 0.5825119999999999,
+     "DCRDiff": 0.6060479999999999,
+     "KDEratio": 0.5861919999999999
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.56376,
+     "DCRDiff": 0.5989599999999999,
+     "KDEratio": 0.582832
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.526016,
+     "DCRDiff": 0.46284800000000004,
+     "KDEratio": 0.48384
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P4a_sym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 729,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.485664,
+   "pb": {
+    "0": {
+     "DCR": 0.5111519999999999,
+     "DCRDiff": 0.51448,
+     "KDEratio": 0.516512
+    },
+    "0.1": {
+     "DCR": 0.56088,
+     "DCRDiff": 0.562336,
+     "KDEratio": 0.554432
+    },
+    "0.25": {
+     "DCR": 0.62312,
+     "DCRDiff": 0.640768,
+     "KDEratio": 0.622992
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.597616,
+     "DCRDiff": 0.583024,
+     "KDEratio": 0.5780639999999999
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.524864,
+     "DCRDiff": 0.469824,
+     "KDEratio": 0.47616
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P4a_asym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 729,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.839944,
+   "pb": {
+    "0": {
+     "DCR": 0.49944,
+     "DCRDiff": 0.54728,
+     "KDEratio": 0.5485120000000001
+    },
+    "0.1": {
+     "DCR": 0.5596000000000001,
+     "DCRDiff": 0.5962879999999999,
+     "KDEratio": 0.596896
+    },
+    "0.25": {
+     "DCR": 0.633392,
+     "DCRDiff": 0.662928,
+     "KDEratio": 0.654672
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.596176,
+     "DCRDiff": 0.624144,
+     "KDEratio": 0.619136
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.520128,
+     "DCRDiff": 0.47449600000000003,
+     "KDEratio": 0.482944
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P4b_sym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 729,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.48475200000000007,
+   "pb": {
+    "0": {
+     "DCR": 0.515056,
+     "DCRDiff": 0.5036959999999999,
+     "KDEratio": 0.508896
+    },
+    "0.1": {
+     "DCR": 0.55712,
+     "DCRDiff": 0.537216,
+     "KDEratio": 0.5456639999999999
+    },
+    "0.25": {
+     "DCR": 0.62832,
+     "DCRDiff": 0.609072,
+     "KDEratio": 0.5923039999999999
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.605712,
+     "DCRDiff": 0.58976,
+     "KDEratio": 0.593552
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.491136,
+     "DCRDiff": 0.484928,
+     "KDEratio": 0.49817599999999995
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P4b_asym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 729,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.5169119999999999,
+   "pb": {
+    "0": {
+     "DCR": 0.464848,
+     "DCRDiff": 0.461328,
+     "KDEratio": 0.46988800000000003
+    },
+    "0.1": {
+     "DCR": 0.513344,
+     "DCRDiff": 0.5018239999999999,
+     "KDEratio": 0.499312
+    },
+    "0.25": {
+     "DCR": 0.615648,
+     "DCRDiff": 0.622288,
+     "KDEratio": 0.611248
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.45008,
+     "DCRDiff": 0.527328,
+     "KDEratio": 0.557632
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.515328,
+     "DCRDiff": 0.47283200000000003,
+     "KDEratio": 0.482624
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P5_sym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 638,
+   "n_nm_avail": 646,
+   "n_ref_avail": 647,
+   "records_only_oof": 0.5252640000000001,
+   "pb": {
+    "0": {
+     "DCR": 0.525136,
+     "DCRDiff": 0.494528,
+     "KDEratio": 0.496896
+    },
+    "0.1": {
+     "DCR": 0.572576,
+     "DCRDiff": 0.55616,
+     "KDEratio": 0.545712
+    },
+    "0.25": {
+     "DCR": 0.650304,
+     "DCRDiff": 0.62136,
+     "KDEratio": 0.603248
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.641424,
+     "DCRDiff": 0.594352,
+     "KDEratio": 0.58472
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.498048,
+     "DCRDiff": 0.510464,
+     "KDEratio": 0.523328
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P5_asym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 638,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.528,
+   "pb": {
+    "0": {
+     "DCR": 0.572384,
+     "DCRDiff": 0.477936,
+     "KDEratio": 0.49948800000000004
+    },
+    "0.1": {
+     "DCR": 0.609008,
+     "DCRDiff": 0.525744,
+     "KDEratio": 0.539152
+    },
+    "0.25": {
+     "DCR": 0.67632,
+     "DCRDiff": 0.606768,
+     "KDEratio": 0.589904
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.65384,
+     "DCRDiff": 0.554944,
+     "KDEratio": 0.562864
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.433472,
+     "DCRDiff": 0.50528,
+     "KDEratio": 0.4928639999999999
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P6_sym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 266,
+   "n_nm_avail": 250,
+   "n_ref_avail": 250,
+   "records_only_oof": 0.480448,
+   "pb": {
+    "0": {
+     "DCR": 0.48240000000000005,
+     "DCRDiff": 0.49471999999999994,
+     "KDEratio": 0.5167039999999999
+    },
+    "0.1": {
+     "DCR": 0.5476319999999999,
+     "DCRDiff": 0.546912,
+     "KDEratio": 0.566288
+    },
+    "0.25": {
+     "DCR": 0.587648,
+     "DCRDiff": 0.6055519999999999,
+     "KDEratio": 0.599904
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.5914079999999999,
+     "DCRDiff": 0.592608,
+     "KDEratio": 0.605184
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.53024,
+     "DCRDiff": 0.5020800000000001,
+     "KDEratio": 0.506048
+    }
+   }
+  },
+  {
+   "cell": "mimic_c",
+   "world": 6,
+   "arm": "P6_asym",
+   "n_members": 250,
+   "n_ref": 250,
+   "n_mem_avail": 266,
+   "n_nm_avail": 729,
+   "n_ref_avail": 735,
+   "records_only_oof": 0.695752,
+   "pb": {
+    "0": {
+     "DCR": 0.4583519999999999,
+     "DCRDiff": 0.484592,
+     "KDEratio": 0.48564799999999997
+    },
+    "0.1": {
+     "DCR": 0.5123200000000001,
+     "DCRDiff": 0.5400640000000001,
+     "KDEratio": 0.529712
+    },
+    "0.25": {
+     "DCR": 0.5739839999999999,
+     "DCRDiff": 0.6078399999999999,
+     "KDEratio": 0.595872
+    },
+    "nc_d4_f0.25": {
+     "DCR": 0.585456,
+     "DCRDiff": 0.5908,
+     "KDEratio": 0.5809440000000001
+    }
+   },
+   "plc": {
+    "0": {
+     "DCR": 0.514432,
+     "DCRDiff": 0.5279999999999999,
+     "KDEratio": 0.5217920000000001
+    }
+   }
+  }
+ ]
+}

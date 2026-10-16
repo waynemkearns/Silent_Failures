@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb",
+  "snsynth": "unknown",
+  "split_factor": 3,
+  "method": "pb",
+  "seconds": 88
+ },
+ "results": [
+  {
+   "cell": "adult_pb",
+   "world": 27,
+   "arm": "clean_full",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 1000,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 1000,
+   "n_ref": 250,
+   "records_only_oof": 0.513066,
+   "lap_eps100": {
+    "DCR": 0.99834,
+    "DCRDiff": 0.913216,
+    "Classifier": 0.488143,
+    "KDEratio": 0.739141,
+    "LocalNeighborhood": 0.624391
+   },
+   "pb_eps1": {
+    "DCR": 0.51125,
+    "DCRDiff": 0.513211,
+    "Classifier": 0.4992464999999999,
+    "KDEratio": 0.5181719999999999,
+    "LocalNeighborhood": 0.5121995
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.48915600000000004,
+    "DCRDiff": 0.501224,
+    "Classifier": 0.512722,
+    "KDEratio": 0.501532,
+    "LocalNeighborhood": 0.4794560000000001
+   },
+   "pb_eps10": {
+    "DCR": 0.5267759999999999,
+    "DCRDiff": 0.5217290000000001,
+    "Classifier": 0.5060535,
+    "KDEratio": 0.527621,
+    "LocalNeighborhood": 0.5181485
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.4870880000000001,
+    "DCRDiff": 0.500596,
+    "Classifier": 0.50421,
+    "KDEratio": 0.5025,
+    "LocalNeighborhood": 0.48442599999999997
+   }
+  },
+  {
+   "cell": "adult_pb",
+   "world": 27,
+   "arm": "clean_matched",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 550,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 525,
+   "n_ref": 250,
+   "records_only_oof": 0.5317387755102041,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9460716553287982,
+    "Classifier": 0.48587755102040814,
+    "KDEratio": 0.7920979591836735,
+    "LocalNeighborhood": 0.663698866213152
+   },
+   "pb_eps1": {
+    "DCR": 0.5159292517006802,
+    "DCRDiff": 0.48383129251700685,
+    "Classifier": 0.48375510204081634,
+    "KDEratio": 0.48470566893424033,
+    "LocalNeighborhood": 0.5053968253968254
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.5048511159023368,
+    "DCRDiff": 0.4906473981702698,
+    "Classifier": 0.4782573859332207,
+    "KDEratio": 0.5038604976399976,
+    "LocalNeighborhood": 0.5092870462094282
+   },
+   "pb_eps10": {
+    "DCR": 0.5326911564625851,
+    "DCRDiff": 0.5002448979591837,
+    "Classifier": 0.4755410430839002,
+    "KDEratio": 0.4943274376417234,
+    "LocalNeighborhood": 0.5191419501133786
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.5202202668842142,
+    "DCRDiff": 0.4873987529864227,
+    "Classifier": 0.45607045043995104,
+    "KDEratio": 0.4904725831827983,
+    "LocalNeighborhood": 0.5136865567274634
+   }
+  },
+  {
+   "cell": "adult_pb",
+   "world": 27,
+   "arm": "contaminated",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 550,
+   "n_hold_retained": 525,
+   "n_ref_retained": 559,
+   "n_members": 525,
+   "n_ref": 250,
+   "records_only_oof": 0.5070312925170067,
+   "lap_eps100": {
+    "DCR": 0.9999419501133787,
+    "DCRDiff": 0.9555555555555555,
+    "Classifier": 0.5029297052154196,
+    "KDEratio": 0.796887074829932,
+    "LocalNeighborhood": 0.6571646258503401
+   },
+   "pb_eps1": {
+    "DCR": 0.5155954648526078,
+    "DCRDiff": 0.4732625850340135,
+    "Classifier": 0.4761541950113378,
+    "KDEratio": 0.48207891156462584,
+    "LocalNeighborhood": 0.49923809523809526
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.5240953324398345,
+    "DCRDiff": 0.5180496474564419,
+    "Classifier": 0.46458539712137986,
+    "KDEratio": 0.5094254414078433,
+    "LocalNeighborhood": 0.5269360759862478
+   },
+   "pb_eps10": {
+    "DCR": 0.540778231292517,
+    "DCRDiff": 0.4998095238095238,
+    "Classifier": 0.46933696145124715,
+    "KDEratio": 0.5031836734693877,
+    "LocalNeighborhood": 0.533300680272109
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.541649670765107,
+    "DCRDiff": 0.5341180583882058,
+    "Classifier": 0.5065482780723733,
+    "KDEratio": 0.5430190548336344,
+    "LocalNeighborhood": 0.5454518967426141
+   }
+  }
+ ]
+}

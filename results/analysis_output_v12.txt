@@ -1,0 +1,129 @@
+worlds finished: {'adult_asym': 100, 'mimic_asym': 100, 'adult_mstasym': 50, 'mimic_mstasym': 50}
+
+======================================================================
+CELL adult_asym (Laplace-perturbed records; Part A and Part B)
+worlds completed: 100 (minimum 100)
+standard arms records-only means (clean_full, clean_matched, contaminated) [0.499 0.501 0.5  ] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means 0.500-0.506 PASS
+DCRDiff            positive(lap eps100) min-arm 0.930 PASS | placebo means 0.497-0.501 PASS
+KDEratio           positive(lap eps100) min-arm 0.741 FAIL | placebo means 0.496-0.500 PASS
+Classifier         positive(lap eps100) min-arm 0.504 FAIL | placebo means 0.495-0.501 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.593 FAIL | placebo means 0.500-0.504 PASS
+informative attacks: ['DCR', 'DCRDiff']
+Mismatched arm, descriptive (members from the contaminated pool, holdout and reference prepared as clean), n=100
+  records-only mean: 0.531
+  lap_eps1   mean AUC by attack: {'DCR': 0.546, 'DCRDiff': 0.512, 'KDEratio': 0.527, 'Classifier': 0.493, 'LocalNeighborhood': 0.501}
+  plc_lap_eps1   placebo mean AUC: {'DCR': 0.502, 'DCRDiff': 0.499, 'KDEratio': 0.499, 'Classifier': 0.502, 'LocalNeighborhood': 0.5}
+  plc_lap_eps100 placebo mean AUC: {'DCR': 0.502, 'DCRDiff': 0.501, 'KDEratio': 0.5, 'Classifier': 0.499, 'LocalNeighborhood': 0.502}
+  positive control lap_eps100: {'DCR': 1.0, 'DCRDiff': 0.954, 'KDEratio': 0.798, 'Classifier': 0.498, 'LocalNeighborhood': 0.644}
+  records-only, mismatched minus contaminated (matched): +0.031
+PART A: mismatched minus contaminated (matched), lap_eps1, H0: difference <= +0.03, one-sided, Holm over 2 attacks, 90% CI
+lap_eps1   DCR          diff +0.0231 90% CI [+0.0206,+0.0255] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 96/100
+lap_eps1   DCRDiff      diff -0.0051 90% CI [-0.0077,-0.0025] Holm p 1.0000 -> no shift shown; positive in 35/100
+Secondary (descriptive) mismatched minus clean_matched:
+lap_eps1   DCR          +0.0251 sd 0.0205
+lap_eps1   DCRDiff      -0.0046 sd 0.0153
+PART B (descriptive, no gates): scaler isolation at divisor 1, three attacks. Size = clean_matched minus clean_full. Selection = contaminated minus clean_matched.
+  S1 arm-fitted on members (submitted), S2 reference-fitted (repaired), S3 fixed (20,000 rows of the full file, same encoder). Mean diff, 90% CI, positive count.
+  DCR       size      S1 +0.0044 [+0.0016,+0.0073] 58/100 | S2 +0.0055 [+0.0026,+0.0084] 58/100 | S3 +0.0043 [+0.0015,+0.0071] 65/100
+  DCR       selection S1 +0.0036 [-0.0002,+0.0074] 56/100 | S2 +0.0020 [-0.0019,+0.0060] 56/100 | S3 +0.0033 [-0.0005,+0.0071] 54/100
+  DCRDiff   size      S1 +0.0054 [+0.0024,+0.0083] 56/100 | S2 +0.0059 [+0.0029,+0.0088] 59/100 | S3 +0.0053 [+0.0024,+0.0082] 61/100
+  DCRDiff   selection S1 +0.0018 [-0.0015,+0.0051] 56/100 | S2 +0.0006 [-0.0028,+0.0039] 50/100 | S3 +0.0017 [-0.0017,+0.0050] 53/100
+  KDEratio  size      S1 +0.0075 [+0.0044,+0.0106] 64/100 | S2 +0.0083 [+0.0055,+0.0112] 66/100 | S3 +0.0078 [+0.0048,+0.0108] 66/100
+  KDEratio  selection S1 +0.0033 [-0.0004,+0.0071] 51/100 | S2 +0.0018 [-0.0018,+0.0054] 49/100 | S3 +0.0031 [-0.0006,+0.0068] 52/100
+
+======================================================================
+CELL mimic_asym (Laplace-perturbed records; Part A and Part B)
+worlds completed: 100 (minimum 100)
+standard arms records-only means (clean_full, clean_matched, contaminated) [0.497 0.503 0.495] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means 0.496-0.504 PASS
+DCRDiff            positive(lap eps100) min-arm 0.985 PASS | placebo means 0.493-0.499 PASS
+KDEratio           positive(lap eps100) min-arm 0.838 PASS | placebo means 0.493-0.501 PASS
+Classifier         positive(lap eps100) min-arm 0.523 FAIL | placebo means 0.497-0.501 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.610 FAIL | placebo means 0.497-0.505 PASS
+informative attacks: ['DCR', 'DCRDiff', 'KDEratio']
+Mismatched arm, descriptive (members from the contaminated pool, holdout and reference prepared as clean), n=100
+  records-only mean: 0.709
+  lap_eps1   mean AUC by attack: {'DCR': 0.528, 'DCRDiff': 0.549, 'KDEratio': 0.564, 'Classifier': 0.552, 'LocalNeighborhood': 0.5}
+  plc_lap_eps1   placebo mean AUC: {'DCR': 0.496, 'DCRDiff': 0.494, 'KDEratio': 0.495, 'Classifier': 0.497, 'LocalNeighborhood': 0.5}
+  plc_lap_eps100 placebo mean AUC: {'DCR': 0.501, 'DCRDiff': 0.498, 'KDEratio': 0.499, 'Classifier': 0.499, 'LocalNeighborhood': 0.502}
+  positive control lap_eps100: {'DCR': 1.0, 'DCRDiff': 0.994, 'KDEratio': 0.914, 'Classifier': 0.7, 'LocalNeighborhood': 0.715}
+  records-only, mismatched minus contaminated (matched): +0.214
+PART A: mismatched minus contaminated (matched), lap_eps1, H0: difference <= +0.03, one-sided, Holm over 3 attacks, 90% CI
+lap_eps1   DCR          diff -0.0049 90% CI [-0.0091,-0.0008] Holm p 1.0000 -> no shift shown; positive in 39/100
+lap_eps1   DCRDiff      diff +0.0139 90% CI [+0.0090,+0.0188] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 68/100
+lap_eps1   KDEratio     diff +0.0155 90% CI [+0.0106,+0.0204] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 72/100
+Secondary (descriptive) mismatched minus clean_matched:
+lap_eps1   DCR          -0.0024 sd 0.0362
+lap_eps1   DCRDiff      +0.0190 sd 0.0291
+lap_eps1   KDEratio     +0.0210 sd 0.0318
+PART B (descriptive, no gates): scaler isolation at divisor 1, three attacks. Size = clean_matched minus clean_full. Selection = contaminated minus clean_matched.
+  S1 arm-fitted on members (submitted), S2 reference-fitted (repaired), S3 fixed (20,000 rows of the full file, same encoder). Mean diff, 90% CI, positive count.
+  DCR       size      S1 +0.0144 [+0.0101,+0.0188] 65/100 | S2 +0.0131 [+0.0084,+0.0179] 60/100 | S3 +0.0104 [+0.0055,+0.0153] 61/100
+  DCR       selection S1 +0.0013 [-0.0052,+0.0078] 51/100 | S2 +0.0025 [-0.0041,+0.0092] 56/100 | S3 -0.0023 [-0.0089,+0.0042] 48/100
+  DCRDiff   size      S1 +0.0151 [+0.0102,+0.0199] 71/100 | S2 +0.0124 [+0.0075,+0.0172] 67/100 | S3 +0.0111 [+0.0065,+0.0157] 64/100
+  DCRDiff   selection S1 +0.0032 [-0.0028,+0.0093] 50/100 | S2 +0.0051 [-0.0008,+0.0109] 54/100 | S3 +0.0005 [-0.0052,+0.0062] 52/100
+  KDEratio  size      S1 +0.0197 [+0.0149,+0.0246] 78/100 | S2 +0.0186 [+0.0135,+0.0237] 71/100 | S3 +0.0199 [+0.0149,+0.0249] 71/100
+  KDEratio  selection S1 +0.0055 [+0.0002,+0.0107] 54/100 | S2 +0.0055 [-0.0002,+0.0113] 57/100 | S3 -0.0040 [-0.0096,+0.0017] 42/100
+
+======================================================================
+CELL adult_mstasym (MST, epsilon 1 and 10; compared with V11 cell adult_mst)
+V11 worlds 34, V12 worlds 50
+V11 standard arms records-only means (clean_full, clean_matched, contaminated) [0.496 0.501 0.497] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means 0.498-0.503 PASS
+DCRDiff            positive(lap eps100) min-arm 0.932 PASS | placebo means 0.496-0.507 PASS
+KDEratio           positive(lap eps100) min-arm 0.741 FAIL | placebo means 0.494-0.505 PASS
+Classifier         positive(lap eps100) min-arm 0.501 FAIL | placebo means 0.496-0.502 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.594 FAIL | placebo means 0.498-0.501 PASS
+informative attacks: ['DCR', 'DCRDiff']
+worlds with both V11 and V12 results: 34 (minimum 30)
+Mismatched arm, descriptive (members from the contaminated pool, holdout and reference prepared as clean), n=34
+  records-only mean: 0.528
+  mst_eps1   mean AUC by attack: {'DCR': 0.529, 'DCRDiff': 0.51, 'KDEratio': 0.515, 'Classifier': 0.507, 'LocalNeighborhood': 0.518}
+  mst_eps10  mean AUC by attack: {'DCR': 0.538, 'DCRDiff': 0.523, 'KDEratio': 0.523, 'Classifier': 0.518, 'LocalNeighborhood': 0.526}
+  plc_mst_eps1   placebo mean AUC: {'DCR': 0.499, 'DCRDiff': 0.5, 'KDEratio': 0.499, 'Classifier': 0.504, 'LocalNeighborhood': 0.497}
+  plc_mst_eps10  placebo mean AUC: {'DCR': 0.498, 'DCRDiff': 0.5, 'KDEratio': 0.499, 'Classifier': 0.502, 'LocalNeighborhood': 0.497}
+  positive control lap_eps100: {'DCR': 1.0, 'DCRDiff': 0.952, 'KDEratio': 0.796, 'Classifier': 0.497, 'LocalNeighborhood': 0.649}
+PART C: mismatched minus contaminated (matched, from V11), H0: difference <= +0.03, one-sided, Holm over 4 tests, 90% CI, n=34
+mst_eps1   DCR          diff +0.0284 90% CI [+0.0239,+0.0329] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 33/34
+mst_eps1   DCRDiff      diff +0.0131 90% CI [+0.0076,+0.0185] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 26/34
+mst_eps10  DCR          diff +0.0291 90% CI [+0.0248,+0.0334] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 34/34
+mst_eps10  DCRDiff      diff +0.0170 90% CI [+0.0107,+0.0233] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 26/34
+Secondary (descriptive) mismatched minus clean_matched (V11):
+mst_eps1   DCR          +0.0253 sd 0.0151
+mst_eps1   DCRDiff      +0.0088 sd 0.0208
+mst_eps10  DCR          +0.0259 sd 0.0162
+mst_eps10  DCRDiff      +0.0105 sd 0.0196
+
+======================================================================
+CELL mimic_mstasym (MST, epsilon 1 and 10; compared with V11 cell mimic_mst)
+V11 worlds 33, V12 worlds 50
+V11 standard arms records-only means (clean_full, clean_matched, contaminated) [0.495 0.5   0.494] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means 0.493-0.518 PASS
+DCRDiff            positive(lap eps100) min-arm 0.985 PASS | placebo means 0.492-0.511 PASS
+KDEratio           positive(lap eps100) min-arm 0.831 PASS | placebo means 0.493-0.516 PASS
+Classifier         positive(lap eps100) min-arm 0.524 FAIL | placebo means 0.485-0.516 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.610 FAIL | placebo means 0.494-0.510 PASS
+informative attacks: ['DCR', 'DCRDiff', 'KDEratio']
+worlds with both V11 and V12 results: 33 (minimum 30)
+Mismatched arm, descriptive (members from the contaminated pool, holdout and reference prepared as clean), n=33
+  records-only mean: 0.707
+  mst_eps1   mean AUC by attack: {'DCR': 0.484, 'DCRDiff': 0.505, 'KDEratio': 0.502, 'Classifier': 0.684, 'LocalNeighborhood': 0.5}
+  mst_eps10  mean AUC by attack: {'DCR': 0.506, 'DCRDiff': 0.535, 'KDEratio': 0.541, 'Classifier': 0.719, 'LocalNeighborhood': 0.51}
+  plc_mst_eps1   placebo mean AUC: {'DCR': 0.497, 'DCRDiff': 0.493, 'KDEratio': 0.5, 'Classifier': 0.502, 'LocalNeighborhood': 0.495}
+  plc_mst_eps10  placebo mean AUC: {'DCR': 0.504, 'DCRDiff': 0.494, 'KDEratio': 0.498, 'Classifier': 0.506, 'LocalNeighborhood': 0.508}
+  positive control lap_eps100: {'DCR': 1.0, 'DCRDiff': 0.992, 'KDEratio': 0.91, 'Classifier': 0.706, 'LocalNeighborhood': 0.713}
+PART C: mismatched minus contaminated (matched, from V11), H0: difference <= +0.03, one-sided, Holm over 6 tests, 90% CI, n=33
+mst_eps1   DCR          diff -0.0213 90% CI [-0.0286,-0.0141] Holm p 1.0000 -> no shift shown; positive in 7/33
+mst_eps1   DCRDiff      diff -0.0007 90% CI [-0.0105,+0.0091] Holm p 1.0000 -> no shift shown; positive in 16/33
+mst_eps1   KDEratio     diff -0.0074 90% CI [-0.0179,+0.0030] Holm p 1.0000 -> no shift shown; positive in 13/33
+mst_eps10  DCR          diff -0.0040 90% CI [-0.0111,+0.0031] Holm p 1.0000 -> no shift shown; positive in 12/33
+mst_eps10  DCRDiff      diff +0.0250 90% CI [+0.0138,+0.0362] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 24/33
+mst_eps10  KDEratio     diff +0.0292 90% CI [+0.0186,+0.0399] Holm p 1.0000 -> positive shift, not shown larger than the margin; positive in 23/33
+Secondary (descriptive) mismatched minus clean_matched (V11):
+mst_eps1   DCR          -0.0184 sd 0.0270
+mst_eps1   DCRDiff      +0.0023 sd 0.0311
+mst_eps1   KDEratio     -0.0017 sd 0.0294
+mst_eps10  DCR          -0.0016 sd 0.0259
+mst_eps10  DCRDiff      +0.0254 sd 0.0282
+mst_eps10  KDEratio     +0.0295 sd 0.0286

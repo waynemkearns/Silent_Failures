@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb",
+  "snsynth": "unknown",
+  "split_factor": 3,
+  "method": "pb",
+  "seconds": 96
+ },
+ "results": [
+  {
+   "cell": "adult_pb",
+   "world": 18,
+   "arm": "clean_full",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 1000,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 1000,
+   "n_ref": 250,
+   "records_only_oof": 0.476276,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9258259999999999,
+    "Classifier": 0.504931,
+    "KDEratio": 0.735522,
+    "LocalNeighborhood": 0.6040695
+   },
+   "pb_eps1": {
+    "DCR": 0.49056,
+    "DCRDiff": 0.475373,
+    "Classifier": 0.4943735,
+    "KDEratio": 0.484457,
+    "LocalNeighborhood": 0.4925875
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.505204,
+    "DCRDiff": 0.508348,
+    "Classifier": 0.48150600000000005,
+    "KDEratio": 0.507908,
+    "LocalNeighborhood": 0.497168
+   },
+   "pb_eps10": {
+    "DCR": 0.513401,
+    "DCRDiff": 0.488298,
+    "Classifier": 0.4916715,
+    "KDEratio": 0.5031169999999999,
+    "LocalNeighborhood": 0.5051705
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.501868,
+    "DCRDiff": 0.5001359999999999,
+    "Classifier": 0.49967800000000007,
+    "KDEratio": 0.498864,
+    "LocalNeighborhood": 0.4882920000000001
+   }
+  },
+  {
+   "cell": "adult_pb",
+   "world": 18,
+   "arm": "clean_matched",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 561,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 558,
+   "n_ref": 250,
+   "records_only_oof": 0.48842030549453375,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9516257499261314,
+    "Classifier": 0.5109791112652715,
+    "KDEratio": 0.7822709112164541,
+    "LocalNeighborhood": 0.6090668799218921
+   },
+   "pb_eps1": {
+    "DCR": 0.5161161855577394,
+    "DCRDiff": 0.49328117573001373,
+    "Classifier": 0.5024826248378104,
+    "KDEratio": 0.5019430634241595,
+    "LocalNeighborhood": 0.5043373671972354
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.5380840431135263,
+    "DCRDiff": 0.5260338382086561,
+    "Classifier": 0.4894078955820198,
+    "KDEratio": 0.5236443519482021,
+    "LocalNeighborhood": 0.5287894554283732
+   },
+   "pb_eps10": {
+    "DCR": 0.5232204108374764,
+    "DCRDiff": 0.5087614496216647,
+    "Classifier": 0.509777944784882,
+    "KDEratio": 0.5210621651828727,
+    "LocalNeighborhood": 0.5149455299906219
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.5083567785614265,
+    "DCRDiff": 0.5076759034442003,
+    "Classifier": 0.4765419252065107,
+    "KDEratio": 0.5010084659755142,
+    "LocalNeighborhood": 0.5025179532637042
+   }
+  },
+  {
+   "cell": "adult_pb",
+   "world": 18,
+   "arm": "contaminated",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 561,
+   "n_hold_retained": 558,
+   "n_ref_retained": 569,
+   "n_members": 558,
+   "n_ref": 250,
+   "records_only_oof": 0.4936713942523862,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9457130561015404,
+    "Classifier": 0.5138937064015108,
+    "KDEratio": 0.789991778111792,
+    "LocalNeighborhood": 0.6009814879048316
+   },
+   "pb_eps1": {
+    "DCR": 0.49006307729859583,
+    "DCRDiff": 0.4931784021274136,
+    "Classifier": 0.5093572153492376,
+    "KDEratio": 0.5032405801569867,
+    "LocalNeighborhood": 0.48867081615087166
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.4479515936331753,
+    "DCRDiff": 0.5193278606389948,
+    "Classifier": 0.537364627895325,
+    "KDEratio": 0.5077658303464755,
+    "LocalNeighborhood": 0.4907054123148469
+   },
+   "pb_eps10": {
+    "DCR": 0.5034364923369432,
+    "DCRDiff": 0.5037929882709625,
+    "Classifier": 0.5156199817576855,
+    "KDEratio": 0.507746560295988,
+    "LocalNeighborhood": 0.5026544494546576
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.45129173571768094,
+    "DCRDiff": 0.5144075744145116,
+    "Classifier": 0.5353733893449468,
+    "KDEratio": 0.5057360516951221,
+    "LocalNeighborhood": 0.4642861730964401
+   }
+  }
+ ]
+}

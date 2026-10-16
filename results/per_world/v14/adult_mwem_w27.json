@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb",
+  "snsynth": "unknown",
+  "split_factor": 3,
+  "method": "mwem",
+  "seconds": 373
+ },
+ "results": [
+  {
+   "cell": "adult_mwem",
+   "world": 27,
+   "arm": "clean_full",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 1000,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 1000,
+   "n_ref": 250,
+   "records_only_oof": 0.513066,
+   "lap_eps100": {
+    "DCR": 0.99834,
+    "DCRDiff": 0.913216,
+    "Classifier": 0.488143,
+    "KDEratio": 0.739141,
+    "LocalNeighborhood": 0.624391
+   },
+   "mwem_eps1": {
+    "DCR": 0.526647,
+    "DCRDiff": 0.51698,
+    "Classifier": 0.5001395,
+    "KDEratio": 0.528973,
+    "LocalNeighborhood": 0.51455
+   },
+   "plc_mwem_eps1": {
+    "DCR": 0.481876,
+    "DCRDiff": 0.47706,
+    "Classifier": 0.49275599999999997,
+    "KDEratio": 0.464964,
+    "LocalNeighborhood": 0.49137600000000003
+   },
+   "mwem_eps10": {
+    "DCR": 0.525776,
+    "DCRDiff": 0.526583,
+    "Classifier": 0.5085015,
+    "KDEratio": 0.5299419999999999,
+    "LocalNeighborhood": 0.520144
+   },
+   "plc_mwem_eps10": {
+    "DCR": 0.490172,
+    "DCRDiff": 0.495724,
+    "Classifier": 0.5013639999999999,
+    "KDEratio": 0.497012,
+    "LocalNeighborhood": 0.48710800000000004
+   }
+  },
+  {
+   "cell": "adult_mwem",
+   "world": 27,
+   "arm": "clean_matched",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 550,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 525,
+   "n_ref": 250,
+   "records_only_oof": 0.5317387755102041,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9460716553287982,
+    "Classifier": 0.48587755102040814,
+    "KDEratio": 0.7920979591836735,
+    "LocalNeighborhood": 0.663698866213152
+   },
+   "mwem_eps1": {
+    "DCR": 0.5195392290249433,
+    "DCRDiff": 0.4896471655328798,
+    "Classifier": 0.4712326530612245,
+    "KDEratio": 0.5027882086167801,
+    "LocalNeighborhood": 0.5025886621315192
+   },
+   "plc_mwem_eps1": {
+    "DCR": 0.5188217469844415,
+    "DCRDiff": 0.5059000058271663,
+    "Classifier": 0.4749650370025057,
+    "KDEratio": 0.5122516170386341,
+    "LocalNeighborhood": 0.4950469086883048
+   },
+   "mwem_eps10": {
+    "DCR": 0.5343492063492064,
+    "DCRDiff": 0.5066848072562358,
+    "Classifier": 0.49376145124716553,
+    "KDEratio": 0.5120290249433107,
+    "LocalNeighborhood": 0.5124952380952381
+   },
+   "plc_mwem_eps10": {
+    "DCR": 0.5286550900297187,
+    "DCRDiff": 0.5074879086300332,
+    "Classifier": 0.45113921100168997,
+    "KDEratio": 0.5085513664704854,
+    "LocalNeighborhood": 0.5189237223937999
+   }
+  },
+  {
+   "cell": "adult_mwem",
+   "world": 27,
+   "arm": "contaminated",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 550,
+   "n_hold_retained": 525,
+   "n_ref_retained": 559,
+   "n_members": 525,
+   "n_ref": 250,
+   "records_only_oof": 0.5070312925170067,
+   "lap_eps100": {
+    "DCR": 0.9999419501133787,
+    "DCRDiff": 0.9555555555555555,
+    "Classifier": 0.5029297052154196,
+    "KDEratio": 0.796887074829932,
+    "LocalNeighborhood": 0.6571646258503401
+   },
+   "mwem_eps1": {
+    "DCR": 0.51718820861678,
+    "DCRDiff": 0.48609160997732426,
+    "Classifier": 0.4861714285714286,
+    "KDEratio": 0.5006113378684807,
+    "LocalNeighborhood": 0.5052009070294784
+   },
+   "plc_mwem_eps1": {
+    "DCR": 0.5236728628867782,
+    "DCRDiff": 0.4914777693607598,
+    "Classifier": 0.4954839461569838,
+    "KDEratio": 0.4992133325563778,
+    "LocalNeighborhood": 0.5164544606957637
+   },
+   "mwem_eps10": {
+    "DCR": 0.5268716553287982,
+    "DCRDiff": 0.4853804988662132,
+    "Classifier": 0.48456235827664407,
+    "KDEratio": 0.49811519274376415,
+    "LocalNeighborhood": 0.5269514739229025
+   },
+   "plc_mwem_eps10": {
+    "DCR": 0.544301031408426,
+    "DCRDiff": 0.5348173183380922,
+    "Classifier": 0.4889793718314783,
+    "KDEratio": 0.5297622516170386,
+    "LocalNeighborhood": 0.5538357321834393
+   }
+  }
+ ]
+}

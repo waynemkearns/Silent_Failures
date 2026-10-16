@@ -1,0 +1,63 @@
+worlds finished: {'adult_pb': 30, 'mimic_pb': 30}
+
+========================================================================
+CELL adult_pb (PB, publicly binned data; epsilon 1 and 10)
+worlds completed: 30 (minimum 30)
+records-only means (clean_full, clean_matched, contaminated) [0.495 0.499 0.497] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means 0.495-0.501 PASS
+DCRDiff            positive(lap eps100) min-arm 0.932 PASS | placebo means 0.494-0.509 PASS
+KDEratio           positive(lap eps100) min-arm 0.742 FAIL | placebo means 0.496-0.506 PASS
+Classifier         positive(lap eps100) min-arm 0.502 FAIL | placebo means 0.495-0.505 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.595 FAIL | placebo means 0.495-0.499 PASS
+informative attacks: ['DCR', 'DCRDiff']
+PB mean AUC by arm and epsilon (all attacks, descriptive):
+  clean_full     eps  1 {'DCR': 0.504, 'DCRDiff': 0.501, 'KDEratio': 0.501, 'Classifier': 0.502, 'LocalNeighborhood': 0.503}
+  clean_full     eps 10 {'DCR': 0.508, 'DCRDiff': 0.506, 'KDEratio': 0.507, 'Classifier': 0.502, 'LocalNeighborhood': 0.506}
+  clean_matched  eps  1 {'DCR': 0.508, 'DCRDiff': 0.505, 'KDEratio': 0.508, 'Classifier': 0.504, 'LocalNeighborhood': 0.502}
+  clean_matched  eps 10 {'DCR': 0.506, 'DCRDiff': 0.503, 'KDEratio': 0.505, 'Classifier': 0.501, 'LocalNeighborhood': 0.503}
+  contaminated   eps  1 {'DCR': 0.506, 'DCRDiff': 0.5, 'KDEratio': 0.501, 'Classifier': 0.501, 'LocalNeighborhood': 0.502}
+  contaminated   eps 10 {'DCR': 0.509, 'DCRDiff': 0.504, 'KDEratio': 0.505, 'Classifier': 0.503, 'LocalNeighborhood': 0.507}
+
+PRIMARY: contaminated minus clean_matched, margin +/-0.03, 90% CI, Holm over 4 tests, n=30
+  eps  1 DCR        diff -0.0022 CI [-0.0086,+0.0042] Holm eq 8.49e-08 shift 1 -> equivalent within the margin; positive in 10/30
+  eps  1 DCRDiff    diff -0.0055 CI [-0.0122,+0.0013] Holm eq 5.54e-07 shift 1 -> equivalent within the margin; positive in 12/30
+  eps 10 DCR        diff +0.0029 CI [-0.0038,+0.0096] Holm eq 2.5e-07 shift 1 -> equivalent within the margin; positive in 19/30
+  eps 10 DCRDiff    diff +0.0012 CI [-0.0064,+0.0089] Holm eq 5.54e-07 shift 1 -> equivalent within the margin; positive in 15/30
+SECONDARY (descriptive): clean_matched minus clean_full
+  eps  1 DCR        +0.0036 sd 0.0179
+  eps  1 DCRDiff    +0.0039 sd 0.0201
+  eps 10 DCR        -0.0021 sd 0.0167
+  eps 10 DCRDiff    -0.0033 sd 0.0228
+
+========================================================================
+CELL mimic_pb (PB, publicly binned data; epsilon 1 and 10)
+worlds completed: 30 (minimum 30)
+records-only means (clean_full, clean_matched, contaminated) [0.494 0.498 0.496] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means 0.501-0.509 PASS
+DCRDiff            positive(lap eps100) min-arm 0.985 PASS | placebo means 0.499-0.522 PASS
+KDEratio           positive(lap eps100) min-arm 0.829 PASS | placebo means 0.501-0.520 PASS
+Classifier         positive(lap eps100) min-arm 0.521 FAIL | placebo means 0.490-0.505 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.611 FAIL | placebo means 0.498-0.509 PASS
+informative attacks: ['DCR', 'DCRDiff', 'KDEratio']
+PB mean AUC by arm and epsilon (all attacks, descriptive):
+  clean_full     eps  1 {'DCR': 0.5, 'DCRDiff': 0.502, 'KDEratio': 0.504, 'Classifier': 0.501, 'LocalNeighborhood': 0.5}
+  clean_full     eps 10 {'DCR': 0.503, 'DCRDiff': 0.504, 'KDEratio': 0.504, 'Classifier': 0.499, 'LocalNeighborhood': 0.502}
+  clean_matched  eps  1 {'DCR': 0.504, 'DCRDiff': 0.502, 'KDEratio': 0.501, 'Classifier': 0.499, 'LocalNeighborhood': 0.504}
+  clean_matched  eps 10 {'DCR': 0.505, 'DCRDiff': 0.506, 'KDEratio': 0.506, 'Classifier': 0.521, 'LocalNeighborhood': 0.507}
+  contaminated   eps  1 {'DCR': 0.504, 'DCRDiff': 0.501, 'KDEratio': 0.503, 'Classifier': 0.503, 'LocalNeighborhood': 0.496}
+  contaminated   eps 10 {'DCR': 0.512, 'DCRDiff': 0.509, 'KDEratio': 0.511, 'Classifier': 0.523, 'LocalNeighborhood': 0.509}
+
+PRIMARY: contaminated minus clean_matched, margin +/-0.03, 90% CI, Holm over 6 tests, n=30
+  eps  1 DCR        diff -0.0005 CI [-0.0107,+0.0098] Holm eq 0.000101 shift 1 -> equivalent within the margin; positive in 15/30
+  eps  1 DCRDiff    diff -0.0005 CI [-0.0112,+0.0102] Holm eq 0.000148 shift 1 -> equivalent within the margin; positive in 14/30
+  eps  1 KDEratio   diff +0.0021 CI [-0.0090,+0.0132] Holm eq 0.000388 shift 1 -> equivalent within the margin; positive in 17/30
+  eps 10 DCR        diff +0.0070 CI [-0.0030,+0.0170] Holm eq 0.000758 shift 1 -> equivalent within the margin; positive in 14/30
+  eps 10 DCRDiff    diff +0.0030 CI [-0.0095,+0.0155] Holm eq 0.000993 shift 1 -> equivalent within the margin; positive in 17/30
+  eps 10 KDEratio   diff +0.0049 CI [-0.0080,+0.0177] Holm eq 0.00123 shift 1 -> equivalent within the margin; positive in 16/30
+SECONDARY (descriptive): clean_matched minus clean_full
+  eps  1 DCR        +0.0044 sd 0.0276
+  eps  1 DCRDiff    -0.0009 sd 0.0274
+  eps  1 KDEratio   -0.0032 sd 0.0282
+  eps 10 DCR        +0.0015 sd 0.0275
+  eps 10 DCRDiff    +0.0016 sd 0.0261
+  eps 10 KDEratio   +0.0017 sd 0.0281

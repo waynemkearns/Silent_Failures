@@ -1,0 +1,30 @@
+worlds finished: {'adult_laplace': 100, 'adult_mst': 0, 'mimic_mst': 0}
+
+======================================================================
+CELL adult_laplace
+worlds completed: 100 (minimum 100 )
+records-only means [0.499 0.501 0.5  ] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means 0.500-0.506 PASS
+DCRDiff            positive(lap eps100) min-arm 0.930 PASS | placebo means 0.497-0.501 PASS
+KDEratio           positive(lap eps100) min-arm 0.741 FAIL | placebo means 0.496-0.500 PASS
+Classifier         positive(lap eps100) min-arm 0.504 FAIL | placebo means 0.495-0.501 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.593 FAIL | placebo means 0.500-0.504 PASS
+informative attacks: ['DCR', 'DCRDiff']
+EQUIVALENCE contaminated minus clean_matched, margin +/-0.03, n=100
+lap_eps1   DCR          diff +0.0020 90% CI [-0.0019,+0.0060] Holm p 0.0000 -> EQUIVALENT within margin; positive in 56/100
+lap_eps1   DCRDiff      diff +0.0006 90% CI [-0.0028,+0.0039] Holm p 0.0000 -> EQUIVALENT within margin; positive in 50/100
+Secondary (descriptive) matched minus full:
+lap_eps1   DCR          +0.0055 sd 0.0174
+lap_eps1   DCRDiff      +0.0059 sd 0.0176
+
+======================================================================
+CELL adult_mst
+worlds completed: 0 (minimum 30 )
+status file: cell dropped at smoke test: TIMEOUT. See error_adult_mst_w0.txt
+INSUFFICIENT WORLDS: no equivalence claim for this cell
+
+======================================================================
+CELL mimic_mst
+worlds completed: 0 (minimum 30 )
+status file: cell dropped at smoke test: TIMEOUT. See error_mimic_mst_w0.txt
+INSUFFICIENT WORLDS: no equivalence claim for this cell

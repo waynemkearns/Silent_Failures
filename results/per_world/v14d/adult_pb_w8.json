@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb",
+  "snsynth": "unknown",
+  "split_factor": 3,
+  "method": "pb",
+  "seconds": 95
+ },
+ "results": [
+  {
+   "cell": "adult_pb",
+   "world": 8,
+   "arm": "clean_full",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 1000,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 1000,
+   "n_ref": 250,
+   "records_only_oof": 0.49761199999999994,
+   "lap_eps100": {
+    "DCR": 0.99996,
+    "DCRDiff": 0.9194570000000001,
+    "Classifier": 0.5049595,
+    "KDEratio": 0.712137,
+    "LocalNeighborhood": 0.616495
+   },
+   "pb_eps1": {
+    "DCR": 0.5148320000000001,
+    "DCRDiff": 0.499589,
+    "Classifier": 0.4816275,
+    "KDEratio": 0.488046,
+    "LocalNeighborhood": 0.508895
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.493052,
+    "DCRDiff": 0.502032,
+    "Classifier": 0.506264,
+    "KDEratio": 0.504876,
+    "LocalNeighborhood": 0.489732
+   },
+   "pb_eps10": {
+    "DCR": 0.531047,
+    "DCRDiff": 0.51642,
+    "Classifier": 0.48799000000000003,
+    "KDEratio": 0.512961,
+    "LocalNeighborhood": 0.5273435
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.485568,
+    "DCRDiff": 0.501636,
+    "Classifier": 0.4893160000000001,
+    "KDEratio": 0.51156,
+    "LocalNeighborhood": 0.47622600000000004
+   }
+  },
+  {
+   "cell": "adult_pb",
+   "world": 8,
+   "arm": "clean_matched",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 568,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 568,
+   "n_ref": 250,
+   "records_only_oof": 0.4793862204919659,
+   "lap_eps100": {
+    "DCR": 0.9996807429081531,
+    "DCRDiff": 0.9359874032929975,
+    "Classifier": 0.49040523953580645,
+    "KDEratio": 0.7690066455068438,
+    "LocalNeighborhood": 0.6488264977187066
+   },
+   "pb_eps1": {
+    "DCR": 0.5298489882959729,
+    "DCRDiff": 0.497228972426106,
+    "Classifier": 0.4664563082721683,
+    "KDEratio": 0.4961503173973418,
+    "LocalNeighborhood": 0.5130290988891093
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.5271275540567347,
+    "DCRDiff": 0.49964044832374527,
+    "Classifier": 0.4853451696092045,
+    "KDEratio": 0.5036947034318587,
+    "LocalNeighborhood": 0.516991916286451
+   },
+   "pb_eps10": {
+    "DCR": 0.5224874776829994,
+    "DCRDiff": 0.47664153937710774,
+    "Classifier": 0.4592559759968261,
+    "KDEratio": 0.47730485022812935,
+    "LocalNeighborhood": 0.508378173973418
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.5287765324340408,
+    "DCRDiff": 0.4921394564570522,
+    "Classifier": 0.4848864312636381,
+    "KDEratio": 0.50278962507439,
+    "LocalNeighborhood": 0.4901061297361635
+   }
+  },
+  {
+   "cell": "adult_pb",
+   "world": 8,
+   "arm": "contaminated",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 568,
+   "n_hold_retained": 573,
+   "n_ref_retained": 556,
+   "n_members": 568,
+   "n_ref": 250,
+   "records_only_oof": 0.4824625570323348,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9353426899424718,
+    "Classifier": 0.497772949315612,
+    "KDEratio": 0.7602410236064274,
+    "LocalNeighborhood": 0.6463762770283674
+   },
+   "pb_eps1": {
+    "DCR": 0.5101914302717715,
+    "DCRDiff": 0.4885315413608411,
+    "Classifier": 0.44867244842293197,
+    "KDEratio": 0.49671754116246775,
+    "LocalNeighborhood": 0.5164277921047411
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.5171716921245785,
+    "DCRDiff": 0.5076497718706606,
+    "Classifier": 0.5125781095020829,
+    "KDEratio": 0.5080093235469153,
+    "LocalNeighborhood": 0.5117784169807578
+   },
+   "pb_eps10": {
+    "DCR": 0.5450958391192223,
+    "DCRDiff": 0.5092336589962309,
+    "Classifier": 0.4728646969847253,
+    "KDEratio": 0.518966350922436,
+    "LocalNeighborhood": 0.5221294757984527
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.4938504265026781,
+    "DCRDiff": 0.49671444157905176,
+    "Classifier": 0.5059450009918668,
+    "KDEratio": 0.5058768101567149,
+    "LocalNeighborhood": 0.4982022416187264
+   }
+  }
+ ]
+}

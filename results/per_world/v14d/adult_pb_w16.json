@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb",
+  "snsynth": "unknown",
+  "split_factor": 3,
+  "method": "pb",
+  "seconds": 93
+ },
+ "results": [
+  {
+   "cell": "adult_pb",
+   "world": 16,
+   "arm": "clean_full",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 1000,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 1000,
+   "n_ref": 250,
+   "records_only_oof": 0.4917795,
+   "lap_eps100": {
+    "DCR": 0.999968,
+    "DCRDiff": 0.939088,
+    "Classifier": 0.4971415,
+    "KDEratio": 0.7378480000000001,
+    "LocalNeighborhood": 0.5925294999999999
+   },
+   "pb_eps1": {
+    "DCR": 0.525609,
+    "DCRDiff": 0.488223,
+    "Classifier": 0.4956885,
+    "KDEratio": 0.487481,
+    "LocalNeighborhood": 0.51411
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.486488,
+    "DCRDiff": 0.508356,
+    "Classifier": 0.49818799999999996,
+    "KDEratio": 0.50894,
+    "LocalNeighborhood": 0.500944
+   },
+   "pb_eps10": {
+    "DCR": 0.5332250000000001,
+    "DCRDiff": 0.49343099999999995,
+    "Classifier": 0.4920445,
+    "KDEratio": 0.49335300000000004,
+    "LocalNeighborhood": 0.534648
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.476272,
+    "DCRDiff": 0.5049,
+    "Classifier": 0.5003299999999999,
+    "KDEratio": 0.5084359999999999,
+    "LocalNeighborhood": 0.477424
+   }
+  },
+  {
+   "cell": "adult_pb",
+   "world": 16,
+   "arm": "clean_matched",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 545,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 522,
+   "n_ref": 250,
+   "records_only_oof": 0.4788482993496866,
+   "lap_eps100": {
+    "DCR": 0.9999963300597466,
+    "DCRDiff": 0.947846479059321,
+    "Classifier": 0.49473363573641027,
+    "KDEratio": 0.7908978141835851,
+    "LocalNeighborhood": 0.6353272118729907
+   },
+   "pb_eps1": {
+    "DCR": 0.5114061743074823,
+    "DCRDiff": 0.49529146665492285,
+    "Classifier": 0.4915462926263561,
+    "KDEratio": 0.49437765153183305,
+    "LocalNeighborhood": 0.5099290233554998
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.5530893557052892,
+    "DCRDiff": 0.5508286725092115,
+    "Classifier": 0.514210008661059,
+    "KDEratio": 0.5552619603352857,
+    "LocalNeighborhood": 0.5132558241951821
+   },
+   "pb_eps10": {
+    "DCR": 0.5194396735221151,
+    "DCRDiff": 0.5031818381996742,
+    "Classifier": 0.5112758914284875,
+    "KDEratio": 0.50155605466743,
+    "LocalNeighborhood": 0.5088702455924017
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.488469047723903,
+    "DCRDiff": 0.5021505849884763,
+    "Classifier": 0.52270959028787,
+    "KDEratio": 0.508330764375156,
+    "LocalNeighborhood": 0.49086184876910205
+   }
+  },
+  {
+   "cell": "adult_pb",
+   "world": 16,
+   "arm": "contaminated",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 545,
+   "n_hold_retained": 522,
+   "n_ref_retained": 558,
+   "n_members": 522,
+   "n_ref": 250,
+   "records_only_oof": 0.5171514657741373,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9513659517623052,
+    "Classifier": 0.4910398408713906,
+    "KDEratio": 0.7873930212416141,
+    "LocalNeighborhood": 0.6409954345943247
+   },
+   "pb_eps1": {
+    "DCR": 0.53389556818015,
+    "DCRDiff": 0.48143010231793426,
+    "Classifier": 0.4811016426652574,
+    "KDEratio": 0.4827292611676282,
+    "LocalNeighborhood": 0.5039103213399686
+   },
+   "plc_pb_eps1": {
+    "DCR": 0.515479807988726,
+    "DCRDiff": 0.5084482024632639,
+    "Classifier": 0.49619060201699916,
+    "KDEratio": 0.5106795261373145,
+    "LocalNeighborhood": 0.5148559181456527
+   },
+   "pb_eps10": {
+    "DCR": 0.555254620454779,
+    "DCRDiff": 0.5124080679966531,
+    "Classifier": 0.4922931254679173,
+    "KDEratio": 0.5173771670997196,
+    "LocalNeighborhood": 0.5401803408640506
+   },
+   "plc_pb_eps10": {
+    "DCR": 0.5574052054432554,
+    "DCRDiff": 0.5683709869203329,
+    "Classifier": 0.4998165029873314,
+    "KDEratio": 0.5689581773608725,
+    "LocalNeighborhood": 0.5339175878216702
+   }
+  }
+ ]
+}

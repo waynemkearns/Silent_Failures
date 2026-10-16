@@ -1,0 +1,114 @@
+{
+ "meta": {
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb",
+  "snsynth": "unknown",
+  "split_factor": 3,
+  "method": "aim",
+  "seconds": 953
+ },
+ "results": [
+  {
+   "cell": "adult_aim",
+   "world": 21,
+   "arm": "clean_full",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 1000,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 1000,
+   "n_ref": 250,
+   "records_only_oof": 0.481931,
+   "lap_eps100": {
+    "DCR": 0.999868,
+    "DCRDiff": 0.939889,
+    "Classifier": 0.5029375,
+    "KDEratio": 0.767475,
+    "LocalNeighborhood": 0.5692440000000001
+   },
+   "aim_eps1": {
+    "DCR": 0.493607,
+    "DCRDiff": 0.530995,
+    "Classifier": 0.5182565,
+    "KDEratio": 0.532906,
+    "LocalNeighborhood": 0.4960795
+   },
+   "plc_aim_eps1": {
+    "DCR": 0.49982800000000005,
+    "DCRDiff": 0.523868,
+    "Classifier": 0.49213599999999996,
+    "KDEratio": 0.526832,
+    "LocalNeighborhood": 0.50129
+   }
+  },
+  {
+   "cell": "adult_aim",
+   "world": 21,
+   "arm": "clean_matched",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 557,
+   "n_hold_retained": 1000,
+   "n_ref_retained": 1000,
+   "n_members": 546,
+   "n_ref": 250,
+   "records_only_oof": 0.4955889653691852,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9704309731782259,
+    "Classifier": 0.5316822981658146,
+    "KDEratio": 0.8265507386386508,
+    "LocalNeighborhood": 0.5779612634008238
+   },
+   "aim_eps1": {
+    "DCR": 0.4794308255846717,
+    "DCRDiff": 0.5229206080854433,
+    "Classifier": 0.5033443357619183,
+    "KDEratio": 0.5212333454091695,
+    "LocalNeighborhood": 0.48263427659032054
+   },
+   "plc_aim_eps1": {
+    "DCR": 0.4814770089495365,
+    "DCRDiff": 0.5123777321579519,
+    "Classifier": 0.43567604556615547,
+    "KDEratio": 0.506353231627957,
+    "LocalNeighborhood": 0.4860255739376618
+   }
+  },
+  {
+   "cell": "adult_aim",
+   "world": 21,
+   "arm": "contaminated",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 557,
+   "n_hold_retained": 546,
+   "n_ref_retained": 549,
+   "n_members": 546,
+   "n_ref": 250,
+   "records_only_oof": 0.5039799943646097,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9572649572649572,
+    "Classifier": 0.5233550027506071,
+    "KDEratio": 0.8204256061398918,
+    "LocalNeighborhood": 0.6266688134820003
+   },
+   "aim_eps1": {
+    "DCR": 0.45969354211112456,
+    "DCRDiff": 0.49417340900857387,
+    "Classifier": 0.5204517704517704,
+    "KDEratio": 0.49594453165881736,
+    "LocalNeighborhood": 0.4779481812448845
+   },
+   "plc_aim_eps1": {
+    "DCR": 0.5134511398247662,
+    "DCRDiff": 0.5076949912114748,
+    "Classifier": 0.48406660494572573,
+    "KDEratio": 0.5013753035731058,
+    "LocalNeighborhood": 0.49604851802654
+   }
+  }
+ ]
+}

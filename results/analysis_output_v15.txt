@@ -1,0 +1,193 @@
+worlds finished: {'adult_mwem': 30, 'mimic_mwem': 30, 'adult_pb': 30, 'mimic_pb': 30}
+
+========================================================================
+CELL adult_mwem (MWEM release at epsilon 10, share f of rows replaced by real member records)
+worlds completed: 30 (minimum 30)
+records-only means (clean_full, clean_matched, contaminated) [0.495 0.499 0.497] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means (f=0) 0.495-0.497 PASS
+DCRDiff            positive(lap eps100) min-arm 0.932 PASS | placebo means (f=0) 0.495-0.499 PASS
+KDEratio           positive(lap eps100) min-arm 0.742 FAIL | placebo means (f=0) 0.495-0.496 PASS
+Classifier         positive(lap eps100) min-arm 0.502 FAIL | placebo means (f=0) 0.497-0.499 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.595 FAIL | placebo means (f=0) 0.495-0.496 PASS
+informative attacks: ['DCR', 'DCRDiff']
+Mean AUC by arm and share f (all attacks, descriptive):
+  clean_full     f    0 {'DCR': 0.509, 'DCRDiff': 0.506, 'KDEratio': 0.506, 'Classifier': 0.503, 'LocalNeighborhood': 0.507}
+  clean_full     f 0.05 {'DCR': 0.533, 'DCRDiff': 0.53, 'KDEratio': 0.523, 'Classifier': 0.529, 'LocalNeighborhood': 0.515}
+  clean_full     f  0.1 {'DCR': 0.556, 'DCRDiff': 0.552, 'KDEratio': 0.538, 'Classifier': 0.55, 'LocalNeighborhood': 0.523}
+  clean_full     f 0.25 {'DCR': 0.63, 'DCRDiff': 0.62, 'KDEratio': 0.58, 'Classifier': 0.616, 'LocalNeighborhood': 0.541}
+  clean_matched  f    0 {'DCR': 0.508, 'DCRDiff': 0.506, 'KDEratio': 0.508, 'Classifier': 0.507, 'LocalNeighborhood': 0.506}
+  clean_matched  f 0.05 {'DCR': 0.531, 'DCRDiff': 0.528, 'KDEratio': 0.526, 'Classifier': 0.531, 'LocalNeighborhood': 0.517}
+  clean_matched  f  0.1 {'DCR': 0.559, 'DCRDiff': 0.555, 'KDEratio': 0.546, 'Classifier': 0.555, 'LocalNeighborhood': 0.53}
+  clean_matched  f 0.25 {'DCR': 0.628, 'DCRDiff': 0.625, 'KDEratio': 0.595, 'Classifier': 0.628, 'LocalNeighborhood': 0.555}
+  contaminated   f    0 {'DCR': 0.507, 'DCRDiff': 0.502, 'KDEratio': 0.503, 'Classifier': 0.506, 'LocalNeighborhood': 0.505}
+  contaminated   f 0.05 {'DCR': 0.53, 'DCRDiff': 0.524, 'KDEratio': 0.52, 'Classifier': 0.526, 'LocalNeighborhood': 0.515}
+  contaminated   f  0.1 {'DCR': 0.554, 'DCRDiff': 0.548, 'KDEratio': 0.539, 'Classifier': 0.553, 'LocalNeighborhood': 0.525}
+  contaminated   f 0.25 {'DCR': 0.63, 'DCRDiff': 0.621, 'KDEratio': 0.59, 'Classifier': 0.623, 'LocalNeighborhood': 0.551}
+
+PRIMARY (detection), clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 6 tests, n=30
+  DCR        f 0.05 diff +0.0232 CI [+0.0217,+0.0248] Holm p(>0) 0 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.46
+  DCR        f  0.1 diff +0.0509 CI [+0.0481,+0.0536] Holm p(>0) 0 p(>0.03) 4.33e-13 -> BEYOND the 0.03 margin; gain per unit f 0.51
+  DCR        f 0.25 diff +0.1205 CI [+0.1166,+0.1243] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.48
+  DCRDiff    f 0.05 diff +0.0225 CI [+0.0202,+0.0247] Holm p(>0) 0 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.45
+  DCRDiff    f  0.1 diff +0.0491 CI [+0.0461,+0.0522] Holm p(>0) 0 p(>0.03) 2.24e-11 -> BEYOND the 0.03 margin; gain per unit f 0.49
+  DCRDiff    f 0.25 diff +0.1190 CI [+0.1142,+0.1238] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.48
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+
+SECONDARY: contaminated minus clean_matched at each share f, margin +/-0.03, 90% CI, Holm over 8 tests
+  f    0 DCR        diff -0.0005 CI [-0.0065,+0.0055] -> equivalent within the margin
+  f    0 DCRDiff    diff -0.0039 CI [-0.0092,+0.0014] -> equivalent within the margin
+  f 0.05 DCR        diff -0.0014 CI [-0.0071,+0.0043] -> equivalent within the margin
+  f 0.05 DCRDiff    diff -0.0039 CI [-0.0092,+0.0014] -> equivalent within the margin
+  f  0.1 DCR        diff -0.0044 CI [-0.0095,+0.0007] -> equivalent within the margin
+  f  0.1 DCRDiff    diff -0.0068 CI [-0.0122,-0.0013] -> equivalent within the margin
+  f 0.25 DCR        diff +0.0014 CI [-0.0032,+0.0060] -> equivalent within the margin
+  f 0.25 DCRDiff    diff -0.0040 CI [-0.0090,+0.0010] -> equivalent within the margin
+
+========================================================================
+CELL mimic_mwem (MWEM release at epsilon 10, share f of rows replaced by real member records)
+worlds completed: 30 (minimum 30)
+records-only means (clean_full, clean_matched, contaminated) [0.494 0.498 0.496] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means (f=0) 0.499-0.506 PASS
+DCRDiff            positive(lap eps100) min-arm 0.985 PASS | placebo means (f=0) 0.496-0.513 PASS
+KDEratio           positive(lap eps100) min-arm 0.829 PASS | placebo means (f=0) 0.499-0.513 PASS
+Classifier         positive(lap eps100) min-arm 0.521 FAIL | placebo means (f=0) 0.497-0.508 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.611 FAIL | placebo means (f=0) 0.499-0.505 PASS
+informative attacks: ['DCR', 'DCRDiff', 'KDEratio']
+Mean AUC by arm and share f (all attacks, descriptive):
+  clean_full     f    0 {'DCR': 0.503, 'DCRDiff': 0.505, 'KDEratio': 0.504, 'Classifier': 0.501, 'LocalNeighborhood': 0.501}
+  clean_full     f 0.05 {'DCR': 0.528, 'DCRDiff': 0.529, 'KDEratio': 0.525, 'Classifier': 0.529, 'LocalNeighborhood': 0.511}
+  clean_full     f  0.1 {'DCR': 0.551, 'DCRDiff': 0.554, 'KDEratio': 0.545, 'Classifier': 0.55, 'LocalNeighborhood': 0.518}
+  clean_full     f 0.25 {'DCR': 0.629, 'DCRDiff': 0.628, 'KDEratio': 0.602, 'Classifier': 0.624, 'LocalNeighborhood': 0.542}
+  clean_matched  f    0 {'DCR': 0.496, 'DCRDiff': 0.496, 'KDEratio': 0.496, 'Classifier': 0.516, 'LocalNeighborhood': 0.499}
+  clean_matched  f 0.05 {'DCR': 0.523, 'DCRDiff': 0.52, 'KDEratio': 0.518, 'Classifier': 0.539, 'LocalNeighborhood': 0.517}
+  clean_matched  f  0.1 {'DCR': 0.547, 'DCRDiff': 0.548, 'KDEratio': 0.544, 'Classifier': 0.563, 'LocalNeighborhood': 0.53}
+  clean_matched  f 0.25 {'DCR': 0.627, 'DCRDiff': 0.624, 'KDEratio': 0.612, 'Classifier': 0.634, 'LocalNeighborhood': 0.575}
+  contaminated   f    0 {'DCR': 0.51, 'DCRDiff': 0.509, 'KDEratio': 0.51, 'Classifier': 0.519, 'LocalNeighborhood': 0.503}
+  contaminated   f 0.05 {'DCR': 0.533, 'DCRDiff': 0.532, 'KDEratio': 0.532, 'Classifier': 0.54, 'LocalNeighborhood': 0.521}
+  contaminated   f  0.1 {'DCR': 0.558, 'DCRDiff': 0.558, 'KDEratio': 0.554, 'Classifier': 0.568, 'LocalNeighborhood': 0.539}
+  contaminated   f 0.25 {'DCR': 0.634, 'DCRDiff': 0.633, 'KDEratio': 0.623, 'Classifier': 0.637, 'LocalNeighborhood': 0.582}
+
+PRIMARY (detection), clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 9 tests, n=30
+  DCR        f 0.05 diff +0.0271 CI [+0.0240,+0.0301] Holm p(>0) 4.66e-15 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.54
+  DCR        f  0.1 diff +0.0511 CI [+0.0478,+0.0543] Holm p(>0) 0 p(>0.03) 2.68e-11 -> BEYOND the 0.03 margin; gain per unit f 0.51
+  DCR        f 0.25 diff +0.1309 CI [+0.1260,+0.1357] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.52
+  DCRDiff    f 0.05 diff +0.0244 CI [+0.0208,+0.0279] Holm p(>0) 1.47e-12 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.49
+  DCRDiff    f  0.1 diff +0.0524 CI [+0.0481,+0.0567] Holm p(>0) 0 p(>0.03) 2.39e-09 -> BEYOND the 0.03 margin; gain per unit f 0.52
+  DCRDiff    f 0.25 diff +0.1284 CI [+0.1232,+0.1336] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.51
+  KDEratio   f 0.05 diff +0.0218 CI [+0.0181,+0.0255] Holm p(>0) 3.13e-11 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.44
+  KDEratio   f  0.1 diff +0.0474 CI [+0.0427,+0.0521] Holm p(>0) 4.44e-16 p(>0.03) 1.34e-06 -> BEYOND the 0.03 margin; gain per unit f 0.47
+  KDEratio   f 0.25 diff +0.1152 CI [+0.1100,+0.1204] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.46
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  KDEratio   smallest share detected: 0.05; smallest share beyond the margin: 0.1
+
+SECONDARY: contaminated minus clean_matched at each share f, margin +/-0.03, 90% CI, Holm over 12 tests
+  f    0 DCR        diff +0.0143 CI [+0.0043,+0.0243] -> equivalent within the margin
+  f    0 DCRDiff    diff +0.0131 CI [+0.0026,+0.0236] -> equivalent within the margin
+  f    0 KDEratio   diff +0.0140 CI [+0.0027,+0.0252] -> equivalent within the margin
+  f 0.05 DCR        diff +0.0100 CI [+0.0007,+0.0193] -> equivalent within the margin
+  f 0.05 DCRDiff    diff +0.0112 CI [-0.0001,+0.0225] -> equivalent within the margin
+  f 0.05 KDEratio   diff +0.0134 CI [+0.0010,+0.0259] -> equivalent within the margin
+  f  0.1 DCR        diff +0.0107 CI [+0.0007,+0.0208] -> equivalent within the margin
+  f  0.1 DCRDiff    diff +0.0094 CI [-0.0005,+0.0192] -> equivalent within the margin
+  f  0.1 KDEratio   diff +0.0106 CI [+0.0002,+0.0210] -> equivalent within the margin
+  f 0.25 DCR        diff +0.0069 CI [-0.0014,+0.0152] -> equivalent within the margin
+  f 0.25 DCRDiff    diff +0.0084 CI [+0.0012,+0.0156] -> equivalent within the margin
+  f 0.25 KDEratio   diff +0.0117 CI [+0.0032,+0.0201] -> equivalent within the margin
+
+========================================================================
+CELL adult_pb (PrivBayes-style release at epsilon 10, share f of rows replaced by real member records)
+worlds completed: 30 (minimum 30)
+records-only means (clean_full, clean_matched, contaminated) [0.495 0.499 0.497] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means (f=0) 0.496-0.498 PASS
+DCRDiff            positive(lap eps100) min-arm 0.932 PASS | placebo means (f=0) 0.497-0.503 PASS
+KDEratio           positive(lap eps100) min-arm 0.742 FAIL | placebo means (f=0) 0.499-0.502 PASS
+Classifier         positive(lap eps100) min-arm 0.502 FAIL | placebo means (f=0) 0.495-0.505 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.595 FAIL | placebo means (f=0) 0.495-0.497 PASS
+informative attacks: ['DCR', 'DCRDiff']
+Mean AUC by arm and share f (all attacks, descriptive):
+  clean_full     f    0 {'DCR': 0.508, 'DCRDiff': 0.506, 'KDEratio': 0.507, 'Classifier': 0.502, 'LocalNeighborhood': 0.506}
+  clean_full     f 0.05 {'DCR': 0.532, 'DCRDiff': 0.53, 'KDEratio': 0.523, 'Classifier': 0.525, 'LocalNeighborhood': 0.516}
+  clean_full     f  0.1 {'DCR': 0.555, 'DCRDiff': 0.551, 'KDEratio': 0.537, 'Classifier': 0.547, 'LocalNeighborhood': 0.525}
+  clean_full     f 0.25 {'DCR': 0.63, 'DCRDiff': 0.618, 'KDEratio': 0.578, 'Classifier': 0.613, 'LocalNeighborhood': 0.544}
+  clean_matched  f    0 {'DCR': 0.506, 'DCRDiff': 0.503, 'KDEratio': 0.505, 'Classifier': 0.501, 'LocalNeighborhood': 0.503}
+  clean_matched  f 0.05 {'DCR': 0.53, 'DCRDiff': 0.527, 'KDEratio': 0.524, 'Classifier': 0.524, 'LocalNeighborhood': 0.52}
+  clean_matched  f  0.1 {'DCR': 0.559, 'DCRDiff': 0.555, 'KDEratio': 0.546, 'Classifier': 0.549, 'LocalNeighborhood': 0.537}
+  clean_matched  f 0.25 {'DCR': 0.627, 'DCRDiff': 0.623, 'KDEratio': 0.593, 'Classifier': 0.621, 'LocalNeighborhood': 0.561}
+  contaminated   f    0 {'DCR': 0.509, 'DCRDiff': 0.504, 'KDEratio': 0.505, 'Classifier': 0.503, 'LocalNeighborhood': 0.507}
+  contaminated   f 0.05 {'DCR': 0.528, 'DCRDiff': 0.523, 'KDEratio': 0.52, 'Classifier': 0.523, 'LocalNeighborhood': 0.519}
+  contaminated   f  0.1 {'DCR': 0.553, 'DCRDiff': 0.547, 'KDEratio': 0.538, 'Classifier': 0.548, 'LocalNeighborhood': 0.531}
+  contaminated   f 0.25 {'DCR': 0.63, 'DCRDiff': 0.622, 'KDEratio': 0.591, 'Classifier': 0.618, 'LocalNeighborhood': 0.562}
+
+PRIMARY (detection), clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 6 tests, n=30
+  DCR        f 0.05 diff +0.0238 CI [+0.0216,+0.0259] Holm p(>0) 0 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.48
+  DCR        f  0.1 diff +0.0529 CI [+0.0494,+0.0563] Holm p(>0) 0 p(>0.03) 8.1e-12 -> BEYOND the 0.03 margin; gain per unit f 0.53
+  DCR        f 0.25 diff +0.1209 CI [+0.1170,+0.1248] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.48
+  DCRDiff    f 0.05 diff +0.0236 CI [+0.0210,+0.0263] Holm p(>0) 1.33e-15 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.47
+  DCRDiff    f  0.1 diff +0.0514 CI [+0.0482,+0.0547] Holm p(>0) 0 p(>0.03) 8.1e-12 -> BEYOND the 0.03 margin; gain per unit f 0.51
+  DCRDiff    f 0.25 diff +0.1195 CI [+0.1149,+0.1240] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.48
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+
+SECONDARY: contaminated minus clean_matched at each share f, margin +/-0.03, 90% CI, Holm over 8 tests
+  f    0 DCR        diff +0.0029 CI [-0.0038,+0.0096] -> equivalent within the margin
+  f    0 DCRDiff    diff +0.0012 CI [-0.0064,+0.0089] -> equivalent within the margin
+  f 0.05 DCR        diff -0.0017 CI [-0.0077,+0.0043] -> equivalent within the margin
+  f 0.05 DCRDiff    diff -0.0033 CI [-0.0105,+0.0040] -> equivalent within the margin
+  f  0.1 DCR        diff -0.0057 CI [-0.0112,-0.0001] -> equivalent within the margin
+  f  0.1 DCRDiff    diff -0.0071 CI [-0.0140,-0.0002] -> equivalent within the margin
+  f 0.25 DCR        diff +0.0035 CI [-0.0018,+0.0088] -> equivalent within the margin
+  f 0.25 DCRDiff    diff -0.0006 CI [-0.0070,+0.0057] -> equivalent within the margin
+
+========================================================================
+CELL mimic_pb (PrivBayes-style release at epsilon 10, share f of rows replaced by real member records)
+worlds completed: 30 (minimum 30)
+records-only means (clean_full, clean_matched, contaminated) [0.494 0.498 0.496] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means (f=0) 0.501-0.505 PASS
+DCRDiff            positive(lap eps100) min-arm 0.985 PASS | placebo means (f=0) 0.499-0.509 PASS
+KDEratio           positive(lap eps100) min-arm 0.829 PASS | placebo means (f=0) 0.501-0.510 PASS
+Classifier         positive(lap eps100) min-arm 0.521 FAIL | placebo means (f=0) 0.490-0.504 PASS
+LocalNeighborhood  positive(lap eps100) min-arm 0.611 FAIL | placebo means (f=0) 0.498-0.509 PASS
+informative attacks: ['DCR', 'DCRDiff', 'KDEratio']
+Mean AUC by arm and share f (all attacks, descriptive):
+  clean_full     f    0 {'DCR': 0.503, 'DCRDiff': 0.504, 'KDEratio': 0.504, 'Classifier': 0.499, 'LocalNeighborhood': 0.502}
+  clean_full     f 0.05 {'DCR': 0.528, 'DCRDiff': 0.53, 'KDEratio': 0.525, 'Classifier': 0.526, 'LocalNeighborhood': 0.51}
+  clean_full     f  0.1 {'DCR': 0.551, 'DCRDiff': 0.552, 'KDEratio': 0.542, 'Classifier': 0.549, 'LocalNeighborhood': 0.517}
+  clean_full     f 0.25 {'DCR': 0.628, 'DCRDiff': 0.626, 'KDEratio': 0.596, 'Classifier': 0.621, 'LocalNeighborhood': 0.539}
+  clean_matched  f    0 {'DCR': 0.505, 'DCRDiff': 0.506, 'KDEratio': 0.506, 'Classifier': 0.521, 'LocalNeighborhood': 0.507}
+  clean_matched  f 0.05 {'DCR': 0.53, 'DCRDiff': 0.528, 'KDEratio': 0.527, 'Classifier': 0.541, 'LocalNeighborhood': 0.523}
+  clean_matched  f  0.1 {'DCR': 0.555, 'DCRDiff': 0.555, 'KDEratio': 0.551, 'Classifier': 0.564, 'LocalNeighborhood': 0.537}
+  clean_matched  f 0.25 {'DCR': 0.631, 'DCRDiff': 0.63, 'KDEratio': 0.616, 'Classifier': 0.639, 'LocalNeighborhood': 0.58}
+  contaminated   f    0 {'DCR': 0.512, 'DCRDiff': 0.509, 'KDEratio': 0.511, 'Classifier': 0.523, 'LocalNeighborhood': 0.509}
+  contaminated   f 0.05 {'DCR': 0.535, 'DCRDiff': 0.532, 'KDEratio': 0.533, 'Classifier': 0.544, 'LocalNeighborhood': 0.526}
+  contaminated   f  0.1 {'DCR': 0.559, 'DCRDiff': 0.557, 'KDEratio': 0.554, 'Classifier': 0.57, 'LocalNeighborhood': 0.545}
+  contaminated   f 0.25 {'DCR': 0.631, 'DCRDiff': 0.627, 'KDEratio': 0.615, 'Classifier': 0.635, 'LocalNeighborhood': 0.584}
+
+PRIMARY (detection), clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 9 tests, n=30
+  DCR        f 0.05 diff +0.0254 CI [+0.0222,+0.0287] Holm p(>0) 9.13e-14 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.51
+  DCR        f  0.1 diff +0.0500 CI [+0.0463,+0.0537] Holm p(>0) 0 p(>0.03) 1.34e-09 -> BEYOND the 0.03 margin; gain per unit f 0.50
+  DCR        f 0.25 diff +0.1262 CI [+0.1202,+0.1322] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.50
+  DCRDiff    f 0.05 diff +0.0226 CI [+0.0193,+0.0259] Holm p(>0) 7.77e-13 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.45
+  DCRDiff    f  0.1 diff +0.0496 CI [+0.0445,+0.0546] Holm p(>0) 5.55e-16 p(>0.03) 7.51e-07 -> BEYOND the 0.03 margin; gain per unit f 0.50
+  DCRDiff    f 0.25 diff +0.1243 CI [+0.1182,+0.1304] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.50
+  KDEratio   f 0.05 diff +0.0207 CI [+0.0178,+0.0235] Holm p(>0) 4.98e-13 p(>0.03) 1 -> detected (increase > 0); gain per unit f 0.41
+  KDEratio   f  0.1 diff +0.0452 CI [+0.0399,+0.0506] Holm p(>0) 1.78e-14 p(>0.03) 7.37e-05 -> BEYOND the 0.03 margin; gain per unit f 0.45
+  KDEratio   f 0.25 diff +0.1106 CI [+0.1047,+0.1165] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin; gain per unit f 0.44
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  KDEratio   smallest share detected: 0.05; smallest share beyond the margin: 0.1
+
+SECONDARY: contaminated minus clean_matched at each share f, margin +/-0.03, 90% CI, Holm over 12 tests
+  f    0 DCR        diff +0.0070 CI [-0.0030,+0.0170] -> equivalent within the margin
+  f    0 DCRDiff    diff +0.0030 CI [-0.0095,+0.0155] -> equivalent within the margin
+  f    0 KDEratio   diff +0.0049 CI [-0.0080,+0.0177] -> equivalent within the margin
+  f 0.05 DCR        diff +0.0051 CI [-0.0042,+0.0145] -> equivalent within the margin
+  f 0.05 DCRDiff    diff +0.0041 CI [-0.0090,+0.0171] -> equivalent within the margin
+  f 0.05 KDEratio   diff +0.0060 CI [-0.0069,+0.0189] -> equivalent within the margin
+  f  0.1 DCR        diff +0.0045 CI [-0.0055,+0.0145] -> equivalent within the margin
+  f  0.1 DCRDiff    diff +0.0017 CI [-0.0104,+0.0137] -> equivalent within the margin
+  f  0.1 KDEratio   diff +0.0028 CI [-0.0095,+0.0152] -> equivalent within the margin
+  f 0.25 DCR        diff +0.0002 CI [-0.0079,+0.0082] -> equivalent within the margin
+  f 0.25 DCRDiff    diff -0.0033 CI [-0.0125,+0.0059] -> equivalent within the margin
+  f 0.25 KDEratio   diff -0.0015 CI [-0.0113,+0.0083] -> equivalent within the margin

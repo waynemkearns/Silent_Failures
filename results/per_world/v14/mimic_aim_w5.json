@@ -1,0 +1,114 @@
+{
+ "meta": {
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb",
+  "snsynth": "unknown",
+  "split_factor": 3,
+  "method": "aim",
+  "seconds": 975
+ },
+ "results": [
+  {
+   "cell": "mimic_aim",
+   "world": 5,
+   "arm": "clean_full",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 752,
+   "n_hold_retained": 764,
+   "n_ref_retained": 720,
+   "n_members": 752,
+   "n_ref": 239,
+   "records_only_oof": 0.5012466755319149,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9861963841104573,
+    "Classifier": 0.5320059628225442,
+    "KDEratio": 0.7660087284970576,
+    "LocalNeighborhood": 0.6100841019692169
+   },
+   "aim_eps1": {
+    "DCR": 0.5233738399728384,
+    "DCRDiff": 0.515745246717972,
+    "Classifier": 0.49977188490267094,
+    "KDEratio": 0.5123235202580353,
+    "LocalNeighborhood": 0.5252544632752377
+   },
+   "plc_aim_eps1": {
+    "DCR": 0.4711832277048439,
+    "DCRDiff": 0.47904877772747845,
+    "Classifier": 0.4675546061566319,
+    "KDEratio": 0.4790982910819375,
+    "LocalNeighborhood": 0.4774006903576279
+   }
+  },
+  {
+   "cell": "mimic_aim",
+   "world": 5,
+   "arm": "clean_matched",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 281,
+   "n_hold_retained": 764,
+   "n_ref_retained": 720,
+   "n_members": 262,
+   "n_ref": 239,
+   "records_only_oof": 0.5276790396830021,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9970864168754734,
+    "Classifier": 0.5243575549210419,
+    "KDEratio": 0.9017394091253423,
+    "LocalNeighborhood": 0.6788065963521939
+   },
+   "aim_eps1": {
+    "DCR": 0.5331711438727347,
+    "DCRDiff": 0.5104597634170502,
+    "Classifier": 0.5099061826233903,
+    "KDEratio": 0.5078229706893538,
+    "LocalNeighborhood": 0.5279776819532661
+   },
+   "plc_aim_eps1": {
+    "DCR": 0.5737427888817668,
+    "DCRDiff": 0.5515995571353651,
+    "Classifier": 0.5363906532253364,
+    "KDEratio": 0.5532894353475905,
+    "LocalNeighborhood": 0.5606608006526426
+   }
+  },
+  {
+   "cell": "mimic_aim",
+   "world": 5,
+   "arm": "contaminated",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 281,
+   "n_hold_retained": 262,
+   "n_ref_retained": 239,
+   "n_members": 262,
+   "n_ref": 239,
+   "records_only_oof": 0.5309641046559057,
+   "lap_eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9893362857642329,
+    "Classifier": 0.5744201969582192,
+    "KDEratio": 0.819255870869996,
+    "LocalNeighborhood": 0.6922746343453179
+   },
+   "aim_eps1": {
+    "DCR": 0.5090029718547869,
+    "DCRDiff": 0.48974418740166653,
+    "Classifier": 0.4969407377192471,
+    "KDEratio": 0.5049822271429404,
+    "LocalNeighborhood": 0.5017700017481499
+   },
+   "plc_aim_eps1": {
+    "DCR": 0.5387797913874482,
+    "DCRDiff": 0.5623798146961133,
+    "Classifier": 0.5182390303595361,
+    "KDEratio": 0.5486859740108385,
+    "LocalNeighborhood": 0.522405454227609
+   }
+  }
+ ]
+}

@@ -1,0 +1,263 @@
+worlds finished: {'adult_pat': 100, 'mimic_pat': 100}
+
+========================================================================
+CELL adult_pat (Laplace-perturbed records, NOT epsilon-DP)
+worlds completed: 100 (minimum 50)
+common member count per world: min 520 median 549
+clean arm records-only mean 0.500 PASS
+DCR       positive control (divisor 100) 1.000 PASS | clean placebo means 0.499-0.500 PASS | clean AUC by divisor {'1': 0.523, '2': 0.631, '4': 0.841}
+DCRDiff   positive control (divisor 100) 0.953 PASS | clean placebo means 0.497-0.499 PASS | clean AUC by divisor {'1': 0.516, '2': 0.595, '4': 0.75}
+KDEratio  positive control (divisor 100) 0.799 FAIL | clean placebo means 0.497-0.498 PASS | clean AUC by divisor {'1': 0.524, '2': 0.612, '4': 0.725}
+informative attacks: ['DCR', 'DCRDiff']
+
+Tests: 60 (Holm over these, separately for equivalence and for shift). Margin +/-0.03, 90% CI of the paired mean difference, arm minus clean, n=100
+
+P2_asym: records-only baseline 0.502 (diff +0.002, 90% CI [-0.003,+0.007]); placebo mean over tests 0.499; members available 600, holdout 1000 (median)
+  DCR       div  1  clean 0.523  diff +0.0010 CI [-0.0024,+0.0044]  equivalent within the margin  Holm eq 4.82e-24 shift 1
+  DCR       div  2  clean 0.631  diff +0.0010 CI [-0.0039,+0.0059]  equivalent within the margin  Holm eq 2.87e-15 shift 1
+  DCR       div  4  clean 0.841  diff -0.0036 CI [-0.0092,+0.0021]  equivalent within the margin  Holm eq 9.16e-11 shift 1
+  DCRDiff   div  1  clean 0.516  diff +0.0013 CI [-0.0025,+0.0052]  equivalent within the margin  Holm eq 1.5e-20 shift 1
+  DCRDiff   div  2  clean 0.595  diff +0.0000 CI [-0.0040,+0.0041]  equivalent within the margin  Holm eq 2.29e-20 shift 1
+  DCRDiff   div  4  clean 0.750  diff -0.0021 CI [-0.0068,+0.0026]  equivalent within the margin  Holm eq 3e-15 shift 1
+
+P2_sym: records-only baseline 0.502 (diff +0.002, 90% CI [-0.004,+0.007]); placebo mean over tests 0.499; members available 600, holdout 600 (median)
+  DCR       div  1  clean 0.523  diff +0.0008 CI [-0.0026,+0.0042]  equivalent within the margin  Holm eq 2.14e-24 shift 1
+  DCR       div  2  clean 0.631  diff +0.0008 CI [-0.0037,+0.0054]  equivalent within the margin  Holm eq 6.14e-17 shift 1
+  DCR       div  4  clean 0.841  diff -0.0042 CI [-0.0097,+0.0014]  equivalent within the margin  Holm eq 1.19e-10 shift 1
+  DCRDiff   div  1  clean 0.516  diff -0.0003 CI [-0.0043,+0.0036]  equivalent within the margin  Holm eq 2.67e-21 shift 1
+  DCRDiff   div  2  clean 0.595  diff -0.0023 CI [-0.0064,+0.0018]  equivalent within the margin  Holm eq 6.09e-22 shift 1
+  DCRDiff   div  4  clean 0.750  diff -0.0038 CI [-0.0086,+0.0011]  equivalent within the margin  Holm eq 2.75e-13 shift 1
+
+P4a_asym: records-only baseline 0.902 (diff +0.401, 90% CI [+0.398,+0.405]); placebo mean over tests 0.498; members available 1000, holdout 1000 (median)
+  DCR       div  1  clean 0.523  diff +0.0081 CI [+0.0065,+0.0098]  equivalent within the margin  Holm eq 1.91e-38 shift 1
+  DCR       div  2  clean 0.631  diff +0.0117 CI [+0.0107,+0.0126]  equivalent within the margin  Holm eq 6.72e-53 shift 1
+  DCR       div  4  clean 0.841  diff +0.0130 CI [+0.0123,+0.0138]  equivalent within the margin  Holm eq 6.6e-58 shift 1
+  DCRDiff   div  1  clean 0.516  diff +0.0237 CI [+0.0222,+0.0253]  equivalent within the margin  Holm eq 7.69e-09 shift 1
+  DCRDiff   div  2  clean 0.595  diff +0.0285 CI [+0.0274,+0.0296]  inconclusive  Holm eq 0.137 shift 1
+  DCRDiff   div  4  clean 0.750  diff +0.0266 CI [+0.0256,+0.0277]  equivalent within the margin  Holm eq 3.24e-06 shift 1
+
+P4a_sym: records-only baseline 0.500 (diff +0.000, 90% CI [-0.000,+0.000]); placebo mean over tests 0.499; members available 1000, holdout 1000 (median)
+  DCR       div  1  clean 0.523  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCR       div  2  clean 0.631  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCR       div  4  clean 0.841  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCRDiff   div  1  clean 0.516  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCRDiff   div  2  clean 0.595  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCRDiff   div  4  clean 0.750  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+
+P4b_asym: records-only baseline 0.539 (diff +0.039, 90% CI [+0.037,+0.041]); placebo mean over tests 0.500; members available 1000, holdout 1000 (median)
+  DCR       div  1  clean 0.523  diff -0.0537 CI [-0.0593,-0.0481]  SHIFT beyond the margin (down)  Holm eq 1 shift 8.26e-09
+  DCR       div  2  clean 0.631  diff -0.1646 CI [-0.1705,-0.1586]  SHIFT beyond the margin (down)  Holm eq 1 shift 9.3e-59
+  DCR       div  4  clean 0.841  diff -0.3733 CI [-0.3795,-0.3671]  SHIFT beyond the margin (down)  Holm eq 1 shift 3.21e-96
+  DCRDiff   div  1  clean 0.516  diff +0.0226 CI [+0.0195,+0.0258]  equivalent within the margin  Holm eq 0.00143 shift 1
+  DCRDiff   div  2  clean 0.595  diff -0.0554 CI [-0.0590,-0.0519]  SHIFT beyond the margin (down)  Holm eq 1 shift 2.38e-19
+  DCRDiff   div  4  clean 0.750  diff -0.2091 CI [-0.2135,-0.2047]  SHIFT beyond the margin (down)  Holm eq 1 shift 6.02e-83
+
+P4b_sym: records-only baseline 0.501 (diff +0.001, 90% CI [-0.001,+0.002]); placebo mean over tests 0.499; members available 1000, holdout 1000 (median)
+  DCR       div  1  clean 0.523  diff -0.0019 CI [-0.0036,-0.0002]  equivalent within the margin  Holm eq 1.6e-51 shift 1
+  DCR       div  2  clean 0.631  diff -0.0109 CI [-0.0125,-0.0093]  equivalent within the margin  Holm eq 1.85e-64 shift 1
+  DCR       div  4  clean 0.841  diff -0.0293 CI [-0.0306,-0.0279]  inconclusive  Holm eq 1 shift 1
+  DCRDiff   div  1  clean 0.516  diff -0.0017 CI [-0.0036,+0.0002]  equivalent within the margin  Holm eq 6.35e-47 shift 1
+  DCRDiff   div  2  clean 0.595  diff -0.0104 CI [-0.0121,-0.0087]  equivalent within the margin  Holm eq 3.75e-60 shift 1
+  DCRDiff   div  4  clean 0.750  diff -0.0300 CI [-0.0316,-0.0284]  inconclusive  Holm eq 1 shift 1
+
+P5_asym: records-only baseline 0.510 (diff +0.010, 90% CI [+0.005,+0.014]); placebo mean over tests 0.498; members available 948, holdout 1000 (median)
+  DCR       div  1  clean 0.523  diff +0.0187 CI [+0.0151,+0.0223]  equivalent within the margin  Holm eq 7.12e-06 shift 1
+  DCR       div  2  clean 0.631  diff +0.0255 CI [+0.0216,+0.0294]  inconclusive  Holm eq 0.239 shift 1
+  DCR       div  4  clean 0.841  diff +0.0219 CI [+0.0176,+0.0262]  equivalent within the margin  Holm eq 0.0131 shift 1
+  DCRDiff   div  1  clean 0.516  diff -0.0030 CI [-0.0065,+0.0006]  equivalent within the margin  Holm eq 1.79e-26 shift 1
+  DCRDiff   div  2  clean 0.595  diff +0.0042 CI [+0.0008,+0.0076]  equivalent within the margin  Holm eq 5.34e-21 shift 1
+  DCRDiff   div  4  clean 0.750  diff +0.0090 CI [+0.0053,+0.0128]  equivalent within the margin  Holm eq 6.81e-14 shift 1
+
+P5_sym: records-only baseline 0.494 (diff -0.006, 90% CI [-0.011,-0.002]); placebo mean over tests 0.502; members available 948, holdout 949 (median)
+  DCR       div  1  clean 0.523  diff +0.0019 CI [-0.0018,+0.0055]  equivalent within the margin  Holm eq 2.75e-21 shift 1
+  DCR       div  2  clean 0.631  diff +0.0108 CI [+0.0065,+0.0150]  equivalent within the margin  Holm eq 2.71e-10 shift 1
+  DCR       div  4  clean 0.841  diff +0.0170 CI [+0.0126,+0.0214]  equivalent within the margin  Holm eq 2.68e-05 shift 1
+  DCRDiff   div  1  clean 0.516  diff +0.0014 CI [-0.0023,+0.0051]  equivalent within the margin  Holm eq 2.65e-21 shift 1
+  DCRDiff   div  2  clean 0.595  diff +0.0064 CI [+0.0025,+0.0103]  equivalent within the margin  Holm eq 1.44e-15 shift 1
+  DCRDiff   div  4  clean 0.750  diff +0.0111 CI [+0.0069,+0.0153]  equivalent within the margin  Holm eq 2.71e-10 shift 1
+
+P6_asym: records-only baseline 0.531 (diff +0.031, 90% CI [+0.026,+0.036]); placebo mean over tests 0.501; members available 556, holdout 1000 (median)
+  DCR       div  1  clean 0.523  diff +0.0234 CI [+0.0200,+0.0269]  equivalent within the margin  Holm eq 0.0131 shift 1
+  DCR       div  2  clean 0.631  diff +0.0220 CI [+0.0178,+0.0262]  equivalent within the margin  Holm eq 0.0131 shift 1
+  DCR       div  4  clean 0.841  diff +0.0097 CI [+0.0048,+0.0146]  equivalent within the margin  Holm eq 5.2e-09 shift 1
+  DCRDiff   div  1  clean 0.516  diff -0.0039 CI [-0.0076,-0.0003]  equivalent within the margin  Holm eq 1.71e-26 shift 1
+  DCRDiff   div  2  clean 0.595  diff +0.0002 CI [-0.0037,+0.0041]  equivalent within the margin  Holm eq 2.65e-21 shift 1
+  DCRDiff   div  4  clean 0.750  diff +0.0017 CI [-0.0026,+0.0059]  equivalent within the margin  Holm eq 8.81e-18 shift 1
+
+P6_sym: records-only baseline 0.500 (diff -0.000, 90% CI [-0.005,+0.005]); placebo mean over tests 0.502; members available 556, holdout 557 (median)
+  DCR       div  1  clean 0.523  diff +0.0004 CI [-0.0033,+0.0041]  equivalent within the margin  Holm eq 3.4e-22 shift 1
+  DCR       div  2  clean 0.631  diff -0.0016 CI [-0.0057,+0.0025]  equivalent within the margin  Holm eq 2.07e-21 shift 1
+  DCR       div  4  clean 0.841  diff -0.0073 CI [-0.0124,-0.0023]  equivalent within the margin  Holm eq 4.02e-10 shift 1
+  DCRDiff   div  1  clean 0.516  diff +0.0012 CI [-0.0026,+0.0049]  equivalent within the margin  Holm eq 2.47e-21 shift 1
+  DCRDiff   div  2  clean 0.595  diff -0.0022 CI [-0.0060,+0.0017]  equivalent within the margin  Holm eq 1.71e-23 shift 1
+  DCRDiff   div  4  clean 0.750  diff -0.0063 CI [-0.0111,-0.0014]  equivalent within the margin  Holm eq 2.15e-11 shift 1
+
+DANGER TABLE (descriptive): largest absolute mean shift in AUC over the tested attacks and divisors, and the records-only shift. Sorted by distance-attack shift.
+  P4b_asym   max |shift| 0.373 (DCR, div 4, -0.373)  records-only shift +0.039  tests with SHIFT beyond margin 5/6
+  P4b_sym    max |shift| 0.030 (DCRDiff, div 4, -0.030)  records-only shift +0.001  tests with SHIFT beyond margin 0/6
+  P4a_asym   max |shift| 0.029 (DCRDiff, div 2, +0.029)  records-only shift +0.401  tests with SHIFT beyond margin 0/6
+  P5_asym    max |shift| 0.026 (DCR, div 2, +0.026)  records-only shift +0.010  tests with SHIFT beyond margin 0/6
+  P6_asym    max |shift| 0.023 (DCR, div 1, +0.023)  records-only shift +0.031  tests with SHIFT beyond margin 0/6
+  P5_sym     max |shift| 0.017 (DCR, div 4, +0.017)  records-only shift -0.006  tests with SHIFT beyond margin 0/6
+  P6_sym     max |shift| 0.007 (DCR, div 4, -0.007)  records-only shift -0.000  tests with SHIFT beyond margin 0/6
+  P2_sym     max |shift| 0.004 (DCR, div 4, -0.004)  records-only shift +0.002  tests with SHIFT beyond margin 0/6
+  P2_asym    max |shift| 0.004 (DCR, div 4, -0.004)  records-only shift +0.002  tests with SHIFT beyond margin 0/6
+  P4a_sym    max |shift| 0.000 (DCR, div 1, +0.000)  records-only shift +0.000  tests with SHIFT beyond margin 0/6
+
+========================================================================
+CELL mimic_pat (Laplace-perturbed records, NOT epsilon-DP)
+worlds completed: 100 (minimum 50)
+common member count per world: min 215 median 242
+clean arm records-only mean 0.500 PASS
+DCR       positive control (divisor 100) 1.000 PASS | clean placebo means 0.498-0.500 PASS | clean AUC by divisor {'1': 0.528, '2': 0.679, '4': 0.929}
+DCRDiff   positive control (divisor 100) 0.993 PASS | clean placebo means 0.502-0.504 PASS | clean AUC by divisor {'1': 0.536, '2': 0.66, '4': 0.869}
+KDEratio  positive control (divisor 100) 0.919 PASS | clean placebo means 0.501-0.503 PASS | clean AUC by divisor {'1': 0.549, '2': 0.683, '4': 0.842}
+informative attacks: ['DCR', 'DCRDiff', 'KDEratio']
+
+Tests: 108 (Holm over these, separately for equivalence and for shift). Margin +/-0.03, 90% CI of the paired mean difference, arm minus clean, n=100
+
+P1_asym: records-only baseline 0.495 (diff -0.005, 90% CI [-0.012,+0.002]); placebo mean over tests 0.500; members available 732, holdout 732 (median)
+  DCR       div  1  clean 0.528  diff +0.0052 CI [-0.0003,+0.0108]  equivalent within the margin  Holm eq 1.39e-09 shift 1
+  DCR       div  2  clean 0.679  diff +0.0031 CI [-0.0050,+0.0112]  equivalent within the margin  Holm eq 7.19e-06 shift 1
+  DCR       div  4  clean 0.929  diff -0.0035 CI [-0.0103,+0.0033]  equivalent within the margin  Holm eq 1.05e-07 shift 1
+  DCRDiff   div  1  clean 0.536  diff -0.0014 CI [-0.0071,+0.0043]  equivalent within the margin  Holm eq 1.7e-11 shift 1
+  DCRDiff   div  2  clean 0.660  diff -0.0037 CI [-0.0105,+0.0030]  equivalent within the margin  Holm eq 1.19e-07 shift 1
+  DCRDiff   div  4  clean 0.869  diff -0.0039 CI [-0.0103,+0.0024]  equivalent within the margin  Holm eq 2.8e-08 shift 1
+  KDEratio  div  1  clean 0.549  diff -0.0026 CI [-0.0080,+0.0027]  equivalent within the margin  Holm eq 1.16e-11 shift 1
+  KDEratio  div  2  clean 0.683  diff -0.0060 CI [-0.0134,+0.0013]  equivalent within the margin  Holm eq 9.58e-06 shift 1
+  KDEratio  div  4  clean 0.842  diff -0.0037 CI [-0.0107,+0.0034]  equivalent within the margin  Holm eq 3.53e-07 shift 1
+
+P1_sym: records-only baseline 0.497 (diff -0.003, 90% CI [-0.011,+0.005]); placebo mean over tests 0.497; members available 732, holdout 731 (median)
+  DCR       div  1  clean 0.528  diff +0.0069 CI [+0.0015,+0.0123]  equivalent within the margin  Holm eq 6.09e-09 shift 1
+  DCR       div  2  clean 0.679  diff +0.0030 CI [-0.0052,+0.0112]  equivalent within the margin  Holm eq 7.77e-06 shift 1
+  DCR       div  4  clean 0.929  diff -0.0036 CI [-0.0104,+0.0032]  equivalent within the margin  Holm eq 1.26e-07 shift 1
+  DCRDiff   div  1  clean 0.536  diff -0.0049 CI [-0.0102,+0.0004]  equivalent within the margin  Holm eq 1.67e-10 shift 1
+  DCRDiff   div  2  clean 0.660  diff -0.0092 CI [-0.0160,-0.0024]  equivalent within the margin  Holm eq 3.48e-05 shift 1
+  DCRDiff   div  4  clean 0.869  diff -0.0060 CI [-0.0126,+0.0005]  equivalent within the margin  Holm eq 6.36e-07 shift 1
+  KDEratio  div  1  clean 0.549  diff -0.0027 CI [-0.0083,+0.0030]  equivalent within the margin  Holm eq 6.87e-11 shift 1
+  KDEratio  div  2  clean 0.683  diff -0.0092 CI [-0.0164,-0.0020]  equivalent within the margin  Holm eq 9.2e-05 shift 1
+  KDEratio  div  4  clean 0.842  diff -0.0078 CI [-0.0149,-0.0007]  equivalent within the margin  Holm eq 1.96e-05 shift 1
+
+P2_asym: records-only baseline 0.496 (diff -0.004, 90% CI [-0.011,+0.004]); placebo mean over tests 0.500; members available 439, holdout 732 (median)
+  DCR       div  1  clean 0.528  diff +0.0019 CI [-0.0038,+0.0076]  equivalent within the margin  Holm eq 4.48e-11 shift 1
+  DCR       div  2  clean 0.679  diff +0.0003 CI [-0.0079,+0.0085]  equivalent within the margin  Holm eq 8.49e-07 shift 1
+  DCR       div  4  clean 0.929  diff -0.0075 CI [-0.0161,+0.0010]  equivalent within the margin  Holm eq 0.00047 shift 1
+  DCRDiff   div  1  clean 0.536  diff -0.0016 CI [-0.0070,+0.0038]  equivalent within the margin  Holm eq 2.68e-12 shift 1
+  DCRDiff   div  2  clean 0.660  diff -0.0060 CI [-0.0130,+0.0011]  equivalent within the margin  Holm eq 3.31e-06 shift 1
+  DCRDiff   div  4  clean 0.869  diff -0.0085 CI [-0.0169,-0.0001]  equivalent within the margin  Holm eq 0.00061 shift 1
+  KDEratio  div  1  clean 0.549  diff -0.0041 CI [-0.0096,+0.0015]  equivalent within the margin  Holm eq 3.68e-10 shift 1
+  KDEratio  div  2  clean 0.683  diff -0.0075 CI [-0.0146,-0.0004]  equivalent within the margin  Holm eq 1.66e-05 shift 1
+  KDEratio  div  4  clean 0.842  diff -0.0077 CI [-0.0157,+0.0004]  equivalent within the margin  Holm eq 0.000207 shift 1
+
+P2_sym: records-only baseline 0.504 (diff +0.004, 90% CI [-0.004,+0.011]); placebo mean over tests 0.502; members available 439, holdout 439 (median)
+  DCR       div  1  clean 0.528  diff +0.0018 CI [-0.0039,+0.0075]  equivalent within the margin  Holm eq 3.38e-11 shift 1
+  DCR       div  2  clean 0.679  diff +0.0003 CI [-0.0079,+0.0084]  equivalent within the margin  Holm eq 6.86e-07 shift 1
+  DCR       div  4  clean 0.929  diff -0.0074 CI [-0.0162,+0.0014]  equivalent within the margin  Holm eq 0.000608 shift 1
+  DCRDiff   div  1  clean 0.536  diff -0.0064 CI [-0.0117,-0.0011]  equivalent within the margin  Holm eq 1.72e-09 shift 1
+  DCRDiff   div  2  clean 0.660  diff -0.0103 CI [-0.0175,-0.0031]  equivalent within the margin  Holm eq 0.000263 shift 1
+  DCRDiff   div  4  clean 0.869  diff -0.0093 CI [-0.0176,-0.0010]  equivalent within the margin  Holm eq 0.000803 shift 1
+  KDEratio  div  1  clean 0.549  diff -0.0065 CI [-0.0120,-0.0010]  equivalent within the margin  Holm eq 6.27e-09 shift 1
+  KDEratio  div  2  clean 0.683  diff -0.0115 CI [-0.0192,-0.0039]  equivalent within the margin  Holm eq 0.00126 shift 1
+  KDEratio  div  4  clean 0.842  diff -0.0081 CI [-0.0162,+0.0000]  equivalent within the margin  Holm eq 0.000319 shift 1
+
+P4a_asym: records-only baseline 0.839 (diff +0.339, 90% CI [+0.334,+0.345]); placebo mean over tests 0.500; members available 731, holdout 732 (median)
+  DCR       div  1  clean 0.528  diff +0.0084 CI [+0.0057,+0.0111]  equivalent within the margin  Holm eq 1.27e-21 shift 1
+  DCR       div  2  clean 0.679  diff +0.0141 CI [+0.0127,+0.0155]  equivalent within the margin  Holm eq 5.88e-33 shift 1
+  DCR       div  4  clean 0.929  diff +0.0079 CI [+0.0073,+0.0086]  equivalent within the margin  Holm eq 1.33e-75 shift 1
+  DCRDiff   div  1  clean 0.536  diff +0.0337 CI [+0.0307,+0.0367]  inconclusive  Holm eq 1 shift 1
+  DCRDiff   div  2  clean 0.660  diff +0.0366 CI [+0.0341,+0.0390]  SHIFT beyond the margin (up)  Holm eq 1 shift 0.001
+  DCRDiff   div  4  clean 0.869  diff +0.0194 CI [+0.0181,+0.0207]  equivalent within the margin  Holm eq 7.95e-23 shift 1
+  KDEratio  div  1  clean 0.549  diff +0.0391 CI [+0.0354,+0.0428]  SHIFT beyond the margin (up)  Holm eq 1 shift 0.0051
+  KDEratio  div  2  clean 0.683  diff +0.0412 CI [+0.0385,+0.0440]  SHIFT beyond the margin (up)  Holm eq 1 shift 6.44e-08
+  KDEratio  div  4  clean 0.842  diff +0.0234 CI [+0.0218,+0.0249]  equivalent within the margin  Holm eq 7.94e-09 shift 1
+
+P4a_sym: records-only baseline 0.500 (diff +0.000, 90% CI [-0.000,+0.000]); placebo mean over tests 0.501; members available 731, holdout 732 (median)
+  DCR       div  1  clean 0.528  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCR       div  2  clean 0.679  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCR       div  4  clean 0.929  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCRDiff   div  1  clean 0.536  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCRDiff   div  2  clean 0.660  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  DCRDiff   div  4  clean 0.869  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  KDEratio  div  1  clean 0.549  diff +0.0000 CI [-0.0000,+0.0000]  equivalent within the margin  Holm eq 0 shift 1
+  KDEratio  div  2  clean 0.683  diff +0.0001 CI [-0.0000,+0.0002]  equivalent within the margin  Holm eq 3.51e-165 shift 1
+  KDEratio  div  4  clean 0.842  diff +0.0000 CI [-0.0001,+0.0001]  equivalent within the margin  Holm eq 4.92e-172 shift 1
+
+P4b_asym: records-only baseline 0.533 (diff +0.033, 90% CI [+0.030,+0.036]); placebo mean over tests 0.499; members available 731, holdout 732 (median)
+  DCR       div  1  clean 0.528  diff -0.0571 CI [-0.0646,-0.0496]  SHIFT beyond the margin (down)  Holm eq 1 shift 1.45e-06
+  DCR       div  2  clean 0.679  diff -0.2080 CI [-0.2161,-0.1998]  SHIFT beyond the margin (down)  Holm eq 1 shift 2.06e-57
+  DCR       div  4  clean 0.929  diff -0.4570 CI [-0.4640,-0.4501]  SHIFT beyond the margin (down)  Holm eq 1 shift 2.68e-100
+  DCRDiff   div  1  clean 0.536  diff +0.0075 CI [+0.0029,+0.0122]  equivalent within the margin  Holm eq 7.4e-11 shift 1
+  DCRDiff   div  2  clean 0.660  diff -0.1154 CI [-0.1212,-0.1095]  SHIFT beyond the margin (down)  Holm eq 1 shift 1.1e-41
+  DCRDiff   div  4  clean 0.869  diff -0.3249 CI [-0.3305,-0.3192]  SHIFT beyond the margin (down)  Holm eq 1 shift 3.56e-93
+  KDEratio  div  1  clean 0.549  diff -0.0119 CI [-0.0181,-0.0057]  equivalent within the margin  Holm eq 8.56e-05 shift 1
+  KDEratio  div  2  clean 0.683  diff -0.1405 CI [-0.1471,-0.1339]  SHIFT beyond the margin (down)  Holm eq 1 shift 7.11e-47
+  KDEratio  div  4  clean 0.842  diff -0.3000 CI [-0.3066,-0.2934]  SHIFT beyond the margin (down)  Holm eq 1 shift 3.91e-83
+
+P4b_sym: records-only baseline 0.499 (diff -0.001, 90% CI [-0.003,+0.002]); placebo mean over tests 0.500; members available 731, holdout 732 (median)
+  DCR       div  1  clean 0.528  diff +0.0014 CI [-0.0011,+0.0039]  equivalent within the margin  Holm eq 6.3e-33 shift 1
+  DCR       div  2  clean 0.679  diff +0.0050 CI [+0.0024,+0.0075]  equivalent within the margin  Holm eq 5.98e-28 shift 1
+  DCR       div  4  clean 0.929  diff -0.0007 CI [-0.0020,+0.0006]  equivalent within the margin  Holm eq 5.3e-61 shift 1
+  DCRDiff   div  1  clean 0.536  diff -0.0015 CI [-0.0038,+0.0008]  equivalent within the margin  Holm eq 6.37e-39 shift 1
+  DCRDiff   div  2  clean 0.660  diff +0.0020 CI [-0.0002,+0.0042]  equivalent within the margin  Holm eq 8.64e-37 shift 1
+  DCRDiff   div  4  clean 0.869  diff -0.0034 CI [-0.0050,-0.0019]  equivalent within the margin  Holm eq 2.39e-56 shift 1
+  KDEratio  div  1  clean 0.549  diff -0.0009 CI [-0.0034,+0.0017]  equivalent within the margin  Holm eq 3.12e-35 shift 1
+  KDEratio  div  2  clean 0.683  diff +0.0034 CI [+0.0010,+0.0057]  equivalent within the margin  Holm eq 6.83e-33 shift 1
+  KDEratio  div  4  clean 0.842  diff -0.0023 CI [-0.0040,-0.0005]  equivalent within the margin  Holm eq 1.9e-50 shift 1
+
+P5_asym: records-only baseline 0.513 (diff +0.013, 90% CI [+0.005,+0.021]); placebo mean over tests 0.500; members available 639, holdout 732 (median)
+  DCR       div  1  clean 0.528  diff +0.0406 CI [+0.0349,+0.0463]  inconclusive  Holm eq 1 shift 0.12
+  DCR       div  2  clean 0.679  diff +0.0530 CI [+0.0458,+0.0603]  SHIFT beyond the margin (up)  Holm eq 1 shift 4.23e-05
+  DCR       div  4  clean 0.929  diff +0.0240 CI [+0.0189,+0.0292]  inconclusive  Holm eq 0.509 shift 1
+  DCRDiff   div  1  clean 0.536  diff -0.0098 CI [-0.0153,-0.0042]  equivalent within the margin  Holm eq 6.87e-07 shift 1
+  DCRDiff   div  2  clean 0.660  diff +0.0074 CI [+0.0017,+0.0131]  equivalent within the margin  Holm eq 7.24e-08 shift 1
+  DCRDiff   div  4  clean 0.869  diff +0.0171 CI [+0.0114,+0.0227]  equivalent within the margin  Holm eq 0.00247 shift 1
+  KDEratio  div  1  clean 0.549  diff -0.0032 CI [-0.0090,+0.0026]  equivalent within the margin  Holm eq 4.41e-10 shift 1
+  KDEratio  div  2  clean 0.683  diff +0.0064 CI [+0.0006,+0.0123]  equivalent within the margin  Holm eq 4.42e-08 shift 1
+  KDEratio  div  4  clean 0.842  diff +0.0084 CI [+0.0024,+0.0145]  equivalent within the margin  Holm eq 1.25e-06 shift 1
+
+P5_sym: records-only baseline 0.495 (diff -0.005, 90% CI [-0.012,+0.002]); placebo mean over tests 0.501; members available 639, holdout 640 (median)
+  DCR       div  1  clean 0.528  diff +0.0094 CI [+0.0031,+0.0157]  equivalent within the margin  Holm eq 8.97e-06 shift 1
+  DCR       div  2  clean 0.679  diff +0.0368 CI [+0.0293,+0.0443]  inconclusive  Holm eq 1 shift 1
+  DCR       div  4  clean 0.929  diff +0.0253 CI [+0.0203,+0.0304]  inconclusive  Holm eq 1 shift 1
+  DCRDiff   div  1  clean 0.536  diff -0.0014 CI [-0.0071,+0.0043]  equivalent within the margin  Holm eq 1.52e-11 shift 1
+  DCRDiff   div  2  clean 0.660  diff +0.0170 CI [+0.0109,+0.0231]  equivalent within the margin  Holm eq 0.00572 shift 1
+  DCRDiff   div  4  clean 0.869  diff +0.0288 CI [+0.0231,+0.0345]  inconclusive  Holm eq 1 shift 1
+  KDEratio  div  1  clean 0.549  diff -0.0012 CI [-0.0073,+0.0050]  equivalent within the margin  Holm eq 3.29e-10 shift 1
+  KDEratio  div  2  clean 0.683  diff +0.0148 CI [+0.0084,+0.0212]  equivalent within the margin  Holm eq 0.0016 shift 1
+  KDEratio  div  4  clean 0.842  diff +0.0288 CI [+0.0225,+0.0350]  inconclusive  Holm eq 1 shift 1
+
+P6_asym: records-only baseline 0.709 (diff +0.209, 90% CI [+0.202,+0.216]); placebo mean over tests 0.498; members available 249, holdout 732 (median)
+  DCR       div  1  clean 0.528  diff -0.0008 CI [-0.0072,+0.0057]  equivalent within the margin  Holm eq 8.15e-10 shift 1
+  DCR       div  2  clean 0.679  diff -0.0087 CI [-0.0168,-0.0007]  equivalent within the margin  Holm eq 0.000414 shift 1
+  DCR       div  4  clean 0.929  diff -0.0111 CI [-0.0185,-0.0038]  equivalent within the margin  Holm eq 0.000608 shift 1
+  DCRDiff   div  1  clean 0.536  diff +0.0131 CI [+0.0068,+0.0194]  equivalent within the margin  Holm eq 0.000327 shift 1
+  DCRDiff   div  2  clean 0.660  diff +0.0041 CI [-0.0025,+0.0107]  equivalent within the margin  Holm eq 9.9e-08 shift 1
+  DCRDiff   div  4  clean 0.869  diff -0.0051 CI [-0.0122,+0.0020]  equivalent within the margin  Holm eq 1.77e-06 shift 1
+  KDEratio  div  1  clean 0.549  diff +0.0144 CI [+0.0083,+0.0204]  equivalent within the margin  Holm eq 0.000534 shift 1
+  KDEratio  div  2  clean 0.683  diff +0.0050 CI [-0.0019,+0.0120]  equivalent within the margin  Holm eq 9.92e-07 shift 1
+  KDEratio  div  4  clean 0.842  diff -0.0021 CI [-0.0094,+0.0053]  equivalent within the margin  Holm eq 2.67e-07 shift 1
+
+P6_sym: records-only baseline 0.495 (diff -0.005, 90% CI [-0.013,+0.003]); placebo mean over tests 0.497; members available 249, holdout 251 (median)
+  DCR       div  1  clean 0.528  diff +0.0042 CI [-0.0015,+0.0099]  equivalent within the margin  Holm eq 9.87e-10 shift 1
+  DCR       div  2  clean 0.679  diff -0.0028 CI [-0.0103,+0.0048]  equivalent within the margin  Holm eq 8.68e-07 shift 1
+  DCR       div  4  clean 0.929  diff -0.0074 CI [-0.0146,-0.0002]  equivalent within the margin  Holm eq 1.96e-05 shift 1
+  DCRDiff   div  1  clean 0.536  diff -0.0008 CI [-0.0065,+0.0049]  equivalent within the margin  Holm eq 6.99e-12 shift 1
+  DCRDiff   div  2  clean 0.660  diff -0.0078 CI [-0.0143,-0.0013]  equivalent within the margin  Holm eq 2.87e-06 shift 1
+  DCRDiff   div  4  clean 0.869  diff -0.0077 CI [-0.0145,-0.0009]  equivalent within the margin  Holm eq 7.77e-06 shift 1
+  KDEratio  div  1  clean 0.549  diff -0.0011 CI [-0.0068,+0.0045]  equivalent within the margin  Holm eq 8.43e-12 shift 1
+  KDEratio  div  2  clean 0.683  diff -0.0091 CI [-0.0160,-0.0023]  equivalent within the margin  Holm eq 3.48e-05 shift 1
+  KDEratio  div  4  clean 0.842  diff -0.0069 CI [-0.0143,+0.0004]  equivalent within the margin  Holm eq 1.96e-05 shift 1
+
+DANGER TABLE (descriptive): largest absolute mean shift in AUC over the tested attacks and divisors, and the records-only shift. Sorted by distance-attack shift.
+  P4b_asym   max |shift| 0.457 (DCR, div 4, -0.457)  records-only shift +0.033  tests with SHIFT beyond margin 7/9
+  P5_asym    max |shift| 0.053 (DCR, div 2, +0.053)  records-only shift +0.013  tests with SHIFT beyond margin 1/9
+  P4a_asym   max |shift| 0.041 (KDEratio, div 2, +0.041)  records-only shift +0.339  tests with SHIFT beyond margin 3/9
+  P5_sym     max |shift| 0.037 (DCR, div 2, +0.037)  records-only shift -0.005  tests with SHIFT beyond margin 0/9
+  P6_asym    max |shift| 0.014 (KDEratio, div 1, +0.014)  records-only shift +0.209  tests with SHIFT beyond margin 0/9
+  P2_sym     max |shift| 0.012 (KDEratio, div 2, -0.012)  records-only shift +0.004  tests with SHIFT beyond margin 0/9
+  P1_sym     max |shift| 0.009 (DCRDiff, div 2, -0.009)  records-only shift -0.003  tests with SHIFT beyond margin 0/9
+  P6_sym     max |shift| 0.009 (KDEratio, div 2, -0.009)  records-only shift -0.005  tests with SHIFT beyond margin 0/9
+  P2_asym    max |shift| 0.009 (DCRDiff, div 4, -0.009)  records-only shift -0.004  tests with SHIFT beyond margin 0/9
+  P1_asym    max |shift| 0.006 (KDEratio, div 2, -0.006)  records-only shift -0.005  tests with SHIFT beyond margin 0/9
+  P4b_sym    max |shift| 0.005 (DCR, div 2, +0.005)  records-only shift -0.001  tests with SHIFT beyond margin 0/9
+  P4a_sym    max |shift| 0.000 (KDEratio, div 2, +0.000)  records-only shift +0.000  tests with SHIFT beyond margin 0/9
