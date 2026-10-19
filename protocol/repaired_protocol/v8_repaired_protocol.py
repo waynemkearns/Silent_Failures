@@ -1,5 +1,5 @@
 """
-V8 repaired protocol (post-hoc, written 11 Oct 2026 after the diagnostic in ../mia_check).
+V8 repaired protocol (post-hoc, written after the diagnostic in ../mia_check).
 
 THREAT MODEL. The attacker holds (a) the released synthetic records, (b) an auxiliary reference set of real
 records from the same population that are neither members nor non-members, and (c) a candidate record whose
@@ -9,7 +9,7 @@ Preprocessing boundary: the scaler is fitted on the reference set only. Categori
             levels unseen there map to code -1. This is the attacker's own information.
  "source"   (sensitivity): levels fitted on the whole credentialed canonical. This is NOT a public vocabulary; it is
             reported only to show how much the results depend on the choice.
-v2 (11 Oct 2026, after external review): one feasible matched member count per world for clean_matched and contaminated;
+v2 (after external review): one feasible matched member count per world for clean_matched and contaminated;
 one shared reference count per world for all arms; assertions; sizes saved.
 
 DESIGN. Patient-disjoint: one random encounter per patient, members / non-members / reference drawn from disjoint

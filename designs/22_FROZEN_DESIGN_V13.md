@@ -1,6 +1,6 @@
 # 22 Frozen design V13: what each defect pattern does to the audit, one pattern at a time
 
-Written 14 Oct 2026, before any V13 world is run. It is an addendum to `17_FROZEN_DESIGN_V10.md` and `21_FROZEN_DESIGN_V12.md`. `RUN_V13.py` checks the hashes below, refuses to start while `RUN_V12.py` is running, commits this file and the V13 scripts to git, and writes the commit hash and time to `_drafts/v13/FREEZE_RECORD_V13.txt` before the first job. It does not start until the author starts it.
+Written before any V13 world is run. It is an addendum to `17_FROZEN_DESIGN_V10.md` and `21_FROZEN_DESIGN_V12.md`. `RUN_V13.py` checks the hashes below, refuses to start while `RUN_V12.py` is running, commits this file and the V13 scripts to git, and writes the commit hash and time to `_drafts/v13/FREEZE_RECORD_V13.txt` before the first job. It does not start until the author starts it.
 
 ## Question
 Reviewer D asked which defect pattern is the most dangerous for an empirical privacy evaluation. V12 measured one pattern (the P6 mismatch). V13 measures the others that can be injected into the repaired protocol: P1, P2, P4 and P5, with P6 repeated in the same table. Each is injected into an otherwise clean pipeline, once so that only the members are affected (asymmetric, the V8 situation) and once so that members, holdout and reference are all affected (symmetric, what a shared pipeline does). The outcome is the shift in attack AUC and in the records-only baseline against the clean pipeline.

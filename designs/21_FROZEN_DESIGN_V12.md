@@ -1,6 +1,6 @@
 # 21 Frozen design V12: asymmetric preparation, scaler isolation and an MST audit-failure arm
 
-Written 13 Oct 2026, before any V12 world is run. It is an addendum to `17_FROZEN_DESIGN_V10.md` and `18_FROZEN_DESIGN_V11.md`. `RUN_V12.py` checks the hashes below, waits until `RUN_V11.py` has finished, commits this file and the V12 scripts to git, and writes the commit hash and time to `_drafts/v12/FREEZE_RECORD_V12.txt` before the first job.
+Written before any V12 world is run. It is an addendum to `17_FROZEN_DESIGN_V10.md` and `18_FROZEN_DESIGN_V11.md`. `RUN_V12.py` checks the hashes below, waits until `RUN_V11.py` has finished, commits this file and the V12 scripts to git, and writes the commit hash and time to `_drafts/v12/FREEZE_RECORD_V12.txt` before the first job.
 
 ## Question
 Our original experiment was invalidated because members, holdout and reference were prepared differently. V12 measures what that mismatch does to attack AUC under the repaired protocol, on a Laplace-perturbed release and on a differentially private synthesizer (MST). It also repeats the scaler isolation for the two other attacks that pass the controls.

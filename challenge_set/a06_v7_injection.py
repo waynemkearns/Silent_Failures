@@ -55,8 +55,6 @@ Dataset: synthetic MIMIC-like canonical, n=1,998 records, 9 columns
 
 Run:  python v7_out_of_taxonomy_injection.py
 Output: v7_results.json (same directory)
-
-Date:   2026-06-15
 """
 
 import json

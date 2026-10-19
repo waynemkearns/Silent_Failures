@@ -1,7 +1,6 @@
 """
 Verdict-Flip Experiment: P2+P6 Cascade Produces False-Negative Privacy Verdict
 ===============================================================================
-Pre-registration date:  2026-07-22
 Author:                 [omitted for review]
 Artefact tag:           A09
 
@@ -206,7 +205,7 @@ def compute_mia_auc(train_real: np.ndarray, synthetic: np.ndarray,
 def main():
     print("=" * 72)
     print("Verdict-Flip Experiment — P2+P6 Cascade")
-    print("Pre-registration: 2026-07-22  |  Artefact: A09")
+    print("Artefact: A09")
     print("=" * 72)
 
     # ── 1. Load and verify canonical ──────────────────────────────────────────
@@ -448,7 +447,6 @@ def main():
     with open(md_path, "w", encoding="utf-8") as f:
         f.write(f"""# Verdict-Flip Experiment — P2+P6 Cascade
 **Artefact tag:** A09  
-**Date:** {datetime.utcnow().strftime('%Y-%m-%d')}  
 **Substrate:** corrected MIMIC-IV v3.1 (SHA 7558c398…, verified={sha_ok})
 
 ## Configuration

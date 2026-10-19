@@ -1,6 +1,6 @@
 # 24 Frozen design V14D: a PrivBayes-style audit-failure check (Part D)
 
-Written 14 Oct 2026, before any V14D world is run on the PC. It is an addendum to `18_FROZEN_DESIGN_V11.md` and `23_FROZEN_DESIGN_V14.md`. It changes no V14 file. `RUN_V14D.py` checks the hashes below, refuses to start while `RUN_V12.py`, `RUN_V13.py` or `RUN_V14.py` is running, commits this file and the V14D scripts to git, and writes the commit hash and time to `_drafts/v14d/FREEZE_RECORD_V14D.txt` before the first job. It does not start until the author starts it.
+Written before any V14D world is run on the PC. It is an addendum to `18_FROZEN_DESIGN_V11.md` and `23_FROZEN_DESIGN_V14.md`. It changes no V14 file. `RUN_V14D.py` checks the hashes below, refuses to start while `RUN_V12.py`, `RUN_V13.py` or `RUN_V14.py` is running, commits this file and the V14D scripts to git, and writes the commit hash and time to `_drafts/v14d/FREEZE_RECORD_V14D.txt` before the first job. It does not start until the author starts it.
 
 ## Question
 Reviewer A asked for established DP synthesizers and named PrivBayes. V11 used MST. V14 adds MWEM and AIM. V14D repeats the V11 test with a PrivBayes-style synthesizer, on the same worlds and arms.

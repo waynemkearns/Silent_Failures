@@ -23,7 +23,7 @@ V6 — P4 unbounded (sentinel propagation distorting StandardScaler) [NEW]
 Run: python phase4_controlled_injection.py
 Output: prints detection report; saves phase4_results.json in same directory.
 
-Date: 2026-06-02 | Phase 4 Controlled Injection
+Phase 4 Controlled Injection
 """
 
 import json

@@ -1,4 +1,4 @@
-# Note on package versions, V18 and V19 (written 18 Oct 2026, 22:20 local time, during the V18 world-0 smoke test)
+# Note on package versions, V18 and V19 (written during the V18 world-0 smoke test)
 
 The V18 environment report (`_drafts/v18/results/ENV_V18.txt`) shows versions that differ from the frozen design text:
 - ctgan 0.11.1 and rdt 1.19.0 were already installed in the user site-packages and took precedence over ctgan 0.12.1 and rdt 2.0.0 in `<LOCAL_PATH>`. This is how the job was designed to load packages (the E: folder is appended after site-packages), but the design text named 0.12.1 and 2.0.0.

@@ -1,6 +1,6 @@
 # 18 Frozen design V11: run settings for the two MST cells of V10
 
-Written 12 Oct 2026, before any V11 world is run. This is an addendum to 17_FROZEN_DESIGN_V10.md. RUN_V11.py commits this file and the V11 scripts to git before the first job and writes the commit hash and time to _drafts/v11/FREEZE_RECORD_V11.txt.
+Written before any V11 world is run. This is an addendum to 17_FROZEN_DESIGN_V10.md. RUN_V11.py commits this file and the V11 scripts to git before the first job and writes the commit hash and time to _drafts/v11/FREEZE_RECORD_V11.txt.
 
 ## Why V11 exists
 In the V10 run, the smoke test (world 0) of adult_mst and mimic_mst hit the 45-minute limit and both cells were dropped. The run left no log, so the cause was not recorded. A timing diagnostic was run afterwards on one MST fit (epsilon 10, 1,000 records, 10 bins per numeric column). This was done after the V10 outcome was known, and it is stated here for that reason.

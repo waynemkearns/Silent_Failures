@@ -1,6 +1,5 @@
 # Verdict-Flip Experiment — P2+P6 Cascade
 **Artefact tag:** A09  
-**Date:** 2026-07-22  
 **Substrate:** corrected MIMIC-IV v3.1 (SHA 7558c398…, verified=True)
 
 ## Configuration

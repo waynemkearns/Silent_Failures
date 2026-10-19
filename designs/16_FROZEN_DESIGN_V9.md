@@ -1,6 +1,6 @@
 # 16 Frozen design V9: powered test of contamination effect on measured membership vulnerability
 
-Written 11 Oct 2026, before any V9 world other than world 0 has been run. Status: margin CONFIRMED by the author at 22:47 local time on 11 Oct 2026. RUN_ME.py commits this file and the four scripts to git before any further world is run, and writes the commit hash and time to _drafts/overnight/FREEZE_RECORD.txt. World 0 was run once before the freeze as a smoke test and is kept in the results.
+Written before any V9 world other than world 0 has been run. Status: margin CONFIRMED by the author. RUN_ME.py commits this file and the four scripts to git before any further world is run, and writes the commit hash and time to _drafts/overnight/FREEZE_RECORD.txt. World 0 was run once before the freeze as a smoke test and is kept in the results.
 
 ## Question
 Does P2 contamination (40% lab mask then unscoped dropna) change measured membership vulnerability, compared with a size-matched clean cohort, for Laplace-perturbed records at noise divisor 1?
