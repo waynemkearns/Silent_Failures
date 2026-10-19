@@ -1,6 +1,6 @@
 # 21 Frozen design V12: asymmetric preparation, scaler isolation and an MST audit-failure arm
 
-Written before any V12 world is run. It is an addendum to `17_FROZEN_DESIGN_V10.md` and `18_FROZEN_DESIGN_V11.md`. `RUN_V12.py` checks the hashes below, waits until `RUN_V11.py` has finished, commits this file and the V12 scripts to git, and writes the commit hash and time to `_drafts/v12/FREEZE_RECORD_V12.txt` before the first job.
+Written 13 Oct 2026, before any V12 world is run. It is an addendum to `17_FROZEN_DESIGN_V10.md` and `18_FROZEN_DESIGN_V11.md`. `RUN_V12.py` checks the hashes below, waits until `RUN_V11.py` has finished, commits this file and the V12 scripts to git, and writes the commit hash and time to `_drafts/v12/FREEZE_RECORD_V12.txt` before the first job.
 
 ## Question
 Our original experiment was invalidated because members, holdout and reference were prepared differently. V12 measures what that mismatch does to attack AUC under the repaired protocol, on a Laplace-perturbed release and on a differentially private synthesizer (MST). It also repeats the scaler isolation for the two other attacks that pass the controls.
@@ -29,7 +29,7 @@ During testing, on world 0 only: Adult, mismatched records-only baseline 0.539 a
 The records-only baseline is likely to rise under mismatch, more on MIMIC than on Adult. Whether the distance attacks rise by more than 0.03 at divisor 1 is open. I do not predict it. For Part C at epsilon 1 the MST release carries very little information about members, so any shift would come from the mismatch itself.
 
 ## Run settings
-Two workers, two threads each, temporary files on `E:\Temp`. Order: worlds 1 to 99 of the two Laplace cells, then worlds 1 to 49 of the two MST cells. No new job starts 9 hours after the queue starts. A job is stopped after 3 hours. A smoke test runs world 0 of each cell first, one at a time. An erroring cell is dropped and reported.
+Two workers, two threads each, temporary files on `<LOCAL_PATH>`. Order: worlds 1 to 99 of the two Laplace cells, then worlds 1 to 49 of the two MST cells. No new job starts 9 hours after the queue starts. A job is stopped after 3 hours. A smoke test runs world 0 of each cell first, one at a time. An erroring cell is dropped and reported.
 
 ## Known limits
 One dataset pair, one preparation mismatch (the one from our original experiment), one contamination rate (40%). A mismatch of this kind produces a member and non-member population difference by construction, so a rise in AUC shows that the audit cannot tell that difference from leakage, not that any attack is weak. The MST release is run on publicly binned data with the bin edges taken from the attacker's reference, which is a design choice that may not match deployed use. The Laplace release is not epsilon-DP. Part B repeats an exploratory finding and carries no verdict.

@@ -1,6 +1,6 @@
 # 17 Frozen design V10: contamination effect on measured membership vulnerability, extended to a second dataset and a DP synthesizer
 
-Written after the V9 result and before any V10 world is run. RUN_V10.py commits this file and the scripts to git before the first job and writes the commit hash and time to _drafts/v10/FREEZE_RECORD_V10.txt. V9 (16_FROZEN_DESIGN_V9.md) covers MIMIC-IV with Laplace-perturbed records and is not repeated.
+Written 12 Oct 2026, after the V9 result and before any V10 world is run. RUN_V10.py commits this file and the scripts to git before the first job and writes the commit hash and time to _drafts/v10/FREEZE_RECORD_V10.txt. V9 (16_FROZEN_DESIGN_V9.md) covers MIMIC-IV with Laplace-perturbed records and is not repeated.
 
 ## Question
 Does P2 contamination (random 40% mask of the masked columns, then unscoped dropna) change measured membership AUC compared with a size-matched clean cohort, (a) on a public second dataset with Laplace-perturbed records, and (b) when the release is a real DP synthesizer, on both datasets?

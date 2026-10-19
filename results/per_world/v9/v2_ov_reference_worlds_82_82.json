@@ -1,0 +1,169 @@
+{
+ "meta": {
+  "vocab": "reference",
+  "canonical_sha256_prefix": "7558c398",
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "scipy": "1.15.3",
+  "vendored": "synth-mia 0981eadb"
+ },
+ "results": [
+  {
+   "world": 82,
+   "arm": "clean_full",
+   "vocab": "reference",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 742,
+   "n_hold_retained": 724,
+   "n_ref_retained": 696,
+   "n_members": 724,
+   "n_ref": 240,
+   "records_only_oof": 0.46226744452245044,
+   "eps1": {
+    "DCR": 0.5015014041085437,
+    "DCRDiff": 0.5153822380269223,
+    "Classifier": 0.48765109428894116,
+    "KDEratio": 0.5080373767589512,
+    "LocalNeighborhood": 0.4993093922651934
+   },
+   "placebo_eps1": {
+    "DCR": 0.5051890967919173,
+    "DCRDiff": 0.498145660999359,
+    "Classifier": 0.4989087634687586,
+    "KDEratio": 0.5101340007936266,
+    "LocalNeighborhood": 0.49999999999999994
+   },
+   "dcr_release_to_members_eps1": 5.623767533654525,
+   "eps10": {
+    "DCR": 0.9939085345380178,
+    "DCRDiff": 0.9491182350966088,
+    "Classifier": 0.5060142013369555
+   },
+   "eps30": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9814279936509874,
+    "Classifier": 0.5054514132657734
+   },
+   "eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9850107597448184,
+    "Classifier": 0.5082205213516071,
+    "KDEratio": 0.8387850645584689,
+    "LocalNeighborhood": 0.6028480891914166
+   },
+   "placebo_eps100": {
+    "DCR": 0.4890952657122799,
+    "DCRDiff": 0.4643020664814871,
+    "Classifier": 0.5093518207624921,
+    "KDEratio": 0.4632566160984097,
+    "LocalNeighborhood": 0.4916783675711975
+   },
+   "dcr_release_to_members_eps100": 0.06478927054357422
+  },
+  {
+   "world": 82,
+   "arm": "clean_matched",
+   "vocab": "reference",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 243,
+   "n_hold_retained": 724,
+   "n_ref_retained": 696,
+   "n_members": 243,
+   "n_ref": 240,
+   "records_only_oof": 0.4774424630391709,
+   "eps1": {
+    "DCR": 0.5843960100933123,
+    "DCRDiff": 0.5668343240359701,
+    "Classifier": 0.4852326034310488,
+    "KDEratio": 0.592135345221765,
+    "LocalNeighborhood": 0.5
+   },
+   "placebo_eps1": {
+    "DCR": 0.48377843043507956,
+    "DCRDiff": 0.4792705416296701,
+    "Classifier": 0.4983607677071239,
+    "KDEratio": 0.5115087767229014,
+    "LocalNeighborhood": 0.5
+   },
+   "dcr_release_to_members_eps1": 4.850103362064648,
+   "eps10": {
+    "DCR": 0.9999153245609579,
+    "DCRDiff": 0.9839286016697997,
+    "Classifier": 0.5181882843062541
+   },
+   "eps30": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9913122999542753,
+    "Classifier": 0.529754949279412
+   },
+   "eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9921929245203136,
+    "Classifier": 0.5266388931226609,
+    "KDEratio": 0.9119375433961625,
+    "LocalNeighborhood": 0.7182255414994327
+   },
+   "placebo_eps100": {
+    "DCR": 0.512260091523803,
+    "DCRDiff": 0.5117819821050476,
+    "Classifier": 0.46595177925005116,
+    "KDEratio": 0.49620927532272385,
+    "LocalNeighborhood": 0.510791612594768
+   },
+   "dcr_release_to_members_eps100": 0.05420173701822519
+  },
+  {
+   "world": 82,
+   "arm": "contaminated",
+   "vocab": "reference",
+   "n_pool_prefilter": 1000,
+   "n_pool_retained": 243,
+   "n_hold_retained": 250,
+   "n_ref_retained": 240,
+   "n_members": 243,
+   "n_ref": 240,
+   "records_only_oof": 0.5129299395417365,
+   "eps1": {
+    "DCR": 0.48861115344883066,
+    "DCRDiff": 0.5279682975156226,
+    "Classifier": 0.47351352266761504,
+    "KDEratio": 0.5236837203000897,
+    "LocalNeighborhood": 0.49382716049382713
+   },
+   "placebo_eps1": {
+    "DCR": 0.5075472986817839,
+    "DCRDiff": 0.49655078205040637,
+    "Classifier": 0.4539648931083942,
+    "KDEratio": 0.4898572501878287,
+    "LocalNeighborhood": 0.4958677685950413
+   },
+   "dcr_release_to_members_eps1": 5.292830775234469,
+   "eps10": {
+    "DCR": 0.9999153245609578,
+    "DCRDiff": 0.9800674016494775,
+    "Classifier": 0.5503649511422717
+   },
+   "eps30": {
+    "DCR": 1.0,
+    "DCRDiff": 0.987993022743823,
+    "Classifier": 0.5610509915493912
+   },
+   "eps100": {
+    "DCR": 1.0,
+    "DCRDiff": 0.9890260631001372,
+    "Classifier": 0.593549425053769,
+    "KDEratio": 0.9301596978780335,
+    "LocalNeighborhood": 0.6970820843706075
+   },
+   "placebo_eps100": {
+    "DCR": 0.5210709650980124,
+    "DCRDiff": 0.5143774332354347,
+    "Classifier": 0.5053958062973841,
+    "KDEratio": 0.5246909364114474,
+    "LocalNeighborhood": 0.5194317328051363
+   },
+   "dcr_release_to_members_eps100": 0.059577904820071435
+  }
+ ]
+}

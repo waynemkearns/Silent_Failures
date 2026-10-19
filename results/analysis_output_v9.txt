@@ -1,0 +1,21 @@
+worlds finished: 100
+worlds completed: 100
+
+CONTROLS
+records-only means [0.497 0.503 0.495] PASS
+DCR                positive(eps100) min-arm mean 1.000 PASS | placebo means 0.496-0.504 PASS
+DCRDiff            positive(eps100) min-arm mean 0.985 PASS | placebo means 0.493-0.499 PASS
+KDEratio           positive(eps100) min-arm mean 0.838 PASS | placebo means 0.493-0.501 PASS
+Classifier         positive(eps100) min-arm mean 0.523 FAIL | placebo means 0.497-0.501 PASS
+LocalNeighborhood  positive(eps100) min-arm mean 0.610 FAIL | placebo means 0.497-0.505 PASS
+informative attacks (both controls pass): ['DCR', 'DCRDiff', 'KDEratio']
+
+EQUIVALENCE (contaminated minus clean_matched, eps 1, margin +/-0.03, n=100 paired worlds)
+DCR                diff +0.0025 90% CI [-0.0041,+0.0092] TOST p 0.0000 Holm p 0.0000 -> EQUIVALENT within margin; positive in 56/100
+DCRDiff            diff +0.0051 90% CI [-0.0008,+0.0109] TOST p 0.0000 Holm p 0.0000 -> EQUIVALENT within margin; positive in 54/100
+KDEratio           diff +0.0055 90% CI [-0.0002,+0.0113] TOST p 0.0000 Holm p 0.0000 -> EQUIVALENT within margin; positive in 57/100
+
+Secondary (descriptive): matched minus full at eps 1
+DCR                +0.0131 sd 0.0285
+DCRDiff            +0.0124 sd 0.0293
+KDEratio           +0.0186 sd 0.0309

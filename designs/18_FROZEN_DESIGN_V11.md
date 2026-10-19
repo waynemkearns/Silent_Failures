@@ -1,6 +1,6 @@
 # 18 Frozen design V11: run settings for the two MST cells of V10
 
-Written before any V11 world is run. This is an addendum to 17_FROZEN_DESIGN_V10.md. RUN_V11.py commits this file and the V11 scripts to git before the first job and writes the commit hash and time to _drafts/v11/FREEZE_RECORD_V11.txt.
+Written 12 Oct 2026, before any V11 world is run. This is an addendum to 17_FROZEN_DESIGN_V10.md. RUN_V11.py commits this file and the V11 scripts to git before the first job and writes the commit hash and time to _drafts/v11/FREEZE_RECORD_V11.txt.
 
 ## Why V11 exists
 In the V10 run, the smoke test (world 0) of adult_mst and mimic_mst hit the 45-minute limit and both cells were dropped. The run left no log, so the cause was not recorded. A timing diagnostic was run afterwards on one MST fit (epsilon 10, 1,000 records, 10 bins per numeric column). This was done after the V10 outcome was known, and it is stated here for that reason.
@@ -18,7 +18,7 @@ Run settings only. The question, the cells' data and contamination, the seeds, t
 - Smoke test: world 0 of each MST cell, one cell at a time, 3-hour limit each. An error or timeout drops the cell and is reported as dropped.
 - Main run: worlds 1 to 49 of both cells (target 50 worlds each, with world 0), 4 parallel workers, 2 threads each. A job is stopped after 3 hours.
 - Progress: each MST fit writes a line to _drafts/v10/results/progress_<cell>_w<world>.log, so a timeout leaves a record.
-- Temporary files go to E:\Temp.
+- Temporary files go to <LOCAL_PATH>
 - Stopping rule: no new job starts 10 hours after launch. Jobs already running are allowed to finish. An MST cell needs at least 30 completed worlds, as in V10, otherwise no equivalence claim is made for it.
 - The V10 drop notices for the two MST cells are renamed so the analysis does not report them. They are kept in the results folder.
 

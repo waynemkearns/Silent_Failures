@@ -1,0 +1,41 @@
+{
+  "experiment": "a09_attrition_breakdown",
+  "purpose": "Persist the Paper 1 \u00a73.5 substrate-attrition decomposition for the P2+P6 cascade.",
+  "source_canonical": "<path withheld>",
+  "source_sha256": "7558c398a8e576cc6e57f7309058351982f76d69eed117f38359823676f403e7",
+  "source_row_count": 545497,
+  "params": {
+    "seed_sample": 42,
+    "cap_rate": 0.4,
+    "lab_cols": [
+      "lab_creatinine",
+      "lab_glucose",
+      "lab_hematocrit",
+      "lab_hemoglobin",
+      "lab_platelet_count",
+      "lab_potassium",
+      "lab_sodium",
+      "lab_white_blood_cells"
+    ]
+  },
+  "attrition_table": {
+    "sampled_training_pool": 1000,
+    "already_incomplete_lab_nan": 260,
+    "newly_contaminated_by_p2": 297,
+    "removed_nonlab_nan": 192,
+    "medication_count_nan_among_nonlab": 192,
+    "p6_survivor_cohort": 251
+  },
+  "p2_mask_detail": {
+    "records_masked": 402,
+    "mask_fraction": 0.402,
+    "overlap_with_already_invalid": 105,
+    "previously_clean": 297
+  },
+  "cross_check": {
+    "clean_full_expected_740": 740,
+    "removed_by_lab_nan_post": 557,
+    "sum_removed": 749,
+    "pool_minus_removed": 251
+  }
+}

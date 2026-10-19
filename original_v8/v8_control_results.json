@@ -1,0 +1,173 @@
+{
+  "experiment": "v8_control_size_matched",
+  "date_run": "2026-07-22T16:29:36.034253",
+  "arm_sizes": {
+    "clean_full": 740,
+    "clean_matched": 251,
+    "contaminated": 251
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "dcr_clean_full": 4.786999098938286,
+      "dcr_clean_matched": 4.967832583592435,
+      "dcr_contaminated": 4.879473781919811,
+      "mia_clean_full": 0.5555655522366574,
+      "mia_clean_matched": 0.8977830356337633,
+      "mia_contaminated": 0.8794727879427695,
+      "delta_size_effect": 0.1808334846541495,
+      "delta_selection_effect": -0.08835880167262467,
+      "delta_total": 0.09247468298152484
+    },
+    {
+      "seed": 1,
+      "dcr_clean_full": 4.694552390897182,
+      "dcr_clean_matched": 4.938541364164125,
+      "dcr_contaminated": 4.916837631120493,
+      "mia_clean_full": 0.5567018749775074,
+      "mia_clean_matched": 0.909947427334603,
+      "mia_contaminated": 0.8798733163219292,
+      "delta_size_effect": 0.24398897326694335,
+      "delta_selection_effect": -0.02170373304363249,
+      "delta_total": 0.22228524022331086
+    },
+    {
+      "seed": 2,
+      "dcr_clean_full": 4.82470056946665,
+      "dcr_clean_matched": 4.9683890953191945,
+      "dcr_contaminated": 4.872545922799087,
+      "mia_clean_full": 0.5483643430381113,
+      "mia_clean_matched": 0.9022047628394545,
+      "mia_contaminated": 0.936793438761598,
+      "delta_size_effect": 0.14368852585254466,
+      "delta_selection_effect": -0.09584317252010788,
+      "delta_total": 0.04784535333243678
+    },
+    {
+      "seed": 3,
+      "dcr_clean_full": 4.856276171870788,
+      "dcr_clean_matched": 5.054786081310983,
+      "dcr_contaminated": 5.068904440852795,
+      "mia_clean_full": 0.5588467628747256,
+      "mia_clean_matched": 0.9064036795560766,
+      "mia_contaminated": 0.933941995002679,
+      "delta_size_effect": 0.19850990944019475,
+      "delta_selection_effect": 0.014118359541812175,
+      "delta_total": 0.21262826898200693
+    },
+    {
+      "seed": 42,
+      "dcr_clean_full": 4.750454597543346,
+      "dcr_clean_matched": 4.935125059743768,
+      "dcr_contaminated": 4.949882269510147,
+      "mia_clean_full": 0.5433638032173319,
+      "mia_clean_matched": 0.8913931491079623,
+      "mia_contaminated": 0.8667407599959681,
+      "delta_size_effect": 0.1846704622004225,
+      "delta_selection_effect": 0.014757209766378843,
+      "delta_total": 0.19942767196680133
+    }
+  ],
+  "aggregate": {
+    "dcr_clean_full": {
+      "mean": 4.782597,
+      "sd": 0.056579,
+      "values": [
+        4.786999,
+        4.694552,
+        4.824701,
+        4.856276,
+        4.750455
+      ]
+    },
+    "dcr_clean_matched": {
+      "mean": 4.972935,
+      "sd": 0.043264,
+      "values": [
+        4.967833,
+        4.938541,
+        4.968389,
+        5.054786,
+        4.935125
+      ]
+    },
+    "dcr_contaminated": {
+      "mean": 4.937529,
+      "sd": 0.071321,
+      "values": [
+        4.879474,
+        4.916838,
+        4.872546,
+        5.068904,
+        4.949882
+      ]
+    },
+    "mia_clean_full": {
+      "mean": 0.552568,
+      "sd": 0.005795,
+      "values": [
+        0.555566,
+        0.556702,
+        0.548364,
+        0.558847,
+        0.543364
+      ]
+    },
+    "mia_clean_matched": {
+      "mean": 0.901546,
+      "sd": 0.006509,
+      "values": [
+        0.897783,
+        0.909947,
+        0.902205,
+        0.906404,
+        0.891393
+      ]
+    },
+    "mia_contaminated": {
+      "mean": 0.899364,
+      "sd": 0.029787,
+      "values": [
+        0.879473,
+        0.879873,
+        0.936793,
+        0.933942,
+        0.866741
+      ]
+    },
+    "delta_size_effect": {
+      "mean": 0.190338,
+      "sd": 0.032385,
+      "values": [
+        0.180833,
+        0.243989,
+        0.143689,
+        0.19851,
+        0.18467
+      ]
+    },
+    "delta_selection_effect": {
+      "mean": -0.035406,
+      "sd": 0.048194,
+      "values": [
+        -0.088359,
+        -0.021704,
+        -0.095843,
+        0.014118,
+        0.014757
+      ]
+    },
+    "delta_total": {
+      "mean": 0.154932,
+      "sd": 0.071012,
+      "values": [
+        0.092475,
+        0.222285,
+        0.047845,
+        0.212628,
+        0.199428
+      ]
+    }
+  },
+  "conclusion": "size_dominated"
+}

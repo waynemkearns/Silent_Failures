@@ -1,0 +1,111 @@
+{
+  "experiment": "verdict_flip_p2_p6_cascade",
+  "artefact_tag": "A09",
+  "date_run": "2026-07-22T15:35:39.781761",
+  "sha_verified": true,
+  "config": {
+    "n_source": 2000,
+    "n_train_pool": 1000,
+    "n_holdout": 1000,
+    "cap_rate": 0.4,
+    "epsilon": 1.0,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      42
+    ],
+    "seed_sample": 42,
+    "verdict_flip_threshold": 0.05
+  },
+  "substrate_sizes": {
+    "n_clean": 740,
+    "n_contaminated": 251
+  },
+  "per_seed_results": [
+    {
+      "seed": 0,
+      "n_clean": 740,
+      "n_contaminated": 251,
+      "dcr_train_clean": 4.131119709007738,
+      "dcr_train_contaminated": 4.2617949936168,
+      "dcr_holdout_clean": 4.310221065909744,
+      "dcr_holdout_contaminated": 4.352638154783819,
+      "mia_clean": 0.5823631554323964,
+      "mia_contaminated": 0.7056169463291971,
+      "dcr_train_delta": 0.13067528460906175,
+      "dcr_holdout_delta": 0.04241708887407558,
+      "mia_delta": 0.12325379089680077
+    },
+    {
+      "seed": 1,
+      "n_clean": 740,
+      "n_contaminated": 251,
+      "dcr_train_clean": 4.068228964908209,
+      "dcr_train_contaminated": 4.236087084973343,
+      "dcr_holdout_clean": 4.22982865777013,
+      "dcr_holdout_contaminated": 4.328419716899442,
+      "mia_clean": 0.5845764206283514,
+      "mia_contaminated": 0.6451345085702463,
+      "dcr_train_delta": 0.16785812006513456,
+      "dcr_holdout_delta": 0.09859105912931199,
+      "mia_delta": 0.06055808794189499
+    },
+    {
+      "seed": 2,
+      "n_clean": 740,
+      "n_contaminated": 251,
+      "dcr_train_clean": 4.1384602446405045,
+      "dcr_train_contaminated": 4.177821130651895,
+      "dcr_holdout_clean": 4.304549664777471,
+      "dcr_holdout_contaminated": 4.304188638613551,
+      "mia_clean": 0.5695891963867996,
+      "mia_contaminated": 0.8086084423955311,
+      "dcr_train_delta": 0.03936088601139076,
+      "dcr_holdout_delta": -0.0003610261639197532,
+      "mia_delta": 0.23901924600873148
+    },
+    {
+      "seed": 3,
+      "n_clean": 740,
+      "n_contaminated": 251,
+      "dcr_train_clean": 4.198040592440604,
+      "dcr_train_contaminated": 4.323915334560725,
+      "dcr_holdout_clean": 4.367735141926713,
+      "dcr_holdout_contaminated": 4.4163445455418655,
+      "mia_clean": 0.5937893619318386,
+      "mia_contaminated": 0.7985660553524915,
+      "dcr_train_delta": 0.1258747421201214,
+      "dcr_holdout_delta": 0.04860940361515276,
+      "mia_delta": 0.20477669342065286
+    },
+    {
+      "seed": 42,
+      "n_clean": 740,
+      "n_contaminated": 251,
+      "dcr_train_clean": 4.098964558625369,
+      "dcr_train_contaminated": 4.291798915700254,
+      "dcr_holdout_clean": 4.268203612792425,
+      "dcr_holdout_contaminated": 4.385610241288289,
+      "mia_clean": 0.5803910101846187,
+      "mia_contaminated": 0.641633200884876,
+      "dcr_train_delta": 0.1928343570748856,
+      "dcr_holdout_delta": 0.11740662849586325,
+      "mia_delta": 0.06124219070025727
+    }
+  ],
+  "aggregate": {
+    "dcr_train_clean_mean": 4.126963,
+    "dcr_train_contaminated_mean": 4.258283,
+    "dcr_train_delta_mean": 0.131321,
+    "dcr_holdout_clean_mean": 4.296108,
+    "dcr_holdout_contaminated_mean": 4.35744,
+    "dcr_holdout_delta_mean": 0.061333,
+    "mia_clean_mean": 0.582142,
+    "mia_contaminated_mean": 0.719912,
+    "mia_delta_mean": 0.13777
+  },
+  "verdict": "VERDICT_FLIP_CONFIRMED",
+  "verdict_summary": "Contaminated substrate produces DCR=4.2583 vs clean DCR=4.1270 (\u0394=+0.1313). The contaminated substrate appears MORE PRIVATE than the clean substrate (false-negative privacy verdict). Exceeds threshold=0.05."
+}

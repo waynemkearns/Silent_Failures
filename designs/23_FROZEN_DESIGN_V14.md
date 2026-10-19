@@ -1,6 +1,6 @@
 # 23 Frozen design V14: MWEM and AIM audit-failure checks and a DP GAN feasibility test
 
-Written before any V14 world is run. It is an addendum to `17_FROZEN_DESIGN_V10.md` and `18_FROZEN_DESIGN_V11.md`. `RUN_V14.py` checks the hashes below, refuses to start while `RUN_V12.py` or `RUN_V13.py` is running, commits this file and the V14 scripts to git, and writes the commit hash and time to `_drafts/v14/FREEZE_RECORD_V14.txt` before the first job. It does not start until the author starts it.
+Written 14 Oct 2026, before any V14 world is run on the PC. It is an addendum to `17_FROZEN_DESIGN_V10.md` and `18_FROZEN_DESIGN_V11.md`. `RUN_V14.py` checks the hashes below, refuses to start while `RUN_V12.py` or `RUN_V13.py` is running, commits this file and the V14 scripts to git, and writes the commit hash and time to `_drafts/v14/FREEZE_RECORD_V14.txt` before the first job. It does not start until the author starts it.
 
 ## Question
 Reviewer A asked for established DP synthesizers and reviewer D asked whether a specific algorithm such as MWEM was used. V11 used MST. V14 repeats the V11 test with two further DP synthesizers on the same worlds and arms: MWEM (Part A) and AIM (Part C). AIM models correlations between columns, as MST does. V14 also records whether a DP GAN (DPCTGAN) runs in our setup at all (Part B).

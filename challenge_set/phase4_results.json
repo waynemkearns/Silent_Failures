@@ -1,0 +1,546 @@
+{
+  "timestamp": "2026-09-28T22:04:37.592306",
+  "phase": "Phase 4 \u2014 Controlled Contamination Injection",
+  "n_variants": 6,
+  "sensitivity": 0.8333,
+  "true_positives": 5,
+  "false_negatives": 1,
+  "false_positives": 5,
+  "results": [
+    {
+      "variant": "CONTROL \u2014 no injection",
+      "injected_pattern": "NONE",
+      "target_detected": false,
+      "outcome": "FALSE_NEGATIVE",
+      "false_positive_patterns": [],
+      "all_results": {
+        "P1": {
+          "pattern": "P1",
+          "detected": false,
+          "evidence": "no_groupby_derived_cols",
+          "severity": "NONE"
+        },
+        "P2": {
+          "pattern": "P2",
+          "detected": false,
+          "evidence": "no_unexpected_NaN",
+          "severity": "NONE"
+        },
+        "P3": {
+          "pattern": "P3",
+          "detected": false,
+          "evidence": "no_dead_columns",
+          "severity": "NONE"
+        },
+        "P4": {
+          "pattern": "P4",
+          "detected": false,
+          "evidence": "all_ranges_plausible",
+          "severity": "NONE"
+        },
+        "P5": {
+          "pattern": "P5",
+          "detected": false,
+          "evidence": "age_bin NaN: 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P6": {
+          "pattern": "P6",
+          "detected": false,
+          "evidence": "dropna would remove 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P7": {
+          "pattern": "P7",
+          "detected": false,
+          "evidence": "output path clear",
+          "severity": "NONE"
+        },
+        "P8": {
+          "pattern": "P8",
+          "detected": false,
+          "evidence": "no_drift_comments",
+          "severity": "NONE"
+        },
+        "P9": {
+          "pattern": "P9",
+          "detected": false,
+          "evidence": "no_cross_domain_inheritance",
+          "severity": "NONE"
+        }
+      },
+      "p4_invariance": {
+        "age": {
+          "mean": 62.0,
+          "std": 25.81,
+          "iqr": 46.0,
+          "upper_tukey_fence": 223.0,
+          "outlier_fraction": 0.0,
+          "invariance_broken": false
+        },
+        "total_charges": {
+          "mean": 39528.86,
+          "std": 45749.08,
+          "iqr": 37735.56,
+          "upper_tukey_fence": 161279.42,
+          "outlier_fraction": 0.0425,
+          "invariance_broken": true
+        }
+      }
+    },
+    {
+      "variant": "V1 \u2014 P1 unsorted groupby",
+      "injected_pattern": "P1",
+      "target_detected": false,
+      "outcome": "FALSE_NEGATIVE",
+      "false_positive_patterns": [],
+      "all_results": {
+        "P1": {
+          "pattern": "P1",
+          "detected": false,
+          "evidence": "primary_icd_mismatch_rate=0.000",
+          "severity": "NONE"
+        },
+        "P2": {
+          "pattern": "P2",
+          "detected": false,
+          "evidence": "no_unexpected_NaN",
+          "severity": "NONE"
+        },
+        "P3": {
+          "pattern": "P3",
+          "detected": false,
+          "evidence": "no_dead_columns",
+          "severity": "NONE"
+        },
+        "P4": {
+          "pattern": "P4",
+          "detected": false,
+          "evidence": "all_ranges_plausible",
+          "severity": "NONE"
+        },
+        "P5": {
+          "pattern": "P5",
+          "detected": false,
+          "evidence": "age_bin NaN: 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P6": {
+          "pattern": "P6",
+          "detected": false,
+          "evidence": "dropna would remove 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P7": {
+          "pattern": "P7",
+          "detected": false,
+          "evidence": "output path clear",
+          "severity": "NONE"
+        },
+        "P8": {
+          "pattern": "P8",
+          "detected": false,
+          "evidence": "no_drift_comments",
+          "severity": "NONE"
+        },
+        "P9": {
+          "pattern": "P9",
+          "detected": false,
+          "evidence": "no_cross_domain_inheritance",
+          "severity": "NONE"
+        }
+      },
+      "p4_invariance": {
+        "age": {
+          "mean": 62.0,
+          "std": 25.81,
+          "iqr": 46.0,
+          "upper_tukey_fence": 223.0,
+          "outlier_fraction": 0.0,
+          "invariance_broken": false
+        },
+        "total_charges": {
+          "mean": 39528.86,
+          "std": 45749.08,
+          "iqr": 37735.56,
+          "upper_tukey_fence": 161279.42,
+          "outlier_fraction": 0.0425,
+          "invariance_broken": true
+        }
+      }
+    },
+    {
+      "variant": "V2 \u2014 P2/P6 row cap + NaN",
+      "injected_pattern": "P2",
+      "target_detected": true,
+      "outcome": "TRUE_POSITIVE",
+      "false_positive_patterns": [
+        "P6"
+      ],
+      "all_results": {
+        "P1": {
+          "pattern": "P1",
+          "detected": false,
+          "evidence": "no_groupby_derived_cols",
+          "severity": "NONE"
+        },
+        "P2": {
+          "pattern": "P2",
+          "detected": true,
+          "evidence": "medication_count: 25.0% NaN",
+          "severity": "CRITICAL"
+        },
+        "P3": {
+          "pattern": "P3",
+          "detected": false,
+          "evidence": "no_dead_columns",
+          "severity": "NONE"
+        },
+        "P4": {
+          "pattern": "P4",
+          "detected": false,
+          "evidence": "all_ranges_plausible",
+          "severity": "NONE"
+        },
+        "P5": {
+          "pattern": "P5",
+          "detected": false,
+          "evidence": "age_bin NaN: 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P6": {
+          "pattern": "P6",
+          "detected": true,
+          "evidence": "dropna would remove 500 rows (25.0%)",
+          "severity": "CRITICAL"
+        },
+        "P7": {
+          "pattern": "P7",
+          "detected": false,
+          "evidence": "output path clear",
+          "severity": "NONE"
+        },
+        "P8": {
+          "pattern": "P8",
+          "detected": false,
+          "evidence": "no_drift_comments",
+          "severity": "NONE"
+        },
+        "P9": {
+          "pattern": "P9",
+          "detected": false,
+          "evidence": "no_cross_domain_inheritance",
+          "severity": "NONE"
+        }
+      },
+      "p4_invariance": {}
+    },
+    {
+      "variant": "V3 \u2014 P4 bounded (year-scale age)",
+      "injected_pattern": "P4",
+      "target_detected": true,
+      "outcome": "TRUE_POSITIVE",
+      "false_positive_patterns": [
+        "P5"
+      ],
+      "all_results": {
+        "P1": {
+          "pattern": "P1",
+          "detected": false,
+          "evidence": "no_groupby_derived_cols",
+          "severity": "NONE"
+        },
+        "P2": {
+          "pattern": "P2",
+          "detected": false,
+          "evidence": "no_unexpected_NaN",
+          "severity": "NONE"
+        },
+        "P3": {
+          "pattern": "P3",
+          "detected": false,
+          "evidence": "no_dead_columns",
+          "severity": "NONE"
+        },
+        "P4": {
+          "pattern": "P4",
+          "detected": true,
+          "evidence": "age range [2026, 2114] implausible",
+          "severity": "CRITICAL"
+        },
+        "P5": {
+          "pattern": "P5",
+          "detected": true,
+          "evidence": "age_bin NaN: 1998 rows (100.0%)",
+          "severity": "HIGH"
+        },
+        "P6": {
+          "pattern": "P6",
+          "detected": false,
+          "evidence": "dropna would remove 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P7": {
+          "pattern": "P7",
+          "detected": false,
+          "evidence": "output path clear",
+          "severity": "NONE"
+        },
+        "P8": {
+          "pattern": "P8",
+          "detected": false,
+          "evidence": "no_drift_comments",
+          "severity": "NONE"
+        },
+        "P9": {
+          "pattern": "P9",
+          "detected": false,
+          "evidence": "no_cross_domain_inheritance",
+          "severity": "NONE"
+        }
+      },
+      "p4_invariance": {
+        "age": {
+          "mean": 2070.0,
+          "std": 25.81,
+          "iqr": 46.0,
+          "upper_tukey_fence": 2231.0,
+          "outlier_fraction": 0.0,
+          "invariance_broken": false
+        }
+      }
+    },
+    {
+      "variant": "V4 \u2014 P5 silent exclusion",
+      "injected_pattern": "P5",
+      "target_detected": true,
+      "outcome": "TRUE_POSITIVE",
+      "false_positive_patterns": [
+        "P4"
+      ],
+      "all_results": {
+        "P1": {
+          "pattern": "P1",
+          "detected": false,
+          "evidence": "no_groupby_derived_cols",
+          "severity": "NONE"
+        },
+        "P2": {
+          "pattern": "P2",
+          "detected": false,
+          "evidence": "no_unexpected_NaN",
+          "severity": "NONE"
+        },
+        "P3": {
+          "pattern": "P3",
+          "detected": false,
+          "evidence": "no_dead_columns",
+          "severity": "NONE"
+        },
+        "P4": {
+          "pattern": "P4",
+          "detected": true,
+          "evidence": "age range [18, 2050] implausible",
+          "severity": "CRITICAL"
+        },
+        "P5": {
+          "pattern": "P5",
+          "detected": true,
+          "evidence": "age_bin NaN: 200 rows (10.0%)",
+          "severity": "HIGH"
+        },
+        "P6": {
+          "pattern": "P6",
+          "detected": false,
+          "evidence": "dropna would remove 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P7": {
+          "pattern": "P7",
+          "detected": false,
+          "evidence": "output path clear",
+          "severity": "NONE"
+        },
+        "P8": {
+          "pattern": "P8",
+          "detected": false,
+          "evidence": "no_drift_comments",
+          "severity": "NONE"
+        },
+        "P9": {
+          "pattern": "P9",
+          "detected": false,
+          "evidence": "no_cross_domain_inheritance",
+          "severity": "NONE"
+        }
+      },
+      "p4_invariance": {
+        "age": {
+          "mean": 260.98,
+          "std": 597.17,
+          "iqr": 49.75,
+          "upper_tukey_fence": 241.25,
+          "outlier_fraction": 0.1001,
+          "invariance_broken": true
+        }
+      }
+    },
+    {
+      "variant": "V5 \u2014 P3 dead merge",
+      "injected_pattern": "P3",
+      "target_detected": true,
+      "outcome": "TRUE_POSITIVE",
+      "false_positive_patterns": [],
+      "all_results": {
+        "P1": {
+          "pattern": "P1",
+          "detected": false,
+          "evidence": "no_groupby_derived_cols",
+          "severity": "NONE"
+        },
+        "P2": {
+          "pattern": "P2",
+          "detected": false,
+          "evidence": "no_unexpected_NaN",
+          "severity": "NONE"
+        },
+        "P3": {
+          "pattern": "P3",
+          "detected": true,
+          "evidence": "dead_columns=['clinical_risk_joined']",
+          "severity": "MEDIUM"
+        },
+        "P4": {
+          "pattern": "P4",
+          "detected": false,
+          "evidence": "all_ranges_plausible",
+          "severity": "NONE"
+        },
+        "P5": {
+          "pattern": "P5",
+          "detected": false,
+          "evidence": "age_bin NaN: 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P6": {
+          "pattern": "P6",
+          "detected": false,
+          "evidence": "dropna would remove 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P7": {
+          "pattern": "P7",
+          "detected": false,
+          "evidence": "output path clear",
+          "severity": "NONE"
+        },
+        "P8": {
+          "pattern": "P8",
+          "detected": false,
+          "evidence": "no_drift_comments",
+          "severity": "NONE"
+        },
+        "P9": {
+          "pattern": "P9",
+          "detected": false,
+          "evidence": "no_cross_domain_inheritance",
+          "severity": "NONE"
+        }
+      },
+      "p4_invariance": {
+        "age": {
+          "mean": 62.0,
+          "std": 25.81,
+          "iqr": 46.0,
+          "upper_tukey_fence": 223.0,
+          "outlier_fraction": 0.0,
+          "invariance_broken": false
+        },
+        "total_charges": {
+          "mean": 39528.86,
+          "std": 45749.08,
+          "iqr": 37735.56,
+          "upper_tukey_fence": 161279.42,
+          "outlier_fraction": 0.0425,
+          "invariance_broken": true
+        }
+      }
+    },
+    {
+      "variant": "V6 \u2014 P4 UNBOUNDED (sentinel 9999999)",
+      "injected_pattern": "P4",
+      "target_detected": true,
+      "outcome": "TRUE_POSITIVE",
+      "false_positive_patterns": [
+        "P8",
+        "P9"
+      ],
+      "all_results": {
+        "P1": {
+          "pattern": "P1",
+          "detected": false,
+          "evidence": "no_groupby_derived_cols",
+          "severity": "NONE"
+        },
+        "P2": {
+          "pattern": "P2",
+          "detected": false,
+          "evidence": "no_unexpected_NaN",
+          "severity": "NONE"
+        },
+        "P3": {
+          "pattern": "P3",
+          "detected": false,
+          "evidence": "no_dead_columns",
+          "severity": "NONE"
+        },
+        "P4": {
+          "pattern": "P4",
+          "detected": true,
+          "evidence": "total_charges sentinel (>=9M): 99 rows (5.0%)",
+          "severity": "CRITICAL"
+        },
+        "P5": {
+          "pattern": "P5",
+          "detected": false,
+          "evidence": "age_bin NaN: 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P6": {
+          "pattern": "P6",
+          "detected": false,
+          "evidence": "dropna would remove 0 rows (0.0%)",
+          "severity": "NONE"
+        },
+        "P7": {
+          "pattern": "P7",
+          "detected": false,
+          "evidence": "output path clear",
+          "severity": "NONE"
+        },
+        "P8": {
+          "pattern": "P8",
+          "detected": true,
+          "evidence": "drifted_comments=['total_charges already cleaned \u2014 sentinel values handled in preprocessing']",
+          "severity": "HIGH"
+        },
+        "P9": {
+          "pattern": "P9",
+          "detected": true,
+          "evidence": "inherited_constants=[('CHARGE_CAP', '50000  # Same as Insurance canonical, proven size from Health')]",
+          "severity": "MEDIUM"
+        }
+      },
+      "p4_invariance": {
+        "total_charges": {
+          "mean": 532903.84,
+          "std": 2162040.04,
+          "iqr": 44118.91,
+          "upper_tukey_fence": 187390.58,
+          "outlier_fraction": 0.0786,
+          "invariance_broken": true
+        }
+      }
+    }
+  ]
+}

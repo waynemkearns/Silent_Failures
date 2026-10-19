@@ -1,0 +1,9 @@
+3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]
+numpy 1.26.4 pandas 2.3.3 sklearn 1.7.2 scipy 1.15.3
+torch 2.4.1+cpu cuda False
+opacus 1.5.2
+smartnoise-synth 1.0.6 packaging 23.2
+ctgan 0.11.1 <LOCAL_PATH>
+rdt 1.19.0 Faker 40.1.0
+opacus file <LOCAL_PATH>
+CTGAN and opacus 1.5 imports OK

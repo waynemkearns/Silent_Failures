@@ -1,0 +1,180 @@
+{
+  "script": "v7_out_of_taxonomy_injection.py",
+  "timestamp": "2026-09-28T22:04:40.191005",
+  "seed": 42,
+  "n_rows": 1998,
+  "contamination": {
+    "type": "categorical_code_collapse",
+    "description": "icd_code='250.00' (diabetes mellitus) \u2192 '410.00' (acute MI) for 30% of affected records",
+    "collapse_fraction": 0.3,
+    "records_remapped": 81,
+    "pct_of_canonical": 0.0405,
+    "source_code_before": "250.00",
+    "source_code_after": "410.00"
+  },
+  "orthogonality": {
+    "P1": "no groupby, no row-order dependency",
+    "P2": "no nrows cap, all records retained",
+    "P3": "no dead merge, no join operation",
+    "P4": "no arithmetic formula, no type mismatch, no numeric range violation",
+    "P5": "no NaN produced; collapsed code is a valid ICD string",
+    "P6": "no NaN introduced, dropna() drops zero rows",
+    "P7": "no write-call guard issue introduced by injection",
+    "P8": "no remediation comment injected",
+    "P9": "no cross-domain constant injected"
+  },
+  "procedure_results": {
+    "P1": {
+      "pattern": "P1",
+      "detected": false,
+      "evidence": "no_groupby_derived_cols",
+      "severity": "NONE"
+    },
+    "P2": {
+      "pattern": "P2",
+      "detected": false,
+      "evidence": "no_unexpected_NaN",
+      "severity": "NONE"
+    },
+    "P3": {
+      "pattern": "P3",
+      "detected": false,
+      "evidence": "no_dead_columns",
+      "severity": "NONE"
+    },
+    "P4": {
+      "pattern": "P4",
+      "detected": false,
+      "evidence": "all_ranges_plausible",
+      "severity": "NONE"
+    },
+    "P5": {
+      "pattern": "P5",
+      "detected": false,
+      "evidence": "age_bin NaN: 0 rows (0.0%)",
+      "severity": "NONE"
+    },
+    "P6": {
+      "pattern": "P6",
+      "detected": false,
+      "evidence": "dropna would remove 0 rows (0.0%)",
+      "severity": "NONE"
+    },
+    "P7": {
+      "pattern": "P7",
+      "detected": false,
+      "evidence": "output path clear",
+      "severity": "NONE"
+    },
+    "P8": {
+      "pattern": "P8",
+      "detected": false,
+      "evidence": "no_drift_comments",
+      "severity": "NONE"
+    },
+    "P9": {
+      "pattern": "P9",
+      "detected": false,
+      "evidence": "no_cross_domain_inheritance",
+      "severity": "NONE"
+    }
+  },
+  "p4_invariance": {
+    "age": {
+      "mean": 62.0,
+      "std": 25.81,
+      "iqr": 46.0,
+      "upper_tukey_fence": 223.0,
+      "outlier_fraction": 0.0,
+      "invariance_broken": false
+    },
+    "total_charges": {
+      "mean": 39528.86,
+      "std": 45749.08,
+      "iqr": 37735.56,
+      "upper_tukey_fence": 161279.42,
+      "outlier_fraction": 0.0425,
+      "invariance_broken": true
+    }
+  },
+  "detected_patterns": [],
+  "outcome": "B-MISSED",
+  "procedure_detected_v7": false,
+  "extra_checks": {
+    "categorical_distribution": {
+      "check": "categorical_distribution_comparison",
+      "scope": "EXTRA \u2014 not part of P1\u2013P9 procedure",
+      "detected_by_extra_check": true,
+      "changed_codes": {
+        "250.00": {
+          "clean_count": 271,
+          "v7_count": 190,
+          "delta": -81
+        },
+        "410.00": {
+          "clean_count": 274,
+          "v7_count": 355,
+          "delta": 81
+        }
+      }
+    },
+    "nan_profile": {
+      "check": "nan_profile",
+      "per_column": {
+        "subject_id": 0,
+        "hadm_id": 0,
+        "seq_num": 0,
+        "age": 0,
+        "length_of_stay": 0,
+        "diagnosis_count": 0,
+        "medication_count": 0,
+        "total_charges": 0,
+        "icd_code": 0
+      },
+      "total_nan": 0
+    },
+    "range_plausibility": {
+      "check": "range_plausibility",
+      "columns": {
+        "age": {
+          "min": 18.0,
+          "max": 106.0,
+          "out_of_range_count": 0,
+          "plausible": true
+        },
+        "length_of_stay": {
+          "min": 0.1,
+          "max": 41.8,
+          "out_of_range_count": 0,
+          "plausible": true
+        },
+        "diagnosis_count": {
+          "min": 1.0,
+          "max": 25.0,
+          "out_of_range_count": 0,
+          "plausible": true
+        },
+        "medication_count": {
+          "min": 0.0,
+          "max": 50.0,
+          "out_of_range_count": 0,
+          "plausible": true
+        },
+        "total_charges": {
+          "min": 318.92,
+          "max": 200000.0,
+          "out_of_range_count": 0,
+          "plausible": true
+        }
+      }
+    }
+  },
+  "injection_stats": {
+    "icd_250_before": 271,
+    "icd_250_after": 190,
+    "icd_410_before": 274,
+    "icd_410_after": 355,
+    "records_collapsed": 81
+  },
+  "note": "B-MISSED is the correctly expected outcome and is a usable finding. It empirically demonstrates the P1\u2013P9 procedure's coverage boundary: categorical mapping errors that produce valid, non-null output strings are invisible to both static code inspection (which scans for numeric formula errors, NaN-producing maps, and code-level signatures) and substrate verification (which checks numeric ranges, NaN rates, and Tukey outlier fractions on numeric columns). This confirms \u00a73.1's 'not a closed taxonomy' claim with direct evidence."
+}

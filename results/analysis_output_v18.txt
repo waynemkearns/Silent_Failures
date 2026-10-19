@@ -1,0 +1,247 @@
+worlds finished: {'adult_gan': 30, 'mimic_gan': 30}
+
+========================================================================
+CELL adult_gan (DPCTGAN at epsilon 1 and 10, batch 64, epoch cap 300; CTGAN without DP as a reference; publicly binned data)
+worlds completed: 30 (minimum 30)
+DPCTGAN training record (mean over worlds; epochs trained, share stopped by budget, spent epsilon, fit seconds):
+  clean_full     DPCTGAN eps 1   epochs   14.0 (min 14, max 14) | stopped by budget 30/30 | spent eps 1.022 (max 1.022) | fit s 21
+  clean_full     DPCTGAN eps 10  epochs  300.0 (min 300, max 300) | stopped by budget 0/30 | spent eps 5.683 (max 5.683) | fit s 362
+  clean_full     CTGAN, not DP   fit s 104
+  clean_matched  DPCTGAN eps 1   epochs    8.7 (min 8, max 9) | stopped by budget 30/30 | spent eps 1.027 (max 1.064) | fit s 6
+  clean_matched  DPCTGAN eps 10  epochs  300.0 (min 300, max 300) | stopped by budget 0/30 | spent eps 7.679 (max 8.086) | fit s 207
+  clean_matched  CTGAN, not DP   fit s 37
+  contaminated   DPCTGAN eps 1   epochs    8.7 (min 8, max 9) | stopped by budget 30/30 | spent eps 1.027 (max 1.064) | fit s 6
+  contaminated   DPCTGAN eps 10  epochs  300.0 (min 300, max 300) | stopped by budget 0/30 | spent eps 7.679 (max 8.086) | fit s 191
+  contaminated   CTGAN, not DP   fit s 38
+records-only means (clean_full, clean_matched, contaminated) [0.495 0.499 0.497] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means DPCTGAN eps 1 0.496-0.506 PASS; DPCTGAN eps 10 0.497-0.500 PASS; CTGAN, not DP 0.496-0.502 PASS;
+DCRDiff            positive(lap eps100) min-arm 0.932 PASS | placebo means DPCTGAN eps 1 0.499-0.508 PASS; DPCTGAN eps 10 0.496-0.504 PASS; CTGAN, not DP 0.495-0.508 PASS;
+KDEratio           positive(lap eps100) min-arm 0.742 FAIL | placebo means DPCTGAN eps 1 0.495-0.507 PASS; DPCTGAN eps 10 0.495-0.504 PASS; CTGAN, not DP 0.495-0.506 PASS;
+Classifier         positive(lap eps100) min-arm 0.502 FAIL | placebo means DPCTGAN eps 1 0.499-0.509 PASS; DPCTGAN eps 10 0.501-0.505 PASS; CTGAN, not DP 0.497-0.501 PASS;
+LocalNeighborhood  positive(lap eps100) min-arm 0.595 FAIL | placebo means DPCTGAN eps 1 0.500-0.501 PASS; DPCTGAN eps 10 0.499-0.501 PASS; CTGAN, not DP 0.496-0.500 PASS;
+informative attacks, DPCTGAN eps 1: ['DCR', 'DCRDiff']
+informative attacks, DPCTGAN eps 10: ['DCR', 'DCRDiff']
+informative attacks, CTGAN, not DP: ['DCR', 'DCRDiff']
+FIDELITY (mean TVD against the members; lower is closer). one-way / two-way. Comparison points: non-members, uniform draw, untrained generator
+  clean_full     non-members 0.031/0.078 uniform 0.424/0.622 | DPCTGAN eps 1 trained 0.597/0.802 untrained 0.387/0.565 | DPCTGAN eps 10 trained 0.472/0.695 untrained 0.387/0.565 | CTGAN, not DP trained 0.096/0.190 untrained 0.390/0.568
+  clean_matched  non-members 0.044/0.105 uniform 0.426/0.629 | DPCTGAN eps 1 trained 0.501/0.702 untrained 0.388/0.567 | DPCTGAN eps 10 trained 0.456/0.679 untrained 0.387/0.568 | CTGAN, not DP trained 0.061/0.162 untrained 0.395/0.576
+  contaminated   non-members 0.043/0.102 uniform 0.435/0.640 | DPCTGAN eps 1 trained 0.524/0.721 untrained 0.394/0.574 | DPCTGAN eps 10 trained 0.448/0.672 untrained 0.392/0.573 | CTGAN, not DP trained 0.060/0.157 untrained 0.396/0.575
+  clean_matched DPCTGAN eps 1  : two-way TVD trained minus untrained +0.1344 CI [+0.1220,+0.1467] Holm p(trained closer) 1 -> NOT shown that training brought the release closer
+  clean_matched DPCTGAN eps 10 : two-way TVD trained minus untrained +0.1107 CI [+0.0940,+0.1274] Holm p(trained closer) 1 -> NOT shown that training brought the release closer
+  clean_matched CTGAN, not DP  : two-way TVD trained minus untrained -0.4147 CI [-0.4194,-0.4100] Holm p(trained closer) 2.63e-43 -> training brought the release closer to the members
+Mean AUC by arm, release and share f (all attacks, descriptive):
+  clean_full     DPCTGAN eps 1   f    0 {'DCR': 0.504, 'DCRDiff': 0.5, 'KDEratio': 0.5, 'Classifier': 0.5, 'LocalNeighborhood': 0.5}
+  clean_full     DPCTGAN eps 1   f 0.05 {'DCR': 0.529, 'DCRDiff': 0.526, 'KDEratio': 0.525, 'Classifier': 0.527, 'LocalNeighborhood': 0.518}
+  clean_full     DPCTGAN eps 1   f  0.1 {'DCR': 0.553, 'DCRDiff': 0.55, 'KDEratio': 0.544, 'Classifier': 0.548, 'LocalNeighborhood': 0.533}
+  clean_full     DPCTGAN eps 1   f 0.25 {'DCR': 0.628, 'DCRDiff': 0.62, 'KDEratio': 0.594, 'Classifier': 0.622, 'LocalNeighborhood': 0.552}
+  clean_full     DPCTGAN eps 10  f    0 {'DCR': 0.504, 'DCRDiff': 0.502, 'KDEratio': 0.503, 'Classifier': 0.498, 'LocalNeighborhood': 0.5}
+  clean_full     DPCTGAN eps 10  f 0.05 {'DCR': 0.53, 'DCRDiff': 0.528, 'KDEratio': 0.525, 'Classifier': 0.526, 'LocalNeighborhood': 0.517}
+  clean_full     DPCTGAN eps 10  f  0.1 {'DCR': 0.553, 'DCRDiff': 0.55, 'KDEratio': 0.544, 'Classifier': 0.55, 'LocalNeighborhood': 0.531}
+  clean_full     DPCTGAN eps 10  f 0.25 {'DCR': 0.628, 'DCRDiff': 0.62, 'KDEratio': 0.592, 'Classifier': 0.621, 'LocalNeighborhood': 0.549}
+  clean_full     CTGAN, not DP   f    0 {'DCR': 0.505, 'DCRDiff': 0.503, 'KDEratio': 0.502, 'Classifier': 0.5, 'LocalNeighborhood': 0.503}
+  clean_full     CTGAN, not DP   f 0.05 {'DCR': 0.53, 'DCRDiff': 0.527, 'KDEratio': 0.52, 'Classifier': 0.525, 'LocalNeighborhood': 0.513}
+  clean_full     CTGAN, not DP   f  0.1 {'DCR': 0.553, 'DCRDiff': 0.548, 'KDEratio': 0.533, 'Classifier': 0.545, 'LocalNeighborhood': 0.52}
+  clean_full     CTGAN, not DP   f 0.25 {'DCR': 0.628, 'DCRDiff': 0.618, 'KDEratio': 0.578, 'Classifier': 0.614, 'LocalNeighborhood': 0.539}
+  clean_matched  DPCTGAN eps 1   f    0 {'DCR': 0.507, 'DCRDiff': 0.501, 'KDEratio': 0.503, 'Classifier': 0.498, 'LocalNeighborhood': 0.5}
+  clean_matched  DPCTGAN eps 1   f 0.05 {'DCR': 0.528, 'DCRDiff': 0.526, 'KDEratio': 0.526, 'Classifier': 0.525, 'LocalNeighborhood': 0.523}
+  clean_matched  DPCTGAN eps 1   f  0.1 {'DCR': 0.557, 'DCRDiff': 0.553, 'KDEratio': 0.549, 'Classifier': 0.549, 'LocalNeighborhood': 0.543}
+  clean_matched  DPCTGAN eps 1   f 0.25 {'DCR': 0.626, 'DCRDiff': 0.623, 'KDEratio': 0.603, 'Classifier': 0.625, 'LocalNeighborhood': 0.567}
+  clean_matched  DPCTGAN eps 10  f    0 {'DCR': 0.502, 'DCRDiff': 0.5, 'KDEratio': 0.499, 'Classifier': 0.498, 'LocalNeighborhood': 0.502}
+  clean_matched  DPCTGAN eps 10  f 0.05 {'DCR': 0.527, 'DCRDiff': 0.525, 'KDEratio': 0.524, 'Classifier': 0.527, 'LocalNeighborhood': 0.522}
+  clean_matched  DPCTGAN eps 10  f  0.1 {'DCR': 0.557, 'DCRDiff': 0.553, 'KDEratio': 0.549, 'Classifier': 0.55, 'LocalNeighborhood': 0.54}
+  clean_matched  DPCTGAN eps 10  f 0.25 {'DCR': 0.625, 'DCRDiff': 0.624, 'KDEratio': 0.604, 'Classifier': 0.626, 'LocalNeighborhood': 0.564}
+  clean_matched  CTGAN, not DP   f    0 {'DCR': 0.506, 'DCRDiff': 0.505, 'KDEratio': 0.508, 'Classifier': 0.506, 'LocalNeighborhood': 0.504}
+  clean_matched  CTGAN, not DP   f 0.05 {'DCR': 0.529, 'DCRDiff': 0.527, 'KDEratio': 0.525, 'Classifier': 0.529, 'LocalNeighborhood': 0.515}
+  clean_matched  CTGAN, not DP   f  0.1 {'DCR': 0.557, 'DCRDiff': 0.554, 'KDEratio': 0.544, 'Classifier': 0.552, 'LocalNeighborhood': 0.53}
+  clean_matched  CTGAN, not DP   f 0.25 {'DCR': 0.627, 'DCRDiff': 0.625, 'KDEratio': 0.595, 'Classifier': 0.626, 'LocalNeighborhood': 0.554}
+  contaminated   DPCTGAN eps 1   f    0 {'DCR': 0.5, 'DCRDiff': 0.495, 'KDEratio': 0.496, 'Classifier': 0.496, 'LocalNeighborhood': 0.5}
+  contaminated   DPCTGAN eps 1   f 0.05 {'DCR': 0.523, 'DCRDiff': 0.517, 'KDEratio': 0.517, 'Classifier': 0.516, 'LocalNeighborhood': 0.52}
+  contaminated   DPCTGAN eps 1   f  0.1 {'DCR': 0.547, 'DCRDiff': 0.538, 'KDEratio': 0.534, 'Classifier': 0.542, 'LocalNeighborhood': 0.533}
+  contaminated   DPCTGAN eps 1   f 0.25 {'DCR': 0.627, 'DCRDiff': 0.619, 'KDEratio': 0.599, 'Classifier': 0.622, 'LocalNeighborhood': 0.567}
+  contaminated   DPCTGAN eps 10  f    0 {'DCR': 0.503, 'DCRDiff': 0.498, 'KDEratio': 0.502, 'Classifier': 0.502, 'LocalNeighborhood': 0.502}
+  contaminated   DPCTGAN eps 10  f 0.05 {'DCR': 0.526, 'DCRDiff': 0.522, 'KDEratio': 0.523, 'Classifier': 0.521, 'LocalNeighborhood': 0.52}
+  contaminated   DPCTGAN eps 10  f  0.1 {'DCR': 0.55, 'DCRDiff': 0.545, 'KDEratio': 0.541, 'Classifier': 0.548, 'LocalNeighborhood': 0.533}
+  contaminated   DPCTGAN eps 10  f 0.25 {'DCR': 0.628, 'DCRDiff': 0.621, 'KDEratio': 0.603, 'Classifier': 0.623, 'LocalNeighborhood': 0.563}
+  contaminated   CTGAN, not DP   f    0 {'DCR': 0.505, 'DCRDiff': 0.502, 'KDEratio': 0.503, 'Classifier': 0.502, 'LocalNeighborhood': 0.503}
+  contaminated   CTGAN, not DP   f 0.05 {'DCR': 0.528, 'DCRDiff': 0.523, 'KDEratio': 0.519, 'Classifier': 0.523, 'LocalNeighborhood': 0.514}
+  contaminated   CTGAN, not DP   f  0.1 {'DCR': 0.551, 'DCRDiff': 0.546, 'KDEratio': 0.536, 'Classifier': 0.548, 'LocalNeighborhood': 0.523}
+  contaminated   CTGAN, not DP   f 0.25 {'DCR': 0.63, 'DCRDiff': 0.621, 'KDEratio': 0.588, 'Classifier': 0.621, 'LocalNeighborhood': 0.551}
+
+PRIMARY (DPCTGAN): contaminated minus clean_matched at f=0, margin +/-0.03, 90% CI, Holm over 4 tests, n=30
+  DPCTGAN eps 1   DCR        diff -0.0074 CI [-0.0143,-0.0005] Holm eq 2.51e-06 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 12/30
+  DPCTGAN eps 1   DCRDiff    diff -0.0066 CI [-0.0115,-0.0017] Holm eq 1.06e-08 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 10/30
+  DPCTGAN eps 10  DCR        diff +0.0014 CI [-0.0045,+0.0074] Holm eq 1.06e-08 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 16/30
+  DPCTGAN eps 10  DCRDiff    diff -0.0018 CI [-0.0086,+0.0051] Holm eq 1.06e-07 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 13/30
+
+REFERENCE (CTGAN, not DP, own Holm family): contaminated minus clean_matched at f=0, margin +/-0.03, 90% CI, Holm over 2 tests, n=30
+  CTGAN, not DP   DCR        diff -0.0008 CI [-0.0060,+0.0044] Holm eq 1.75e-10 shift 1 -> equivalent within the margin; positive in 12/30
+  CTGAN, not DP   DCRDiff    diff -0.0038 CI [-0.0095,+0.0019] Holm eq 5.9e-09 shift 1 -> equivalent within the margin; positive in 15/30
+
+SECONDARY (detection), DPCTGAN eps 1, clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 6 tests
+  DCR        f 0.05 diff +0.0214 CI [+0.0148,+0.0280] Holm p(>0) 2.99e-06 p(>0.03) 1 -> detected (increase > 0)
+  DCR        f  0.1 diff +0.0500 CI [+0.0437,+0.0564] Holm p(>0) 1.02e-13 p(>0.03) 1.49e-05 -> BEYOND the 0.03 margin
+  DCR        f 0.25 diff +0.1190 CI [+0.1126,+0.1254] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.05 diff +0.0244 CI [+0.0186,+0.0303] Holm p(>0) 8.23e-08 p(>0.03) 1 -> detected (increase > 0)
+  DCRDiff    f  0.1 diff +0.0519 CI [+0.0468,+0.0571] Holm p(>0) 4.44e-16 p(>0.03) 1.2e-07 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.25 diff +0.1218 CI [+0.1160,+0.1277] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+
+SECONDARY (detection), DPCTGAN eps 10, clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 6 tests
+  DCR        f 0.05 diff +0.0259 CI [+0.0223,+0.0295] Holm p(>0) 5.37e-13 p(>0.03) 1 -> detected (increase > 0)
+  DCR        f  0.1 diff +0.0550 CI [+0.0511,+0.0589] Holm p(>0) 0 p(>0.03) 1.86e-11 -> BEYOND the 0.03 margin
+  DCR        f 0.25 diff +0.1237 CI [+0.1187,+0.1287] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.05 diff +0.0252 CI [+0.0204,+0.0300] Holm p(>0) 4.57e-10 p(>0.03) 1 -> detected (increase > 0)
+  DCRDiff    f  0.1 diff +0.0534 CI [+0.0486,+0.0581] Holm p(>0) 0 p(>0.03) 4.89e-09 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.25 diff +0.1241 CI [+0.1179,+0.1303] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+
+SECONDARY (detection), CTGAN, not DP, clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 6 tests
+  DCR        f 0.05 diff +0.0229 CI [+0.0209,+0.0250] Holm p(>0) 0 p(>0.03) 1 -> detected (increase > 0)
+  DCR        f  0.1 diff +0.0509 CI [+0.0483,+0.0536] Holm p(>0) 0 p(>0.03) 1.37e-13 -> BEYOND the 0.03 margin
+  DCR        f 0.25 diff +0.1215 CI [+0.1175,+0.1255] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.05 diff +0.0217 CI [+0.0191,+0.0242] Holm p(>0) 4.11e-15 p(>0.03) 1 -> detected (increase > 0)
+  DCRDiff    f  0.1 diff +0.0487 CI [+0.0455,+0.0519] Holm p(>0) 0 p(>0.03) 9.47e-11 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.25 diff +0.1198 CI [+0.1148,+0.1249] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+SIZE (descriptive): clean_matched minus clean_full at f=0
+  DPCTGAN eps 1   DCR        +0.0033 sd 0.0241
+  DPCTGAN eps 1   DCRDiff    +0.0010 sd 0.0179
+  DPCTGAN eps 10  DCR        -0.0028 sd 0.0190
+  DPCTGAN eps 10  DCRDiff    -0.0023 sd 0.0189
+  CTGAN, not DP   DCR        +0.0007 sd 0.0129
+  CTGAN, not DP   DCRDiff    +0.0028 sd 0.0214
+
+========================================================================
+CELL mimic_gan (DPCTGAN at epsilon 1 and 10, batch 64, epoch cap 300; CTGAN without DP as a reference; publicly binned data)
+worlds completed: 30 (minimum 30)
+DPCTGAN training record (mean over worlds; epochs trained, share stopped by budget, spent epsilon, fit seconds):
+  clean_full     DPCTGAN eps 1   epochs   10.7 (min 10, max 11) | stopped by budget 30/30 | spent eps 1.029 (max 1.050) | fit s 14
+  clean_full     DPCTGAN eps 10  epochs  300.0 (min 300, max 300) | stopped by budget 0/30 | spent eps 6.766 (max 6.951) | fit s 289
+  clean_full     CTGAN, not DP   fit s 70
+  clean_matched  DPCTGAN eps 1   epochs    5.3 (min 5, max 6) | stopped by budget 30/30 | spent eps 1.055 (max 1.099) | fit s 2
+  clean_matched  DPCTGAN eps 10  epochs  252.7 (min 221, max 289) | stopped by budget 30/30 | spent eps 10.018 (max 10.027) | fit s 94
+  clean_matched  CTGAN, not DP   fit s 42
+  contaminated   DPCTGAN eps 1   epochs    5.3 (min 5, max 6) | stopped by budget 30/30 | spent eps 1.055 (max 1.099) | fit s 2
+  contaminated   DPCTGAN eps 10  epochs  252.7 (min 221, max 289) | stopped by budget 30/30 | spent eps 10.018 (max 10.027) | fit s 88
+  contaminated   CTGAN, not DP   fit s 45
+records-only means (clean_full, clean_matched, contaminated) [0.494 0.498 0.496] PASS
+DCR                positive(lap eps100) min-arm 1.000 PASS | placebo means DPCTGAN eps 1 0.498-0.505 PASS; DPCTGAN eps 10 0.488-0.503 PASS; CTGAN, not DP 0.493-0.513 PASS;
+DCRDiff            positive(lap eps100) min-arm 0.985 PASS | placebo means DPCTGAN eps 1 0.500-0.512 PASS; DPCTGAN eps 10 0.495-0.499 PASS; CTGAN, not DP 0.504-0.509 PASS;
+KDEratio           positive(lap eps100) min-arm 0.829 PASS | placebo means DPCTGAN eps 1 0.502-0.511 PASS; DPCTGAN eps 10 0.493-0.501 PASS; CTGAN, not DP 0.505-0.513 PASS;
+Classifier         positive(lap eps100) min-arm 0.521 FAIL | placebo means DPCTGAN eps 1 0.500-0.513 PASS; DPCTGAN eps 10 0.491-0.500 PASS; CTGAN, not DP 0.493-0.504 PASS;
+LocalNeighborhood  positive(lap eps100) min-arm 0.611 FAIL | placebo means DPCTGAN eps 1 0.500-0.507 PASS; DPCTGAN eps 10 0.496-0.500 PASS; CTGAN, not DP 0.492-0.509 PASS;
+informative attacks, DPCTGAN eps 1: ['DCR', 'DCRDiff', 'KDEratio']
+informative attacks, DPCTGAN eps 10: ['DCR', 'DCRDiff', 'KDEratio']
+informative attacks, CTGAN, not DP: ['DCR', 'DCRDiff', 'KDEratio']
+FIDELITY (mean TVD against the members; lower is closer). one-way / two-way. Comparison points: non-members, uniform draw, untrained generator
+  clean_full     non-members 0.049/0.139 uniform 0.252/0.445 | DPCTGAN eps 1 trained 0.553/0.739 untrained 0.195/0.362 | DPCTGAN eps 10 trained 0.604/0.812 untrained 0.194/0.361 | CTGAN, not DP trained 0.061/0.171 untrained 0.208/0.373
+  clean_matched  non-members 0.084/0.233 uniform 0.272/0.509 | DPCTGAN eps 1 trained 0.244/0.448 untrained 0.213/0.423 | DPCTGAN eps 10 trained 0.578/0.793 untrained 0.212/0.421 | CTGAN, not DP trained 0.080/0.246 untrained 0.224/0.431
+  contaminated   non-members 0.087/0.242 uniform 0.260/0.503 | DPCTGAN eps 1 trained 0.224/0.431 untrained 0.197/0.411 | DPCTGAN eps 10 trained 0.584/0.796 untrained 0.200/0.413 | CTGAN, not DP trained 0.084/0.255 untrained 0.208/0.419
+  clean_matched DPCTGAN eps 1  : two-way TVD trained minus untrained +0.0251 CI [+0.0178,+0.0324] Holm p(trained closer) 1 -> NOT shown that training brought the release closer
+  clean_matched DPCTGAN eps 10 : two-way TVD trained minus untrained +0.3719 CI [+0.3617,+0.3821] Holm p(trained closer) 1 -> NOT shown that training brought the release closer
+  clean_matched CTGAN, not DP  : two-way TVD trained minus untrained -0.1853 CI [-0.1900,-0.1806] Holm p(trained closer) 3.69e-33 -> training brought the release closer to the members
+Mean AUC by arm, release and share f (all attacks, descriptive):
+  clean_full     DPCTGAN eps 1   f    0 {'DCR': 0.498, 'DCRDiff': 0.5, 'KDEratio': 0.498, 'Classifier': 0.503, 'LocalNeighborhood': 0.5}
+  clean_full     DPCTGAN eps 1   f 0.05 {'DCR': 0.526, 'DCRDiff': 0.527, 'KDEratio': 0.526, 'Classifier': 0.525, 'LocalNeighborhood': 0.52}
+  clean_full     DPCTGAN eps 1   f  0.1 {'DCR': 0.549, 'DCRDiff': 0.55, 'KDEratio': 0.547, 'Classifier': 0.55, 'LocalNeighborhood': 0.53}
+  clean_full     DPCTGAN eps 1   f 0.25 {'DCR': 0.626, 'DCRDiff': 0.624, 'KDEratio': 0.609, 'Classifier': 0.622, 'LocalNeighborhood': 0.559}
+  clean_full     DPCTGAN eps 10  f    0 {'DCR': 0.501, 'DCRDiff': 0.503, 'KDEratio': 0.502, 'Classifier': 0.5, 'LocalNeighborhood': 0.5}
+  clean_full     DPCTGAN eps 10  f 0.05 {'DCR': 0.526, 'DCRDiff': 0.528, 'KDEratio': 0.527, 'Classifier': 0.527, 'LocalNeighborhood': 0.519}
+  clean_full     DPCTGAN eps 10  f  0.1 {'DCR': 0.55, 'DCRDiff': 0.552, 'KDEratio': 0.547, 'Classifier': 0.55, 'LocalNeighborhood': 0.529}
+  clean_full     DPCTGAN eps 10  f 0.25 {'DCR': 0.626, 'DCRDiff': 0.625, 'KDEratio': 0.611, 'Classifier': 0.623, 'LocalNeighborhood': 0.558}
+  clean_full     CTGAN, not DP   f    0 {'DCR': 0.5, 'DCRDiff': 0.502, 'KDEratio': 0.504, 'Classifier': 0.499, 'LocalNeighborhood': 0.499}
+  clean_full     CTGAN, not DP   f 0.05 {'DCR': 0.525, 'DCRDiff': 0.528, 'KDEratio': 0.526, 'Classifier': 0.525, 'LocalNeighborhood': 0.512}
+  clean_full     CTGAN, not DP   f  0.1 {'DCR': 0.549, 'DCRDiff': 0.553, 'KDEratio': 0.545, 'Classifier': 0.548, 'LocalNeighborhood': 0.521}
+  clean_full     CTGAN, not DP   f 0.25 {'DCR': 0.626, 'DCRDiff': 0.626, 'KDEratio': 0.603, 'Classifier': 0.622, 'LocalNeighborhood': 0.547}
+  clean_matched  DPCTGAN eps 1   f    0 {'DCR': 0.495, 'DCRDiff': 0.491, 'KDEratio': 0.49, 'Classifier': 0.502, 'LocalNeighborhood': 0.5}
+  clean_matched  DPCTGAN eps 1   f 0.05 {'DCR': 0.525, 'DCRDiff': 0.518, 'KDEratio': 0.515, 'Classifier': 0.521, 'LocalNeighborhood': 0.522}
+  clean_matched  DPCTGAN eps 1   f  0.1 {'DCR': 0.546, 'DCRDiff': 0.541, 'KDEratio': 0.538, 'Classifier': 0.549, 'LocalNeighborhood': 0.537}
+  clean_matched  DPCTGAN eps 1   f 0.25 {'DCR': 0.628, 'DCRDiff': 0.624, 'KDEratio': 0.612, 'Classifier': 0.626, 'LocalNeighborhood': 0.587}
+  clean_matched  DPCTGAN eps 10  f    0 {'DCR': 0.505, 'DCRDiff': 0.502, 'KDEratio': 0.503, 'Classifier': 0.505, 'LocalNeighborhood': 0.499}
+  clean_matched  DPCTGAN eps 10  f 0.05 {'DCR': 0.529, 'DCRDiff': 0.525, 'KDEratio': 0.526, 'Classifier': 0.526, 'LocalNeighborhood': 0.52}
+  clean_matched  DPCTGAN eps 10  f  0.1 {'DCR': 0.549, 'DCRDiff': 0.547, 'KDEratio': 0.547, 'Classifier': 0.555, 'LocalNeighborhood': 0.537}
+  clean_matched  DPCTGAN eps 10  f 0.25 {'DCR': 0.628, 'DCRDiff': 0.625, 'KDEratio': 0.619, 'Classifier': 0.628, 'LocalNeighborhood': 0.586}
+  clean_matched  CTGAN, not DP   f    0 {'DCR': 0.501, 'DCRDiff': 0.502, 'KDEratio': 0.503, 'Classifier': 0.52, 'LocalNeighborhood': 0.503}
+  clean_matched  CTGAN, not DP   f 0.05 {'DCR': 0.525, 'DCRDiff': 0.522, 'KDEratio': 0.522, 'Classifier': 0.54, 'LocalNeighborhood': 0.519}
+  clean_matched  CTGAN, not DP   f  0.1 {'DCR': 0.548, 'DCRDiff': 0.549, 'KDEratio': 0.547, 'Classifier': 0.567, 'LocalNeighborhood': 0.534}
+  clean_matched  CTGAN, not DP   f 0.25 {'DCR': 0.628, 'DCRDiff': 0.627, 'KDEratio': 0.615, 'Classifier': 0.636, 'LocalNeighborhood': 0.578}
+  contaminated   DPCTGAN eps 1   f    0 {'DCR': 0.505, 'DCRDiff': 0.502, 'KDEratio': 0.505, 'Classifier': 0.5, 'LocalNeighborhood': 0.5}
+  contaminated   DPCTGAN eps 1   f 0.05 {'DCR': 0.53, 'DCRDiff': 0.528, 'KDEratio': 0.527, 'Classifier': 0.524, 'LocalNeighborhood': 0.523}
+  contaminated   DPCTGAN eps 1   f  0.1 {'DCR': 0.55, 'DCRDiff': 0.549, 'KDEratio': 0.547, 'Classifier': 0.548, 'LocalNeighborhood': 0.545}
+  contaminated   DPCTGAN eps 1   f 0.25 {'DCR': 0.631, 'DCRDiff': 0.628, 'KDEratio': 0.62, 'Classifier': 0.617, 'LocalNeighborhood': 0.594}
+  contaminated   DPCTGAN eps 10  f    0 {'DCR': 0.505, 'DCRDiff': 0.502, 'KDEratio': 0.504, 'Classifier': 0.498, 'LocalNeighborhood': 0.502}
+  contaminated   DPCTGAN eps 10  f 0.05 {'DCR': 0.531, 'DCRDiff': 0.529, 'KDEratio': 0.529, 'Classifier': 0.522, 'LocalNeighborhood': 0.525}
+  contaminated   DPCTGAN eps 10  f  0.1 {'DCR': 0.554, 'DCRDiff': 0.554, 'KDEratio': 0.554, 'Classifier': 0.546, 'LocalNeighborhood': 0.546}
+  contaminated   DPCTGAN eps 10  f 0.25 {'DCR': 0.632, 'DCRDiff': 0.631, 'KDEratio': 0.624, 'Classifier': 0.623, 'LocalNeighborhood': 0.594}
+  contaminated   CTGAN, not DP   f    0 {'DCR': 0.505, 'DCRDiff': 0.502, 'KDEratio': 0.506, 'Classifier': 0.524, 'LocalNeighborhood': 0.502}
+  contaminated   CTGAN, not DP   f 0.05 {'DCR': 0.531, 'DCRDiff': 0.526, 'KDEratio': 0.527, 'Classifier': 0.547, 'LocalNeighborhood': 0.52}
+  contaminated   CTGAN, not DP   f  0.1 {'DCR': 0.557, 'DCRDiff': 0.555, 'KDEratio': 0.555, 'Classifier': 0.571, 'LocalNeighborhood': 0.54}
+  contaminated   CTGAN, not DP   f 0.25 {'DCR': 0.631, 'DCRDiff': 0.628, 'KDEratio': 0.62, 'Classifier': 0.636, 'LocalNeighborhood': 0.583}
+
+PRIMARY (DPCTGAN): contaminated minus clean_matched at f=0, margin +/-0.03, 90% CI, Holm over 6 tests, n=30
+  DPCTGAN eps 1   DCR        diff +0.0108 CI [-0.0004,+0.0221] Holm eq 0.00731 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 19/30
+  DPCTGAN eps 1   DCRDiff    diff +0.0110 CI [+0.0012,+0.0208] Holm eq 0.00402 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 18/30
+  DPCTGAN eps 1   KDEratio   diff +0.0150 CI [+0.0035,+0.0265] Holm eq 0.0173 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 19/30
+  DPCTGAN eps 10  DCR        diff +0.0007 CI [-0.0073,+0.0088] Holm eq 2.91e-06 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 17/30
+  DPCTGAN eps 10  DCRDiff    diff +0.0002 CI [-0.0099,+0.0103] Holm eq 6.07e-05 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 15/30
+  DPCTGAN eps 10  KDEratio   diff +0.0008 CI [-0.0091,+0.0107] Holm eq 6.07e-05 shift 1 -> equivalent within the margin [UNINFORMATIVE: training not shown to bring the release closer to the members than an untrained generator (two-way TVD)]; positive in 12/30
+
+REFERENCE (CTGAN, not DP, own Holm family): contaminated minus clean_matched at f=0, margin +/-0.03, 90% CI, Holm over 3 tests, n=30
+  CTGAN, not DP   DCR        diff +0.0048 CI [-0.0081,+0.0177] Holm eq 0.00121 shift 1 -> equivalent within the margin; positive in 17/30
+  CTGAN, not DP   DCRDiff    diff +0.0004 CI [-0.0095,+0.0103] Holm eq 2.91e-05 shift 1 -> equivalent within the margin; positive in 14/30
+  CTGAN, not DP   KDEratio   diff +0.0031 CI [-0.0065,+0.0127] Holm eq 5.2e-05 shift 1 -> equivalent within the margin; positive in 16/30
+
+SECONDARY (detection), DPCTGAN eps 1, clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 9 tests
+  DCR        f 0.05 diff +0.0301 CI [+0.0241,+0.0361] Holm p(>0) 3.13e-09 p(>0.03) 1 -> detected (increase > 0)
+  DCR        f  0.1 diff +0.0510 CI [+0.0446,+0.0574] Holm p(>0) 1.23e-13 p(>0.03) 1.45e-05 -> BEYOND the 0.03 margin
+  DCR        f 0.25 diff +0.1337 CI [+0.1265,+0.1410] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.05 diff +0.0273 CI [+0.0211,+0.0335] Holm p(>0) 2.93e-08 p(>0.03) 1 -> detected (increase > 0)
+  DCRDiff    f  0.1 diff +0.0499 CI [+0.0425,+0.0574] Holm p(>0) 8.31e-12 p(>0.03) 0.000227 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.25 diff +0.1333 CI [+0.1253,+0.1414] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  KDEratio   f 0.05 diff +0.0250 CI [+0.0187,+0.0312] Holm p(>0) 1.03e-07 p(>0.03) 1 -> detected (increase > 0)
+  KDEratio   f  0.1 diff +0.0480 CI [+0.0407,+0.0552] Holm p(>0) 8.31e-12 p(>0.03) 0.000432 -> BEYOND the 0.03 margin
+  KDEratio   f 0.25 diff +0.1219 CI [+0.1136,+0.1302] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  KDEratio   smallest share detected: 0.05; smallest share beyond the margin: 0.1
+
+SECONDARY (detection), DPCTGAN eps 10, clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 9 tests
+  DCR        f 0.05 diff +0.0240 CI [+0.0181,+0.0298] Holm p(>0) 1.67e-07 p(>0.03) 1 -> detected (increase > 0)
+  DCR        f  0.1 diff +0.0445 CI [+0.0380,+0.0510] Holm p(>0) 5.96e-12 p(>0.03) 0.00217 -> BEYOND the 0.03 margin
+  DCR        f 0.25 diff +0.1237 CI [+0.1170,+0.1304] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.05 diff +0.0233 CI [+0.0167,+0.0298] Holm p(>0) 1.5e-06 p(>0.03) 1 -> detected (increase > 0)
+  DCRDiff    f  0.1 diff +0.0456 CI [+0.0363,+0.0548] Holm p(>0) 7.7e-09 p(>0.03) 0.0193 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.25 diff +0.1230 CI [+0.1146,+0.1314] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  KDEratio   f 0.05 diff +0.0230 CI [+0.0154,+0.0307] Holm p(>0) 8.38e-06 p(>0.03) 1 -> detected (increase > 0)
+  KDEratio   f  0.1 diff +0.0445 CI [+0.0347,+0.0544] Holm p(>0) 3.59e-08 p(>0.03) 0.0361 -> BEYOND the 0.03 margin
+  KDEratio   f 0.25 diff +0.1163 CI [+0.1070,+0.1256] Holm p(>0) 0 p(>0.03) 3.11e-15 -> BEYOND the 0.03 margin
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  KDEratio   smallest share detected: 0.05; smallest share beyond the margin: 0.1
+
+SECONDARY (detection), CTGAN, not DP, clean_matched arm: AUC at share f minus AUC at f=0, paired, 90% CI, Holm over 9 tests
+  DCR        f 0.05 diff +0.0241 CI [+0.0215,+0.0267] Holm p(>0) 1.33e-15 p(>0.03) 1 -> detected (increase > 0)
+  DCR        f  0.1 diff +0.0475 CI [+0.0450,+0.0500] Holm p(>0) 0 p(>0.03) 3.29e-12 -> BEYOND the 0.03 margin
+  DCR        f 0.25 diff +0.1275 CI [+0.1231,+0.1319] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.05 diff +0.0204 CI [+0.0173,+0.0235] Holm p(>0) 6.33e-12 p(>0.03) 1 -> detected (increase > 0)
+  DCRDiff    f  0.1 diff +0.0471 CI [+0.0430,+0.0513] Holm p(>0) 0 p(>0.03) 2.95e-07 -> BEYOND the 0.03 margin
+  DCRDiff    f 0.25 diff +0.1252 CI [+0.1205,+0.1299] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  KDEratio   f 0.05 diff +0.0188 CI [+0.0153,+0.0222] Holm p(>0) 1.46e-10 p(>0.03) 1 -> detected (increase > 0)
+  KDEratio   f  0.1 diff +0.0439 CI [+0.0399,+0.0479] Holm p(>0) 0 p(>0.03) 4.68e-06 -> BEYOND the 0.03 margin
+  KDEratio   f 0.25 diff +0.1117 CI [+0.1066,+0.1168] Holm p(>0) 0 p(>0.03) 0 -> BEYOND the 0.03 margin
+  DCR        smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  DCRDiff    smallest share detected: 0.05; smallest share beyond the margin: 0.1
+  KDEratio   smallest share detected: 0.05; smallest share beyond the margin: 0.1
+SIZE (descriptive): clean_matched minus clean_full at f=0
+  DPCTGAN eps 1   DCR        -0.0034 sd 0.0258
+  DPCTGAN eps 1   DCRDiff    -0.0094 sd 0.0277
+  DPCTGAN eps 1   KDEratio   -0.0080 sd 0.0292
+  DPCTGAN eps 10  DCR        +0.0040 sd 0.0251
+  DPCTGAN eps 10  DCRDiff    -0.0011 sd 0.0267
+  DPCTGAN eps 10  KDEratio   +0.0009 sd 0.0277
+  CTGAN, not DP   DCR        +0.0009 sd 0.0266
+  CTGAN, not DP   DCRDiff    -0.0005 sd 0.0248
+  CTGAN, not DP   KDEratio   -0.0011 sd 0.0253
